@@ -31,6 +31,8 @@
 		63B21DFB2784E3DA00E5DCE9 /* UIView-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */; };
 		63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFC2784E71A00E5DCE9 /* FPButton.swift */; };
 		63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */; };
+		63B21E012784FB8A00E5DCE9 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21E002784FB8A00E5DCE9 /* ScreenSize.swift */; };
+		863B1A4C3DD9E776E043DB9B /* Pods_FitPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51EAFFE8186BBC32A3F45494 /* Pods-FitPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitPlanner.release.xcconfig"; path = "Target Support Files/Pods-FitPlanner/Pods-FitPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		63B21DA02784C5D800E5DCE9 /* FitPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-ext.swift"; sourceTree = "<group>"; };
 		63B21DFC2784E71A00E5DCE9 /* FPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPButton.swift; sourceTree = "<group>"; };
 		63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWorkoutCard.swift; sourceTree = "<group>"; };
+		63B21E002784FB8A00E5DCE9 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		800B54CB5EBAA63B1536A4A6 /* Pods-FitPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitPlanner.debug.xcconfig"; path = "Target Support Files/Pods-FitPlanner/Pods-FitPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				863B1A4C3DD9E776E043DB9B /* Pods_FitPlanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +120,8 @@
 				63B21DBC2784C5DB00E5DCE9 /* FitPlannerTests */,
 				63B21DC62784C5DB00E5DCE9 /* FitPlannerUITests */,
 				63B21DA12784C5D800E5DCE9 /* Products */,
+				EE071AD32DD3645E3329E426 /* Pods */,
+				708B87A3BFAE443449752F82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,6 +245,7 @@
 				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
 				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
 				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
+				63B21E002784FB8A00E5DCE9 /* ScreenSize.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -260,6 +270,23 @@
 			path = "Container Views";
 			sourceTree = "<group>";
 		};
+		708B87A3BFAE443449752F82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE071AD32DD3645E3329E426 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				800B54CB5EBAA63B1536A4A6 /* Pods-FitPlanner.debug.xcconfig */,
+				51EAFFE8186BBC32A3F45494 /* Pods-FitPlanner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -267,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63B21DCD2784C5DB00E5DCE9 /* Build configuration list for PBXNativeTarget "FitPlanner" */;
 			buildPhases = (
+				2EA49B6082A3ABA6CDE65CA0 /* [CP] Check Pods Manifest.lock */,
 				63B21D9C2784C5D800E5DCE9 /* Sources */,
 				63B21D9D2784C5D800E5DCE9 /* Frameworks */,
 				63B21D9E2784C5D800E5DCE9 /* Resources */,
+				4F96CC5FA31D7C2FDF91B77E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,6 +414,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2EA49B6082A3ABA6CDE65CA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FitPlanner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F96CC5FA31D7C2FDF91B77E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitPlanner/Pods-FitPlanner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FitPlanner/Pods-FitPlanner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FitPlanner/Pods-FitPlanner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		63B21D9C2784C5D800E5DCE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -400,6 +471,7 @@
 				63B21DF72784DF7D00E5DCE9 /* InputContainerView.swift in Sources */,
 				63B21DED2784D70F00E5DCE9 /* UIColor-ext.swift in Sources */,
 				63B21DE82784D69800E5DCE9 /* Router.swift in Sources */,
+				63B21E012784FB8A00E5DCE9 /* ScreenSize.swift in Sources */,
 				63B21DEA2784D6BE00E5DCE9 /* GetStartedVC.swift in Sources */,
 				63B21DEF2784DB9200E5DCE9 /* UIView-autolayout.swift in Sources */,
 				63B21DE42784CC5500E5DCE9 /* ThirdVC.swift in Sources */,
@@ -574,6 +646,7 @@
 		};
 		63B21DCE2784C5DB00E5DCE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 800B54CB5EBAA63B1536A4A6 /* Pods-FitPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -601,6 +674,7 @@
 		};
 		63B21DCF2784C5DB00E5DCE9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51EAFFE8186BBC32A3F45494 /* Pods-FitPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
