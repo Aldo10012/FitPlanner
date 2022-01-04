@@ -20,6 +20,16 @@
 		63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */; };
 		63B21DE22784CB3500E5DCE9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DE12784CB3500E5DCE9 /* TabBarController.swift */; };
 		63B21DE42784CC5500E5DCE9 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DE32784CC5500E5DCE9 /* ThirdVC.swift */; };
+		63B21DE82784D69800E5DCE9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DE72784D69800E5DCE9 /* Router.swift */; };
+		63B21DEA2784D6BE00E5DCE9 /* GetStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DE92784D6BE00E5DCE9 /* GetStartedVC.swift */; };
+		63B21DED2784D70F00E5DCE9 /* UIColor-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */; };
+		63B21DEF2784DB9200E5DCE9 /* UIView-autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */; };
+		63B21DF12784DC3B00E5DCE9 /* FPLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DF02784DC3B00E5DCE9 /* FPLabel.swift */; };
+		63B21DF32784DD2700E5DCE9 /* FPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DF22784DD2700E5DCE9 /* FPTextField.swift */; };
+		63B21DF72784DF7D00E5DCE9 /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DF62784DF7D00E5DCE9 /* InputContainerView.swift */; };
+		63B21DF92784DFD700E5DCE9 /* FPBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DF82784DFD700E5DCE9 /* FPBackground.swift */; };
+		63B21DFB2784E3DA00E5DCE9 /* UIView-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */; };
+		63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFC2784E71A00E5DCE9 /* FPButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +67,16 @@
 		63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		63B21DE12784CB3500E5DCE9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		63B21DE32784CC5500E5DCE9 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
+		63B21DE72784D69800E5DCE9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		63B21DE92784D6BE00E5DCE9 /* GetStartedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedVC.swift; sourceTree = "<group>"; };
+		63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-ext.swift"; sourceTree = "<group>"; };
+		63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-autolayout.swift"; sourceTree = "<group>"; };
+		63B21DF02784DC3B00E5DCE9 /* FPLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPLabel.swift; sourceTree = "<group>"; };
+		63B21DF22784DD2700E5DCE9 /* FPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPTextField.swift; sourceTree = "<group>"; };
+		63B21DF62784DF7D00E5DCE9 /* InputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
+		63B21DF82784DFD700E5DCE9 /* FPBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPBackground.swift; sourceTree = "<group>"; };
+		63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-ext.swift"; sourceTree = "<group>"; };
+		63B21DFC2784E71A00E5DCE9 /* FPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +183,8 @@
 		63B21DD92784C86C00E5DCE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				63B21DF42784DE6400E5DCE9 /* Universal */,
+				63B21DF52784DE7200E5DCE9 /* Container Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +192,7 @@
 		63B21DDA2784C88200E5DCE9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				63B21DE92784D6BE00E5DCE9 /* GetStartedVC.swift */,
 				63B21DA72784C5D800E5DCE9 /* FirstVC.swift */,
 				63B21DDD2784C92C00E5DCE9 /* SecondVC.swift */,
 				63B21DE32784CC5500E5DCE9 /* ThirdVC.swift */,
@@ -188,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				63B21DE12784CB3500E5DCE9 /* TabBarController.swift */,
+				63B21DE72784D69800E5DCE9 /* Router.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -207,8 +231,30 @@
 		63B21DE62784D23D00E5DCE9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
+				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
+				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		63B21DF42784DE6400E5DCE9 /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DF02784DC3B00E5DCE9 /* FPLabel.swift */,
+				63B21DF82784DFD700E5DCE9 /* FPBackground.swift */,
+				63B21DF22784DD2700E5DCE9 /* FPTextField.swift */,
+				63B21DFC2784E71A00E5DCE9 /* FPButton.swift */,
+			);
+			path = Universal;
+			sourceTree = "<group>";
+		};
+		63B21DF52784DE7200E5DCE9 /* Container Views */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DF62784DF7D00E5DCE9 /* InputContainerView.swift */,
+			);
+			path = "Container Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,14 +387,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B21DFB2784E3DA00E5DCE9 /* UIView-ext.swift in Sources */,
 				63B21DA82784C5D800E5DCE9 /* FirstVC.swift in Sources */,
 				63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */,
 				63B21DAE2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld in Sources */,
+				63B21DF92784DFD700E5DCE9 /* FPBackground.swift in Sources */,
 				63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */,
+				63B21DF72784DF7D00E5DCE9 /* InputContainerView.swift in Sources */,
+				63B21DED2784D70F00E5DCE9 /* UIColor-ext.swift in Sources */,
+				63B21DE82784D69800E5DCE9 /* Router.swift in Sources */,
+				63B21DEA2784D6BE00E5DCE9 /* GetStartedVC.swift in Sources */,
+				63B21DEF2784DB9200E5DCE9 /* UIView-autolayout.swift in Sources */,
 				63B21DE42784CC5500E5DCE9 /* ThirdVC.swift in Sources */,
 				63B21DE22784CB3500E5DCE9 /* TabBarController.swift in Sources */,
+				63B21DF12784DC3B00E5DCE9 /* FPLabel.swift in Sources */,
 				63B21DDE2784C92C00E5DCE9 /* SecondVC.swift in Sources */,
 				63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */,
+				63B21DF32784DD2700E5DCE9 /* FPTextField.swift in Sources */,
+				63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
