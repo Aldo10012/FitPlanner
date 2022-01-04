@@ -30,6 +30,7 @@
 		63B21DF92784DFD700E5DCE9 /* FPBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DF82784DFD700E5DCE9 /* FPBackground.swift */; };
 		63B21DFB2784E3DA00E5DCE9 /* UIView-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */; };
 		63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFC2784E71A00E5DCE9 /* FPButton.swift */; };
+		63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		63B21DF82784DFD700E5DCE9 /* FPBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPBackground.swift; sourceTree = "<group>"; };
 		63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-ext.swift"; sourceTree = "<group>"; };
 		63B21DFC2784E71A00E5DCE9 /* FPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPButton.swift; sourceTree = "<group>"; };
+		63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWorkoutCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				63B21DF62784DF7D00E5DCE9 /* InputContainerView.swift */,
+				63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */,
 			);
 			path = "Container Views";
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				63B21DAE2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld in Sources */,
 				63B21DF92784DFD700E5DCE9 /* FPBackground.swift in Sources */,
 				63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */,
+				63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */,
 				63B21DF72784DF7D00E5DCE9 /* InputContainerView.swift in Sources */,
 				63B21DED2784D70F00E5DCE9 /* UIColor-ext.swift in Sources */,
 				63B21DE82784D69800E5DCE9 /* Router.swift in Sources */,

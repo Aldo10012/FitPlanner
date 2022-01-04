@@ -70,6 +70,7 @@ class FPButton: UIButton {
         layer.borderColor = UIColor.FPBlue.cgColor
         layer.borderWidth = 2
         setConstantHeight(height: 30)
+        self.layer.cornerRadius = 15
     }
     
     // MARK: Day of Week
