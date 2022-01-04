@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */; };
 		63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */; };
-		63B21DA82784C5D800E5DCE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA72784C5D800E5DCE9 /* ViewController.swift */; };
+		63B21DA82784C5D800E5DCE9 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA72784C5D800E5DCE9 /* FirstVC.swift */; };
 		63B21DAE2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DAC2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld */; };
 		63B21DB02784C5DA00E5DCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B21DAF2784C5DA00E5DCE9 /* Assets.xcassets */; };
 		63B21DB32784C5DA00E5DCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B21DB12784C5DA00E5DCE9 /* LaunchScreen.storyboard */; };
 		63B21DBE2784C5DB00E5DCE9 /* FitPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DBD2784C5DB00E5DCE9 /* FitPlannerTests.swift */; };
 		63B21DC82784C5DB00E5DCE9 /* FitPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DC72784C5DB00E5DCE9 /* FitPlannerUITests.swift */; };
 		63B21DCA2784C5DB00E5DCE9 /* FitPlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DC92784C5DB00E5DCE9 /* FitPlannerUITestsLaunchTests.swift */; };
+		63B21DDE2784C92C00E5DCE9 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DDD2784C92C00E5DCE9 /* SecondVC.swift */; };
+		63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */; };
+		63B21DE22784CB3500E5DCE9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DE12784CB3500E5DCE9 /* TabBarController.swift */; };
+		63B21DE42784CC5500E5DCE9 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DE32784CC5500E5DCE9 /* ThirdVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,7 @@
 		63B21DA02784C5D800E5DCE9 /* FitPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63B21DA72784C5D800E5DCE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63B21DA72784C5D800E5DCE9 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		63B21DAD2784C5D800E5DCE9 /* FitPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FitPlanner.xcdatamodel; sourceTree = "<group>"; };
 		63B21DAF2784C5DA00E5DCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B21DB22784C5DA00E5DCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		63B21DC32784C5DB00E5DCE9 /* FitPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B21DC72784C5DB00E5DCE9 /* FitPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlannerUITests.swift; sourceTree = "<group>"; };
 		63B21DC92784C5DB00E5DCE9 /* FitPlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		63B21DDD2784C92C00E5DCE9 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		63B21DE12784CB3500E5DCE9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		63B21DE32784CC5500E5DCE9 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +107,10 @@
 		63B21DA22784C5D800E5DCE9 /* FitPlanner */ = {
 			isa = PBXGroup;
 			children = (
-				63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */,
-				63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */,
-				63B21DA72784C5D800E5DCE9 /* ViewController.swift */,
-				63B21DAF2784C5DA00E5DCE9 /* Assets.xcassets */,
-				63B21DB12784C5DA00E5DCE9 /* LaunchScreen.storyboard */,
-				63B21DB42784C5DA00E5DCE9 /* Info.plist */,
-				63B21DAC2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld */,
+				63B21DD62784C81300E5DCE9 /* Setup */,
+				63B21DD72784C83700E5DCE9 /* Resources */,
+				63B21DE52784D1D100E5DCE9 /* AppModules */,
+				63B21DE62784D23D00E5DCE9 /* Helpers */,
 			);
 			path = FitPlanner;
 			sourceTree = "<group>";
@@ -125,6 +130,85 @@
 				63B21DC92784C5DB00E5DCE9 /* FitPlannerUITestsLaunchTests.swift */,
 			);
 			path = FitPlannerUITests;
+			sourceTree = "<group>";
+		};
+		63B21DD62784C81300E5DCE9 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */,
+				63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		63B21DD72784C83700E5DCE9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DAF2784C5DA00E5DCE9 /* Assets.xcassets */,
+				63B21DB12784C5DA00E5DCE9 /* LaunchScreen.storyboard */,
+				63B21DB42784C5DA00E5DCE9 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		63B21DD82784C85C00E5DCE9 /* CoreDada */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DAC2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld */,
+				63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */,
+			);
+			path = CoreDada;
+			sourceTree = "<group>";
+		};
+		63B21DD92784C86C00E5DCE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63B21DDA2784C88200E5DCE9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DA72784C5D800E5DCE9 /* FirstVC.swift */,
+				63B21DDD2784C92C00E5DCE9 /* SecondVC.swift */,
+				63B21DE32784CC5500E5DCE9 /* ThirdVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		63B21DDB2784C89900E5DCE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63B21DDC2784C8C600E5DCE9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DE12784CB3500E5DCE9 /* TabBarController.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		63B21DE52784D1D100E5DCE9 /* AppModules */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DD82784C85C00E5DCE9 /* CoreDada */,
+				63B21DD92784C86C00E5DCE9 /* View */,
+				63B21DDA2784C88200E5DCE9 /* Controller */,
+				63B21DDB2784C89900E5DCE9 /* ViewModel */,
+				63B21DDC2784C8C600E5DCE9 /* Router */,
+			);
+			path = AppModules;
+			sourceTree = "<group>";
+		};
+		63B21DE62784D23D00E5DCE9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,9 +341,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63B21DA82784C5D800E5DCE9 /* ViewController.swift in Sources */,
+				63B21DA82784C5D800E5DCE9 /* FirstVC.swift in Sources */,
 				63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */,
 				63B21DAE2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld in Sources */,
+				63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */,
+				63B21DE42784CC5500E5DCE9 /* ThirdVC.swift in Sources */,
+				63B21DE22784CB3500E5DCE9 /* TabBarController.swift in Sources */,
+				63B21DDE2784C92C00E5DCE9 /* SecondVC.swift in Sources */,
 				63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +521,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitPlanner/Info.plist;
+				INFOPLIST_FILE = FitPlanner/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -460,7 +548,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitPlanner/Info.plist;
+				INFOPLIST_FILE = FitPlanner/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
