@@ -8,7 +8,7 @@
 import UIKit
 import FSCalendar
 
-class FirstVC: UIViewController {
+class HomeVC: UIViewController {
     
     // MARK: Properties
     let nextWorkoutLabel = FPLabel(title: "Your next workout", color: .primary, size: 20, weight: .medium)
@@ -60,7 +60,7 @@ class FirstVC: UIViewController {
 
 
 // MARK: Celendar Delegates
-extension FirstVC: FSCalendarDataSource, FSCalendarDelegate{
+extension HomeVC: FSCalendarDataSource, FSCalendarDelegate{
     
     public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         formatter.dateFormat = "dd-MMM-yyyy E"

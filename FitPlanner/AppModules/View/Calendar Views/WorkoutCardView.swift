@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SmallCalandarView: UIView {
+class WorkoutCardView: UIView {
     
     // MARK: Properties
     var label = FPLabel(title: "Workout Name", color: .primary, size: 18, weight: .regular)
@@ -22,22 +22,22 @@ class SmallCalandarView: UIView {
     
     let navButton = FPButton(type: .primary, title: "...")
     
-    var viewModel: SmallCalandarVM!
+    var smalllCardViewModel: SmallCalandarVM!
 
     init(viewModel: SmallCalandarVM) {
         super.init(frame: .zero)
         
-        self.viewModel = viewModel
+        self.smalllCardViewModel = viewModel
         
-        self.label.text = viewModel.title
+        self.label.text = smalllCardViewModel.title
         
-        if viewModel.onSun { SunButton.workoutIsScheduled = true }
-        if viewModel.onMon { MonButton.workoutIsScheduled = true }
-        if viewModel.onTue { TueButton.workoutIsScheduled = true }
-        if viewModel.onWed { WedButton.workoutIsScheduled = true }
-        if viewModel.onThu { ThuButton.workoutIsScheduled = true }
-        if viewModel.onFri { FriButton.workoutIsScheduled = true }
-        if viewModel.onSat { SatButton.workoutIsScheduled = true }
+        if smalllCardViewModel.onSun { SunButton.workoutIsScheduled = true }
+        if smalllCardViewModel.onMon { MonButton.workoutIsScheduled = true }
+        if smalllCardViewModel.onTue { TueButton.workoutIsScheduled = true }
+        if smalllCardViewModel.onWed { WedButton.workoutIsScheduled = true }
+        if smalllCardViewModel.onThu { ThuButton.workoutIsScheduled = true }
+        if smalllCardViewModel.onFri { FriButton.workoutIsScheduled = true }
+        if smalllCardViewModel.onSat { SatButton.workoutIsScheduled = true }
         
         navButton.setTitleColor(.black, for: .normal)
         navButton.backgroundColor = .clear

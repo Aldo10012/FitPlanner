@@ -28,19 +28,19 @@ class TabBarController: UITabBarController {
     
     fileprivate func setupVCs() {
         viewControllers = [
-            createNavController(for: FirstVC(),
+            createNavController(for: HomeVC(),
                                 navBarTitle: NSLocalizedString("Welcome", comment: ""),
                                 tabBarTitle: NSLocalizedString("Home", comment: ""),
                                 image: UIImage(systemName: "chart.bar")!,
                                 selectedImage: UIImage(systemName: "chart.bar.fill")!),
             
-            createNavController(for: SecondVC(),
+            createNavController(for: WorkoutLogVC(),
                                 navBarTitle: NSLocalizedString("Workout log", comment: ""),
                                 tabBarTitle: NSLocalizedString("Create", comment: ""),
                                 image: UIImage(systemName: "plus.circle")!,
                                 selectedImage: UIImage(systemName: "plus.circle.fill")!),
             
-            createNavController(for: ThirdVC(),
+            createNavController(for: ProfileVC(),
                                 navBarTitle: NSLocalizedString("Profile", comment: ""),
                                 tabBarTitle: NSLocalizedString("Home", comment: ""),
                                 image: UIImage(systemName: "person")!,
