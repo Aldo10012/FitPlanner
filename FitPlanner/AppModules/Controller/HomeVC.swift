@@ -37,7 +37,7 @@ class HomeVC: UIViewController {
     
     // MARK: Selectors
     @objc func didTapViewNextWorkoutButton() {
-        Router.pushToWorkoutPlan(from: self, type: .nextWorkout)
+        //Router.pushToWorkoutPlan(from: self, type: .nextWorkout)
     }
     
     

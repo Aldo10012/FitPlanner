@@ -28,7 +28,9 @@ class WorkoutLogVC: UIViewController {
     
     // MARK: Selectors
     @objc func didTapCreateWorkoutButton() {
-        Router.pushToWorkoutPlan(from: self, type: .addWorkout)
+        Router.pushToWorkoutPlan(from: self, type: .addWorkout, viewModel:
+            WorkoutCardVM(title: "", onSun: false, onMon: false, onTue: false, onWed: false, onThu: false, onFri: false, onSat: false)
+        )
     }
     
     // MARK: UI Setup
@@ -78,7 +80,9 @@ extension WorkoutLogVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected workout")
         print(workoutLogViewModel.yourWorkouts[indexPath.row])
-        Router.pushToWorkoutPlan(from: self, type: .editWorkout)
+        
+        let viewModelToUse = workoutLogViewModel.yourWorkouts[indexPath.row]
+        Router.pushToWorkoutPlan(from: self, type: .editWorkout, viewModel: viewModelToUse)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

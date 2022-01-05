@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SmallCalandarVM {
+struct WorkoutCardVM {
     
     var title: String!
     

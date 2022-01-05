@@ -9,8 +9,8 @@ import Foundation
 
 struct WorkoutLogVM {
     
-    var yourWorkouts: [SmallCalandarVM] = [
-        SmallCalandarVM(title: "Workout A", onSun: false, onMon: true, onTue: false, onWed: true, onThu: false, onFri: true, onSat: false),
-        SmallCalandarVM(title: "Workout B", onSun: true, onMon: false, onTue: true, onWed: false, onThu: true, onFri: false, onSat: true)
+    var yourWorkouts: [WorkoutCardVM] = [
+        WorkoutCardVM(title: "Workout A", onSun: false, onMon: true, onTue: false, onWed: true, onThu: false, onFri: true, onSat: false),
+        WorkoutCardVM(title: "Workout B", onSun: true, onMon: false, onTue: true, onWed: false, onThu: true, onFri: false, onSat: true)
     ]
 }

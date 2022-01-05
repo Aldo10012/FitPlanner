@@ -14,7 +14,7 @@ class WorkoutCardTableViewCell: UITableViewCell {
 
     
     // MARK: Init
-    convenience init(viewModel: SmallCalandarVM) {
+    convenience init(viewModel: WorkoutCardVM) {
         self.init()
         
         self.workoutCard = WorkoutCardView(viewModel: viewModel)
@@ -36,7 +36,7 @@ class WorkoutCardTableViewCell: UITableViewCell {
         workoutCard.centerY(inView: self)
     }
     
-    public func setViewModel(as viewModel: SmallCalandarVM) {
+    public func setViewModel(as viewModel: WorkoutCardVM) {
         self.workoutCard = WorkoutCardView(viewModel: viewModel)
         setupViews()
     }

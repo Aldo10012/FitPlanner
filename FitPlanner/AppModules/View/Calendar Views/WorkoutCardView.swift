@@ -22,9 +22,9 @@ class WorkoutCardView: UIView {
     
     let navButton = FPButton(type: .primary, title: "...")
     
-    var smalllCardViewModel: SmallCalandarVM!
+    var smalllCardViewModel: WorkoutCardVM!
 
-    init(viewModel: SmallCalandarVM) {
+    init(viewModel: WorkoutCardVM) {
         super.init(frame: .zero)
         
         self.smalllCardViewModel = viewModel

@@ -47,8 +47,8 @@ struct Router {
     
     
     
-    static func pushToWorkoutPlan(from rootVC: UIViewController?, type: WorkoutPlanType) {
-        let controller = WorkoutPlanVC(type: type)
+    static func pushToWorkoutPlan(from rootVC: UIViewController?, type: WorkoutPlanType, viewModel: WorkoutCardVM) {
+        let controller = WorkoutPlanVC(type: type, viewModel: viewModel)
         controller.hidesBottomBarWhenPushed = true
         rootVC?.navigationController!.pushViewController(controller, animated: true)
     }
