@@ -111,6 +111,7 @@ class WorkoutPlanVC: UIViewController {
         }
     }
     
+    // MARK: Make buttons editable
     fileprivate func makeDayOfWeekButtonsEditable() {
         workoutcardView.SunButton.canEdit = true
         workoutcardView.MonButton.canEdit = true
