@@ -13,8 +13,9 @@ class WorkoutLogVC: UIViewController {
     let yourWorkoutsLabel = FPLabel(title: "Your next workout", color: .primary, size: 20, weight: .medium)
     
     var workoutLogViewModel = WorkoutLogVM()
-    
     var tableView = UITableView()
+    
+    let createNewWorkoutButton = FPButton(type: .primary, title: "Create new workout", target: self, action: #selector(didTapCreateWorkoutButton))
     
     
     // MARK: Life Cycles
@@ -25,6 +26,11 @@ class WorkoutLogVC: UIViewController {
     }
     
     
+    // MARK: Selectors
+    @objc func didTapCreateWorkoutButton() {
+        Router.pushToWorkoutPlan(from: self, type: .addWorkout)
+    }
+    
     // MARK: UI Setup
     fileprivate func setupViews() {
         view.backgroundColor = .FPBackground
@@ -32,8 +38,11 @@ class WorkoutLogVC: UIViewController {
         view.addSubview(yourWorkoutsLabel)
         yourWorkoutsLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 40, paddingLeft: 20)
         
+        view.addSubview(createNewWorkoutButton)
+        createNewWorkoutButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
+        
         view.addSubview(tableView)
-        tableView.anchor(top: yourWorkoutsLabel.bottomAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
+        tableView.anchor(top: yourWorkoutsLabel.bottomAnchor, left: view.leftAnchor, bottom: createNewWorkoutButton.topAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         tableView.delegate = self
@@ -69,6 +78,17 @@ extension WorkoutLogVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected workout")
         print(workoutLogViewModel.yourWorkouts[indexPath.row])
+        Router.pushToWorkoutPlan(from: self, type: .editWorkout)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let object = workoutLogViewModel.yourWorkouts[indexPath.row]
+            self.workoutLogViewModel.yourWorkouts.remove(at: indexPath.row)
+//            myData.deleteTodoItem(object)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
     }
     
     

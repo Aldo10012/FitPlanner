@@ -13,7 +13,7 @@ class NextWorkoutCard: UIView {
     let imgView = UIImageView(image: UIImage(systemName: "bicycle.circle.fill"))
     var workoutNameLabel = FPLabel(title: "Upper Split", color: .primary, size: 18, weight: .light)
     var dateLabel = FPLabel(title: "Today, Jan 4", color: .primary, size: 12, weight: .medium)
-    let viewButton = FPButton(type: .secondary, title: "view", target: self, action: #selector(didTapViewButton))
+    let viewButton = FPButton(type: .secondary, title: "view")
     
     // MARK: - Init
     init(){
@@ -21,12 +21,6 @@ class NextWorkoutCard: UIView {
         
         setupUI()
     }
-    
-    // MARK: Selectors
-    @objc func didTapViewButton() {
-        print("did tap view workout button")
-    }
-    
     
     // MARK: UI Setup
     fileprivate func setupUI() {

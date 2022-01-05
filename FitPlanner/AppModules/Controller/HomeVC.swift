@@ -12,7 +12,11 @@ class HomeVC: UIViewController {
     
     // MARK: Properties
     let nextWorkoutLabel = FPLabel(title: "Your next workout", color: .primary, size: 20, weight: .medium)
-    let nextWorkoutCard = NextWorkoutCard()
+    let nextWorkoutCard: NextWorkoutCard = {
+        let view = NextWorkoutCard()
+        view.viewButton.addTarget(self, action: #selector(didTapViewNextWorkoutButton), for: .touchUpInside)
+        return view
+    }()
     let yourActivityLabel = FPLabel(title: "Your activity", color: .primary, size: 20, weight: .medium)
     
     let largetCalendarCard = LargeCalendarView()
@@ -30,6 +34,12 @@ class HomeVC: UIViewController {
         setupUI()
     }
 
+    
+    // MARK: Selectors
+    @objc func didTapViewNextWorkoutButton() {
+        Router.pushToWorkoutPlan(from: self, type: .nextWorkout)
+    }
+    
     
     // MARK: UI Setup
     fileprivate func setupUI() {
