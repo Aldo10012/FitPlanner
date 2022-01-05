@@ -27,7 +27,7 @@ class NextWorkoutCard: UIView {
         backgroundColor = .white
         layer.cornerRadius = 8
         setConstantHeight(height: 84)
-        addShadow(color: .black, opacity: 0.15, x: 0, y: 4, radius: 8)
+        addStandardShadow()
         
         addSubview(imgView)
         imgView.setDimensions(height: 60, width: 60)

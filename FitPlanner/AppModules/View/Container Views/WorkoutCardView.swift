@@ -46,7 +46,7 @@ class WorkoutCardView: UIView {
     
     func setupViews() {
         backgroundColor = .white
-        addShadow(color: .black, opacity: 0.15, x: 0, y: 4, radius: 8)
+        addStandardShadow()
         layer.cornerRadius = 8
         
         let stack = UIStackView(arrangedSubviews: [SunButton, MonButton, TueButton, WedButton, ThuButton, FriButton, SatButton])

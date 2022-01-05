@@ -36,6 +36,8 @@ class WorkoutPlanVC: UIViewController {
 
         // Do any additional setup after loading the view.
         setupViews()
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
 
@@ -91,6 +93,8 @@ class WorkoutPlanVC: UIViewController {
             button.setTitle("Add", for: .normal)
             button.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
             workoutcardView.label.text = "Schedule"
+            workoutNameTextField.becomeFirstResponder()
+            makeDayOfWeekButtonsEditable()
             break
             
         case .editWorkout:
@@ -101,11 +105,22 @@ class WorkoutPlanVC: UIViewController {
             button.setTitle("Edit", for: .normal)
             workoutcardView.label.text = "Schedule"
             workoutNameTextField.text = viewModel.title
+            makeDayOfWeekButtonsEditable()
             break
             
         case .none:
             break
         }
+    }
+    
+    fileprivate func makeDayOfWeekButtonsEditable() {
+        workoutcardView.SunButton.canEdit = true
+        workoutcardView.MonButton.canEdit = true
+        workoutcardView.TueButton.canEdit = true
+        workoutcardView.WedButton.canEdit = true
+        workoutcardView.ThuButton.canEdit = true
+        workoutcardView.FriButton.canEdit = true
+        workoutcardView.SatButton.canEdit = true
     }
     
 

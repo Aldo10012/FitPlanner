@@ -8,14 +8,26 @@
 import UIKit
 
 class FPWeekButton: UIButton {
+    
+    // MARK: Properties
+    var canEdit: Bool {
+        didSet {
+            checkIfWorkoutIsScheduled()
+            checkIfWorkoutCanBeEdited()
+        }
+    }
     var workoutIsScheduled: Bool {
         didSet {
             checkIfWorkoutIsScheduled()
         }
     }
 
-    init(title: String, workoutOnThisDay: Bool = false) {
+    
+    // MARK: Init
+    init(title: String, workoutOnThisDay: Bool = false, canEdit: Bool = false) {
         self.workoutIsScheduled = workoutOnThisDay
+        self.canEdit = canEdit
+        
         super.init(frame: .zero)
         
         setTitle(title, for: .normal)
@@ -24,8 +36,11 @@ class FPWeekButton: UIButton {
         setDimensions(height: 35, width: 35)
         
         checkIfWorkoutIsScheduled()
+        checkIfWorkoutCanBeEdited()
     }
     
+    
+    // MARK: Helpers
     func checkIfWorkoutIsScheduled() {
         if workoutIsScheduled {
             setTitleColor(.white, for: .normal)
@@ -34,6 +49,18 @@ class FPWeekButton: UIButton {
             setTitleColor(.black, for: .normal)
             backgroundColor = .FPGray
         }
+    }
+    
+    func checkIfWorkoutCanBeEdited() {
+        if canEdit {
+            addTarget(self, action: #selector(didTapBtn), for: .touchUpInside)
+        }
+    }
+    
+    
+    // MARK: Selectors
+    @objc func didTapBtn() {
+        workoutIsScheduled.toggle()
     }
     
     required init?(coder: NSCoder) {

@@ -10,7 +10,7 @@ import UIKit
 class WorkoutLogVC: UIViewController {
 
     // MARK: Properties
-    let yourWorkoutsLabel = FPLabel(title: "Your next workout", color: .primary, size: 20, weight: .medium)
+    let yourWorkoutsLabel = FPLabel(title: "Your workouts", color: .primary, size: 20, weight: .medium)
     
     var workoutLogViewModel = WorkoutLogVM()
     var tableView = UITableView()

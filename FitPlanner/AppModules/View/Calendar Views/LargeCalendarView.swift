@@ -25,7 +25,7 @@ class LargeCalendarView: UIView {
     fileprivate func setupViews() {
         backgroundColor = .white
         layer.cornerRadius = 8
-        addShadow(color: .black, opacity: 0.15, x: 0, y: 4, radius: 8)
+        addStandardShadow()
         setConstantHeight(height: 320)
         
         let calendar = FSCalendar()

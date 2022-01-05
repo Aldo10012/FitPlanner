@@ -50,7 +50,7 @@ class GetStartedVC: UIViewController {
         view.addSubview(card)
         card.anchor(left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 25, paddingRight: 25, height: 400)
         card.centerY(inView: view)
-        card.addShadow(color: .black, opacity: 0.15, x: 0, y: 4, radius: 8)
+        card.addStandardShadow()
         
         card.addSubview(captionLabel)
         captionLabel.anchor(top: card.topAnchor, paddingTop: 34)
