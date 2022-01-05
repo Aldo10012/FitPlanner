@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		636CE251278508C400BB5664 /* SomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE250278508C400BB5664 /* SomeViewModel.swift */; };
 		636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE253278509B700BB5664 /* LargeCalendarView.swift */; };
+		636CE25627851C1300BB5664 /* SmallCalandarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* SmallCalandarView.swift */; };
+		636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25727851D2900BB5664 /* FPWeekButton.swift */; };
 		63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */; };
 		63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */; };
 		63B21DA82784C5D800E5DCE9 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA72784C5D800E5DCE9 /* FirstVC.swift */; };
@@ -59,6 +61,8 @@
 		51EAFFE8186BBC32A3F45494 /* Pods-FitPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitPlanner.release.xcconfig"; path = "Target Support Files/Pods-FitPlanner/Pods-FitPlanner.release.xcconfig"; sourceTree = "<group>"; };
 		636CE250278508C400BB5664 /* SomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeViewModel.swift; sourceTree = "<group>"; };
 		636CE253278509B700BB5664 /* LargeCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCalendarView.swift; sourceTree = "<group>"; };
+		636CE25527851C1300BB5664 /* SmallCalandarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCalandarView.swift; sourceTree = "<group>"; };
+		636CE25727851D2900BB5664 /* FPWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWeekButton.swift; sourceTree = "<group>"; };
 		63B21DA02784C5D800E5DCE9 /* FitPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				636CE253278509B700BB5664 /* LargeCalendarView.swift */,
+				636CE25527851C1300BB5664 /* SmallCalandarView.swift */,
 			);
 			path = "Calendar Views";
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				63B21DF82784DFD700E5DCE9 /* FPBackground.swift */,
 				63B21DF22784DD2700E5DCE9 /* FPTextField.swift */,
 				63B21DFC2784E71A00E5DCE9 /* FPButton.swift */,
+				636CE25727851D2900BB5664 /* FPWeekButton.swift */,
 			);
 			path = Universal;
 			sourceTree = "<group>";
@@ -479,12 +485,14 @@
 				63B21DA82784C5D800E5DCE9 /* FirstVC.swift in Sources */,
 				63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */,
 				63B21DAE2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld in Sources */,
+				636CE25627851C1300BB5664 /* SmallCalandarView.swift in Sources */,
 				63B21DF92784DFD700E5DCE9 /* FPBackground.swift in Sources */,
 				63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */,
 				63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */,
 				63B21DF72784DF7D00E5DCE9 /* InputContainerView.swift in Sources */,
 				63B21DED2784D70F00E5DCE9 /* UIColor-ext.swift in Sources */,
 				63B21DE82784D69800E5DCE9 /* Router.swift in Sources */,
+				636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */,
 				63B21E012784FB8A00E5DCE9 /* ScreenSize.swift in Sources */,
 				63B21DEA2784D6BE00E5DCE9 /* GetStartedVC.swift in Sources */,
 				63B21DEF2784DB9200E5DCE9 /* UIView-autolayout.swift in Sources */,

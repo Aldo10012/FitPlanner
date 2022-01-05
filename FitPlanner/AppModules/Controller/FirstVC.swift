@@ -11,9 +11,9 @@ import FSCalendar
 class FirstVC: UIViewController {
     
     // MARK: Properties
-    let nextWorkoutLabel = FPLabel(title: "Your next workout", color: .primary, size: 18, weight: .medium)
+    let nextWorkoutLabel = FPLabel(title: "Your next workout", color: .primary, size: 20, weight: .medium)
     let nextWorkoutCard = NextWorkoutCard()
-    let yourActivityLabel = FPLabel(title: "Your activity", color: .primary, size: 18, weight: .medium)
+    let yourActivityLabel = FPLabel(title: "Your activity", color: .primary, size: 20, weight: .medium)
     
     let largetCalendarCard = LargeCalendarView()
     
@@ -51,6 +51,9 @@ class FirstVC: UIViewController {
         view.addSubview(largetCalendarCard)
         largetCalendarCard.anchor(top: yourActivityLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
                                   paddingTop: 12, paddingLeft: 20, paddingRight: 20)
+        
+        largetCalendarCard.calendar.delegate = self
+        largetCalendarCard.calendar.dataSource = self
     }
 
 }
@@ -60,7 +63,7 @@ class FirstVC: UIViewController {
 extension FirstVC: FSCalendarDataSource, FSCalendarDelegate{
     
     public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        formatter.dateFormat = "dd-MMM-yyyy"
+        formatter.dateFormat = "dd-MMM-yyyy E"
         print("Date Selected: \(formatter.string(from: date))")
     }
     

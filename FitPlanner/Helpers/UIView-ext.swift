@@ -9,6 +9,12 @@ import UIKit
 
 extension UIView {
     
+    func addSubviews(_ views: UIView...) {
+        for view in views {
+            addSubview(view)
+        }
+    }
+    
     func addShadow(color: UIColor, opacity: Float, x: CGFloat, y: CGFloat, radius: CGFloat) {
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOpacity = opacity

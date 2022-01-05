@@ -26,9 +26,9 @@ extension UIColor {
     // colors spedific to FPTextField
     static var FPTextFieldPlaceholder = rgba(187, 187, 187, 1)
     
+    static var FPGray = rgba(238, 238, 238, 1)
     
     
-    static var FPShadow = rgba(187, 187, 187, 1)
     
     
 }

@@ -21,7 +21,7 @@ class TabBarController: UITabBarController {
         
         UITabBar.appearance().barTintColor = .systemBackground
         
-        tabBar.barTintColor = UIColor.red
+//        tabBar.barTintColor = UIColor.red
         tabBar.tintColor = UIColor.FPBlue
         tabBar.unselectedItemTintColor = UIColor.gray
     }

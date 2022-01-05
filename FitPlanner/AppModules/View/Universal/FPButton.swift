@@ -78,7 +78,8 @@ class FPButton: UIButton {
         backgroundColor = .FPBackground
         setTitleColor(.FPBlue, for: .normal)
 //        layer.cornerRadius = 25
-        setConstantHeight(height: 35)
+        setDimensions(height: 35, width: 35)
+        layer.cornerRadius = 35/2
     }
     
     
