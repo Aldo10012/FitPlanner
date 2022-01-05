@@ -22,11 +22,23 @@ class SmallCalandarView: UIView {
     
     let navButton = FPButton(type: .primary, title: "...")
     
+    var viewModel: SmallCalandarVM!
 
-    init(header: String) {
+    init(viewModel: SmallCalandarVM) {
         super.init(frame: .zero)
         
-        self.label.text = header
+        self.viewModel = viewModel
+        
+        self.label.text = viewModel.title
+        
+        if viewModel.onSun { SunButton.workoutIsScheduled = true }
+        if viewModel.onMon { MonButton.workoutIsScheduled = true }
+        if viewModel.onTue { TueButton.workoutIsScheduled = true }
+        if viewModel.onWed { WedButton.workoutIsScheduled = true }
+        if viewModel.onThu { ThuButton.workoutIsScheduled = true }
+        if viewModel.onFri { FriButton.workoutIsScheduled = true }
+        if viewModel.onSat { SatButton.workoutIsScheduled = true }
+        
         navButton.setTitleColor(.black, for: .normal)
         navButton.backgroundColor = .clear
         setupViews()

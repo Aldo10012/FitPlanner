@@ -8,21 +8,26 @@
 import UIKit
 
 class FPWeekButton: UIButton {
-    var scheduledWorkout: Bool
+    var workoutIsScheduled: Bool {
+        didSet {
+            checkIfWorkoutIsScheduled()
+        }
+    }
 
     init(title: String, workoutOnThisDay: Bool = false) {
-        self.scheduledWorkout = workoutOnThisDay
+        self.workoutIsScheduled = workoutOnThisDay
         super.init(frame: .zero)
         
         setTitle(title, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         layer.cornerRadius = 35/2
         setDimensions(height: 35, width: 35)
+        
         checkIfWorkoutIsScheduled()
     }
     
     func checkIfWorkoutIsScheduled() {
-        if scheduledWorkout {
+        if workoutIsScheduled {
             setTitleColor(.white, for: .normal)
             backgroundColor = .FPBlue
         } else {

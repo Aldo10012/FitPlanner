@@ -11,7 +11,9 @@ class SecondVC: UIViewController {
 
     // MARK: Properties
     let yourWorkoutsLabel = FPLabel(title: "Your next workout", color: .primary, size: 20, weight: .medium)
-    let workoutCard = SmallCalandarView(header: "Workout A")
+    let workoutCard = SmallCalandarView(viewModel:
+            SmallCalandarVM(title: "Workout A", onSun: false, onMon: true, onTue: false, onWed: true, onThu: false, onFri: true, onSat: false)
+    )
     
     
     // MARK: Life Cycles

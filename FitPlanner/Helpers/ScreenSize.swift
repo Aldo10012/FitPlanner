@@ -8,6 +8,6 @@
 import UIKit
 
 struct ScreenSize {
-    static let width: CGFloat = UIView().frame.size.width
-    static let height: CGFloat = UIView().frame.size.height
+    static let width: CGFloat = UIViewController().view.frame.size.width
+    static let height: CGFloat = UIViewController().view.frame.size.height
 }

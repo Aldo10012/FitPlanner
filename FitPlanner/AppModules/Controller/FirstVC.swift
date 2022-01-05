@@ -25,7 +25,7 @@ class FirstVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .FPBackground
-        Router.presentController(from: self, to: GetStartedVC(), animated: false)
+//        Router.presentController(from: self, to: GetStartedVC(), animated: false)
         
         setupUI()
     }
