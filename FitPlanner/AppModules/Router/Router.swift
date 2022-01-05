@@ -23,6 +23,10 @@ struct Router {
         navigation!.popViewController(animated: true)
     }
     
+    static func popController(_ vc: UIViewController) {
+        vc.navigationController?.popViewController(animated: true)
+    }
+    
     /// Presents a view controller modaly
     static func presentController(
         from rootViewController: UIViewController?,

@@ -36,25 +36,23 @@ class WorkoutPlanVC: UIViewController {
 
         // Do any additional setup after loading the view.
         setupViews()
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
     }
     
 
     // MARK: Selectors
     @objc func didTapMarkAsDone() {
         print("did Tap MarkAsDone")
-        Router.dismissController(self)
+        Router.popController(self)
     }
     
     @objc func didTapAdd() {
         print("did Tap Add")
-        Router.dismissController(self)
+        Router.popController(self)
     }
     
     @objc func didTapEdit() {
         print("did Tap Edit")
-        Router.dismissController(self)
+        Router.popController(self)
     }
     
     
@@ -93,7 +91,7 @@ class WorkoutPlanVC: UIViewController {
             button.setTitle("Add", for: .normal)
             button.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
             workoutcardView.label.text = "Schedule"
-            workoutNameTextField.becomeFirstResponder()
+//            workoutNameTextField.becomeFirstResponder()
             makeDayOfWeekButtonsEditable()
             break
             

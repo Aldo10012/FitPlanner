@@ -10,7 +10,6 @@ import UIKit
 enum buttonType {
     case primary
     case secondary
-    case calendar
 }
 
 class FPButton: UIButton {
@@ -42,8 +41,6 @@ class FPButton: UIButton {
             setPrimaryStyle()
         case .secondary:
             setSecondaryStyle()
-        case .calendar:
-            calendarStyle()
         }
     }
     
@@ -73,14 +70,7 @@ class FPButton: UIButton {
         self.layer.cornerRadius = 15
     }
     
-    // MARK: Day of Week
-    func calendarStyle(){
-        backgroundColor = .FPBackground
-        setTitleColor(.FPBlue, for: .normal)
-//        layer.cornerRadius = 25
-        setDimensions(height: 35, width: 35)
-        layer.cornerRadius = 35/2
-    }
+    
     
     
     required init?(coder: NSCoder) {
