@@ -15,7 +15,7 @@ enum WorkoutPlanType {
 
 class WorkoutPlanVC: UIViewController {
 
-    // MARK: - Properties
+    // MARK: - Properties    
     var type: WorkoutPlanType!
     
     var workoutNameTextField = FPTextField(placeholder: "Workout name", size: 30, weight: .light)

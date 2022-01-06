@@ -36,9 +36,9 @@ class TabBarController: UITabBarController {
             
             createNavController(for: WorkoutLogVC(),
                                 navBarTitle: NSLocalizedString("Workout log", comment: ""),
-                                tabBarTitle: NSLocalizedString("Create", comment: ""),
-                                image: UIImage(systemName: "plus.circle")!,
-                                selectedImage: UIImage(systemName: "plus.circle.fill")!),
+                                tabBarTitle: NSLocalizedString("Workouts", comment: ""),
+                                image: UIImage(named: "dumbbell")!,
+                                selectedImage: UIImage(named: "dumbbell.fill")!),
             
             createNavController(for: ProfileVC(),
                                 navBarTitle: NSLocalizedString("Profile", comment: ""),

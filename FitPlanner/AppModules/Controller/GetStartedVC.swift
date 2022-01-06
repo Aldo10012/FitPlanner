@@ -94,10 +94,6 @@ class GetStartedVC: UIViewController {
         card.addSubview(getStartedButton)
         getStartedButton.anchor(top: stack.bottomAnchor, left: card.leftAnchor, right: card.rightAnchor, paddingTop: 68, paddingLeft: 24, paddingRight: 24)
     }
-    
-
-    
-
 }
 
 
