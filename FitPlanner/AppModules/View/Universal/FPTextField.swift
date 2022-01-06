@@ -16,6 +16,7 @@ class FPTextField: UITextField {
          color: UIColor = .FPOffBlack,
          tintColor: UIColor = .FPOffBlack,
          keyboardType: UIKeyboardType = .default,
+         textAlignment: NSTextAlignment = .left,
          isSecure: Bool = false)
 
     {
@@ -27,6 +28,7 @@ class FPTextField: UITextField {
         self.textColor = color
         self.tintColor = tintColor
         self.keyboardType = keyboardType
+        self.textAlignment = textAlignment
 //        keyboardAppearance = .dark
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes:
                                                     [.foregroundColor : UIColor.FPTextFieldPlaceholder]

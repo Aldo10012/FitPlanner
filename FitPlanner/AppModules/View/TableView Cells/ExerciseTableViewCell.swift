@@ -10,10 +10,10 @@ import UIKit
 class ExerciseTableViewCell: UITableViewCell {
     
     // MARK: Properties
-    let numberLabel = FPLabel(title: "0", color: .primary, size: 14, weight: .light, alignment: .center)
-    var nameTextField = FPTextField(placeholder: "0", size: 14, weight: .light, keyboardType: .default)
-    var repsTextField = FPTextField(placeholder: "0", size: 14, weight: .light, keyboardType: .numberPad)
-    var setsTextField = FPTextField(placeholder: "0", size: 14, weight: .light, keyboardType: .numberPad)
+    let numberLabel = FPLabel(title: "0", color: .primary, size: 16, weight: .light, alignment: .center)
+    var nameTextField = FPTextField(placeholder: "1", size: 16, weight: .light, keyboardType: .default, textAlignment: .center)
+    var repsTextField = FPTextField(placeholder: "2", size: 16, weight: .light, keyboardType: .numberPad, textAlignment: .center)
+    var setsTextField = FPTextField(placeholder: "3", size: 16, weight: .light, keyboardType: .numberPad, textAlignment: .center)
 
     
     // MARK: Init
@@ -23,26 +23,27 @@ class ExerciseTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupViews()
+        
     }
     
     
     // MARK: Helpers
+    
     fileprivate func setupViews() {
-        addSubviews(numberLabel, nameTextField, repsTextField, setsTextField)
+        contentView.addSubviews(numberLabel, nameTextField, repsTextField, setsTextField)
         
         for view in [numberLabel, nameTextField, repsTextField, setsTextField] {
-            view.centerY(inView: self)
+            view.centerY(inView: contentView)
         }
         
-        numberLabel.anchor(left: leftAnchor)
+        numberLabel.anchor(left: contentView.leftAnchor)
         nameTextField.anchor(left: numberLabel.rightAnchor, paddingLeft: 18)
         
-        setsTextField.anchor(right: rightAnchor)
+        setsTextField.anchor(right: contentView.rightAnchor)
         setsTextField.setConstantWidth(width: 60)
         repsTextField.anchor(right: setsTextField.leftAnchor)
         repsTextField.setConstantWidth(width: 60)
         
-        setConstantHeight(height: 20)
     }
     
     

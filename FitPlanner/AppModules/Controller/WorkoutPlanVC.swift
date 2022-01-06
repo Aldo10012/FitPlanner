@@ -84,31 +84,26 @@ class WorkoutPlanVC: UIViewController {
         // Add subviews to card
         // adding labels
         let mainLabel = FPLabel(title: "Exercises", color: .primary, size: 18, weight: .light, alignment: .center)
-        let numberLabel = FPLabel(title: "#", color: .primary, size: 14, weight: .light, alignment: .center)
-        let nameLabel = FPLabel(title: "name", color: .primary, size: 14, weight: .light, alignment: .center)
-        let repsLabel = FPLabel(title: "reps", color: .primary, size: 14, weight: .light, alignment: .center)
-        let setsLabel = FPLabel(title: "sets", color: .primary, size: 14, weight: .light, alignment: .center)
+        let numberLabel = FPLabel(title: "#", color: .primary, size: 16, weight: .light, alignment: .center)
+        let nameLabel = FPLabel(title: "name", color: .primary, size: 16, weight: .light, alignment: .center)
+        let repsLabel = FPLabel(title: "reps", color: .primary, size: 16, weight: .light, alignment: .center)
+        let setsLabel = FPLabel(title: "sets", color: .primary, size: 16, weight: .light, alignment: .center)
         
         addExerciseCard.addSubviews(mainLabel, numberLabel, nameLabel, repsLabel, setsLabel)
         mainLabel.anchor(top: addExerciseCard.topAnchor, left: addExerciseCard.leftAnchor, paddingTop: 12, paddingLeft: 15)
         numberLabel.anchor(top: mainLabel.bottomAnchor, left: mainLabel.leftAnchor, paddingTop: 22)
         nameLabel.anchor(top: numberLabel.topAnchor, left: numberLabel.leftAnchor, paddingLeft: 18)
-        setsLabel.anchor(top: numberLabel.topAnchor,
-                         left: addExerciseCard.rightAnchor, right: addExerciseCard.rightAnchor,
-                         paddingLeft: (12+60) * -1, paddingRight: 12)
-        repsLabel.anchor(top: numberLabel.topAnchor,
-                         left: setsLabel.leftAnchor, right: setsLabel.leftAnchor,
-                         paddingLeft: (60) * -1, paddingRight: 0)
+        setsLabel.anchor(top: numberLabel.topAnchor, right: addExerciseCard.rightAnchor, paddingRight: 12, width: 60)
+        repsLabel.anchor(top: numberLabel.topAnchor, right: setsLabel.leftAnchor, paddingRight: 0, width: 60)
         
         // adding tableView
         addExerciseCard.addSubview(tableView)
-        tableView.anchor(top: numberLabel.bottomAnchor, left: numberLabel.leftAnchor, bottom: addExerciseCard.bottomAnchor,
-                         right: setsLabel.rightAnchor, paddingTop: 15, paddingBottom: 15)
+        tableView.anchor(top: numberLabel.bottomAnchor, left: numberLabel.leftAnchor, bottom: addExerciseCard.bottomAnchor, right: setsLabel.rightAnchor, paddingTop: 15, paddingBottom: 15)
         
         tableView.register(ExerciseTableViewCell.self, forCellReuseIdentifier: CellId.exerciseCell)
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.separatorStyle = .none
         
         
     }
@@ -179,7 +174,7 @@ extension WorkoutPlanVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 20
+        return 30
     }
     
 }
