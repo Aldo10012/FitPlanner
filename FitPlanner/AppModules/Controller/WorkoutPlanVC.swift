@@ -20,6 +20,8 @@ class WorkoutPlanVC: UIViewController {
     
     var workoutNameTextField = FPTextField(placeholder: "Workout name", size: 30, weight: .light)
     var workoutcardView: WorkoutCardView!
+    var addExerciseCard = FPBackground(radius: 8)
+    var tableView = UITableView()
     var button = FPButton(type: .primary, title: "Button")
     
     
@@ -70,6 +72,45 @@ class WorkoutPlanVC: UIViewController {
         
         view.addSubview(button)
         button.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
+        
+        setupAddExerciseCard()
+    }
+    
+    fileprivate func setupAddExerciseCard() {
+        view.addSubviews(addExerciseCard)
+        addExerciseCard.addStandardShadow()
+        addExerciseCard.anchor(top: workoutcardView.bottomAnchor, left: workoutcardView.leftAnchor, right: workoutcardView.rightAnchor, paddingTop: 30, height: 250)
+        
+        // Add subviews to card
+        // adding labels
+        let mainLabel = FPLabel(title: "Exercises", color: .primary, size: 18, weight: .light, alignment: .center)
+        let numberLabel = FPLabel(title: "#", color: .primary, size: 14, weight: .light, alignment: .center)
+        let nameLabel = FPLabel(title: "name", color: .primary, size: 14, weight: .light, alignment: .center)
+        let repsLabel = FPLabel(title: "reps", color: .primary, size: 14, weight: .light, alignment: .center)
+        let setsLabel = FPLabel(title: "sets", color: .primary, size: 14, weight: .light, alignment: .center)
+        
+        addExerciseCard.addSubviews(mainLabel, numberLabel, nameLabel, repsLabel, setsLabel)
+        mainLabel.anchor(top: addExerciseCard.topAnchor, left: addExerciseCard.leftAnchor, paddingTop: 12, paddingLeft: 15)
+        numberLabel.anchor(top: mainLabel.bottomAnchor, left: mainLabel.leftAnchor, paddingTop: 22)
+        nameLabel.anchor(top: numberLabel.topAnchor, left: numberLabel.leftAnchor, paddingLeft: 18)
+        setsLabel.anchor(top: numberLabel.topAnchor,
+                         left: addExerciseCard.rightAnchor, right: addExerciseCard.rightAnchor,
+                         paddingLeft: (12+60) * -1, paddingRight: 12)
+        repsLabel.anchor(top: numberLabel.topAnchor,
+                         left: setsLabel.leftAnchor, right: setsLabel.leftAnchor,
+                         paddingLeft: (60) * -1, paddingRight: 0)
+        
+        // adding tableView
+        addExerciseCard.addSubview(tableView)
+        tableView.anchor(top: numberLabel.bottomAnchor, left: numberLabel.leftAnchor, bottom: addExerciseCard.bottomAnchor,
+                         right: setsLabel.rightAnchor, paddingTop: 15, paddingBottom: 15)
+        
+        tableView.register(ExerciseTableViewCell.self, forCellReuseIdentifier: CellId.exerciseCell)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
+        
     }
     
     // MARK: Check type
@@ -123,4 +164,22 @@ class WorkoutPlanVC: UIViewController {
     }
     
 
+}
+
+
+// MARK: TableView Protocols
+extension WorkoutPlanVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellId.exerciseCell) as! ExerciseTableViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 20
+    }
+    
 }

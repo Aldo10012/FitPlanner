@@ -35,9 +35,12 @@ class ExerciseTableViewCell: UITableViewCell {
         }
         
         numberLabel.anchor(left: leftAnchor)
-        nameTextField.anchor(left: numberLabel.leftAnchor, paddingLeft: 18)
-        setsTextField.anchor(left: leftAnchor, right: leftAnchor, paddingLeft: -30)
-        repsTextField.anchor(left: setsTextField.leftAnchor, right: setsTextField.leftAnchor, paddingLeft: -30)
+        nameTextField.anchor(left: numberLabel.rightAnchor, paddingLeft: 18)
+        
+        setsTextField.anchor(right: rightAnchor)
+        setsTextField.setConstantWidth(width: 60)
+        repsTextField.anchor(right: setsTextField.leftAnchor)
+        repsTextField.setConstantWidth(width: 60)
         
         setConstantHeight(height: 20)
     }
