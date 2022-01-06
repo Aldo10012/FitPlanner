@@ -15,6 +15,8 @@ protocol GetStartedInteractor {
 
 // MARK: View Model
 struct GetStartedVM {
+    let myData = CoreDataStack.shared
+    
     var pictureData: Data?
     var pictureIsSelected: Bool?
     var userName: String?
@@ -39,6 +41,13 @@ extension GetStartedVM: GetStartedInteractor {
         print("register user")
         // get data from view model
         // pass them to CoreDataStack to create user
+        
+        myData.registerNewUser(
+            userName: userName!,
+            height: height!,
+            weight: weight!,
+            pictureData: pictureData!
+        )
     }
     
     

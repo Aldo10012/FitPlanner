@@ -11,6 +11,10 @@ import FSCalendar
 class HomeVC: UIViewController {
     
     // MARK: Properties
+    let udManager = UserDefaultManager()
+    var getStartedVC = GetStartedVC()
+    let getStartedDelegate = self
+    
     let nextWorkoutLabel = FPLabel(title: "Your next workout", color: .primary, size: 20, weight: .medium)
     let nextWorkoutCard: NextWorkoutCard = {
         let view = NextWorkoutCard()
@@ -28,10 +32,16 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .FPBackground
-        Router.presentController(from: self, to: GetStartedVC(), animated: false)
+        // if user is Registered, setupUI
+        // else, navigate to GetStartedVC()
         
-        setupUI()
+        if udManager.checkIfUserIsRegistered() {
+            setupUI()
+        } else {
+            getStartedVC.getStartedDelegate = self
+            Router.presentController(from: self, to: getStartedVC, animated: false)
+        }
+        
     }
 
     
@@ -43,6 +53,7 @@ class HomeVC: UIViewController {
     
     // MARK: UI Setup
     fileprivate func setupUI() {
+        view.backgroundColor = .FPBackground
         
         view.addSubview(nextWorkoutLabel)
         nextWorkoutLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 40, paddingLeft: 20)
@@ -79,3 +90,10 @@ extension HomeVC: FSCalendarDataSource, FSCalendarDelegate{
     
 }
 
+
+// MARK: GetStartedDelegate
+extension HomeVC: GetStartedDelegate {
+    func didRegister() {
+        setupUI()
+    }
+}

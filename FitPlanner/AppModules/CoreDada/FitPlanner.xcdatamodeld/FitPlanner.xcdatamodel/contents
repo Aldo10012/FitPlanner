@@ -18,6 +18,7 @@
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="pictureData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="activity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="user" inverseEntity="Activity"/>
         <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="user" inverseEntity="Workout"/>
@@ -36,10 +37,10 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="workouts" inverseEntity="User"/>
     </entity>
     <elements>
-        <element name="User" positionX="-396.065673828125" positionY="-134.857421875" width="128" height="118"/>
         <element name="Activity" positionX="-412.1478271484375" positionY="99.12142944335938" width="128" height="74"/>
-        <element name="Workout" positionX="-219.2543334960938" positionY="-140.6919860839844" width="128" height="194"/>
         <element name="Alert" positionX="1.62158203125" positionY="-3.3046875" width="128" height="73"/>
         <element name="Exercise" positionX="-9" positionY="135" width="128" height="89"/>
+        <element name="User" positionX="-396.065673828125" positionY="-134.857421875" width="128" height="119"/>
+        <element name="Workout" positionX="-219.2543334960938" positionY="-140.6919860839844" width="128" height="194"/>
     </elements>
 </model>

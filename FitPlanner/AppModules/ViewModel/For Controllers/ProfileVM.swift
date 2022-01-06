@@ -37,6 +37,8 @@ extension ProfileVM: ProfileInteractor {
         // Get user data form CoreData & File Manager
         // update properties for view model
         // pass it to Presentor
+        
+        
         updateProfile()
     }
     
@@ -47,6 +49,7 @@ extension ProfileVM: ProfilePresentor {
     func updateProfile() {
         print("update views on PrifileVC")
         // update viewController views
+        
     }
     
     

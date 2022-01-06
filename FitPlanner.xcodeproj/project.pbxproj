@@ -16,6 +16,7 @@
 		630582D127868A9B0044399A /* AddExerciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630582D027868A9B0044399A /* AddExerciseCardView.swift */; };
 		630B47502787736F00E6FA4B /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B474F2787736F00E6FA4B /* ProfileVM.swift */; };
 		630B4752278776CF00E6FA4B /* GetStartedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B4751278776CF00E6FA4B /* GetStartedVM.swift */; };
+		630B47542787869900E6FA4B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B47532787869900E6FA4B /* UserDefaultManager.swift */; };
 		636CE251278508C400BB5664 /* WorkoutCardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE250278508C400BB5664 /* WorkoutCardVM.swift */; };
 		636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE253278509B700BB5664 /* LargeCalendarView.swift */; };
 		636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* WorkoutCardView.swift */; };
@@ -44,7 +45,6 @@
 		63B21DFB2784E3DA00E5DCE9 /* UIView-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */; };
 		63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFC2784E71A00E5DCE9 /* FPButton.swift */; };
 		63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */; };
-		63B21E012784FB8A00E5DCE9 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21E002784FB8A00E5DCE9 /* ScreenSize.swift */; };
 		863B1A4C3DD9E776E043DB9B /* Pods_FitPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +77,7 @@
 		630582D027868A9B0044399A /* AddExerciseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCardView.swift; sourceTree = "<group>"; };
 		630B474F2787736F00E6FA4B /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		630B4751278776CF00E6FA4B /* GetStartedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedVM.swift; sourceTree = "<group>"; };
+		630B47532787869900E6FA4B /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		636CE250278508C400BB5664 /* WorkoutCardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardVM.swift; sourceTree = "<group>"; };
 		636CE253278509B700BB5664 /* LargeCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCalendarView.swift; sourceTree = "<group>"; };
 		636CE25527851C1300BB5664 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-ext.swift"; sourceTree = "<group>"; };
 		63B21DFC2784E71A00E5DCE9 /* FPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPButton.swift; sourceTree = "<group>"; };
 		63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWorkoutCard.swift; sourceTree = "<group>"; };
-		63B21E002784FB8A00E5DCE9 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		800B54CB5EBAA63B1536A4A6 /* Pods-FitPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitPlanner.debug.xcconfig"; path = "Target Support Files/Pods-FitPlanner/Pods-FitPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +167,16 @@
 			path = "TableView Cells";
 			sourceTree = "<group>";
 		};
+		630B4755278789EC00E6FA4B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
+				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
+				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		636CE24F278508A200BB5664 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +222,7 @@
 				63B21DD62784C81300E5DCE9 /* Setup */,
 				63B21DD72784C83700E5DCE9 /* Resources */,
 				63B21DE52784D1D100E5DCE9 /* AppModules */,
+				630B4755278789EC00E6FA4B /* Extensions */,
 				63B21DE62784D23D00E5DCE9 /* Helpers */,
 			);
 			path = FitPlanner;
@@ -309,11 +320,8 @@
 		63B21DE62784D23D00E5DCE9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
-				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
-				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
-				63B21E002784FB8A00E5DCE9 /* ScreenSize.swift */,
 				630582C327862A180044399A /* CellId.swift */,
+				630B47532787869900E6FA4B /* UserDefaultManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -546,7 +554,6 @@
 				63B21DED2784D70F00E5DCE9 /* UIColor-ext.swift in Sources */,
 				63B21DE82784D69800E5DCE9 /* Router.swift in Sources */,
 				636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */,
-				63B21E012784FB8A00E5DCE9 /* ScreenSize.swift in Sources */,
 				630B4752278776CF00E6FA4B /* GetStartedVM.swift in Sources */,
 				63B21DEA2784D6BE00E5DCE9 /* GetStartedVC.swift in Sources */,
 				63B21DEF2784DB9200E5DCE9 /* UIView-autolayout.swift in Sources */,
@@ -564,6 +571,7 @@
 				630582D127868A9B0044399A /* AddExerciseCardView.swift in Sources */,
 				63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */,
 				630B47502787736F00E6FA4B /* ProfileVM.swift in Sources */,
+				630B47542787869900E6FA4B /* UserDefaultManager.swift in Sources */,
 				636CE251278508C400BB5664 /* WorkoutCardVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

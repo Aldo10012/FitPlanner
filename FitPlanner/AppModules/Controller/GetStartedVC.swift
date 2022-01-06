@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol GetStartedDelegate {
+    func didRegister()
+}
+
 class GetStartedVC: UIViewController {
     
     // MARK: - Properties
-    
+    let udManager = UserDefaultManager()
     var viewModel = GetStartedVM()
+    
+    var getStartedDelegate: GetStartedDelegate!
     
     let card = FPBackground(radius: 8)
     
@@ -55,6 +61,9 @@ class GetStartedVC: UIViewController {
     
     // MARK: Selectors
     @objc func didTapButton() {
+        // viewModel.registerNewUser()
+        // set isRegistered as true
+        getStartedDelegate.didRegister()
         Router.dismissController(self)
     }
     
