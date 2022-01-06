@@ -85,7 +85,7 @@ class ProfileVC: UIViewController {
             profilePic = vm?.profilePic
             userNameLabel.text = vm?.userName
             weightLabel.text = "\((vm?.weight)!) lbs"
-            heightLabel.text = "\((vm?.height)!) in"
+            heightLabel.text = "\((vm?.feet)!)' \((vm?.inches)!)'' ft"
         })
     }
 

@@ -24,7 +24,9 @@ struct ProfileVM {
     var profilePic: UIImage?
     var userName: String?
     var weight: Double?
-    var height: Double?
+    var height: Double? // in inches
+    var feet: Int?
+    var inches: Int?
     
     init() {
         
@@ -53,7 +55,10 @@ extension ProfileVM: ProfileInteractor {
         profilePic = UIImage(data: (user?.pictureData)!)
         userName = user?.name
         weight = user?.weight
-        height = user?.height        
+        height = user?.height
+        
+        feet = Int(height! / 12)
+        inches = Int(height!) - Int(feet! * 12)
     }
     
 }
