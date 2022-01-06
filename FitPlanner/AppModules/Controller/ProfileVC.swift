@@ -50,7 +50,7 @@ class ProfileVC: UIViewController {
     // MARK: Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.getUserData()
         setupViews()
     }
     
@@ -79,9 +79,9 @@ class ProfileVC: UIViewController {
     }
     
     // MARK: Helpers
-    fileprivate func getUserData() {
-        viewModel.getUserData()
-    }
+//    fileprivate func getUserData() {
+//        viewModel.getUserData()
+//    }
 
     
 }

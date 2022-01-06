@@ -27,5 +27,27 @@ struct CoreDataStack {
         newUser.pictureData = pictureData
         
         // save context
+        do { 
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    
+    // MARK: Get user
+    func getUser() -> User? {
+        
+        // Prepare fetchRequest
+        let fetchRequest = User.fetchRequest()
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)  // get User
+            return result.first                                  // return User
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return nil
+        }
     }
 }

@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 // MARK: Protocols
 protocol ProfileInteractor {
-    func getUserData()
+    mutating func getUserData()
 }
 
 protocol ProfilePresentor {
@@ -19,6 +20,9 @@ protocol ProfilePresentor {
 
 // MARK: View Model
 struct ProfileVM {
+    fileprivate let myData = CoreDataStack()
+//    fileprivate var user: User?
+    
     var profilePic: UIImage?
     var userName: String?
     var weight: Double?
@@ -32,12 +36,17 @@ struct ProfileVM {
 
 // MARK: Interactor
 extension ProfileVM: ProfileInteractor {
-    func getUserData() {
+    mutating func getUserData() {
         print("getting user data")
-        // Get user data form CoreData & File Manager
-        // update properties for view model
-        // pass it to Presentor
         
+        // Get user data form CoreData
+        let user = myData.getUser()
+        
+        // update properties for view model
+        profilePic = UIImage(data: (user?.pictureData)!)
+        userName = user?.name
+        weight = user?.weight
+        height = user?.height
         
         updateProfile()
     }

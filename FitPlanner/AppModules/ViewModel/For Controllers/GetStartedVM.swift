@@ -49,6 +49,4 @@ extension GetStartedVM: GetStartedInteractor {
             pictureData: pictureData!
         )
     }
-    
-    
 }

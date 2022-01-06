@@ -61,8 +61,9 @@ class GetStartedVC: UIViewController {
     
     // MARK: Selectors
     @objc func didTapButton() {
-        // viewModel.registerNewUser()
-        // set isRegistered as true
+        viewModel.registerUser() // register user in CoreData
+        udManager.registerUser() // set user as registered in UserDefaults
+        
         getStartedDelegate.didRegister()
         Router.dismissController(self)
     }
