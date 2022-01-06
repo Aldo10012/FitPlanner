@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 // MARK: Protocols
 protocol ProfileInteractor {
@@ -14,14 +13,13 @@ protocol ProfileInteractor {
 }
 
 protocol ProfilePresentor {
-    func updateProfile()
+    mutating func updateProfile(completion: @escaping (ProfileVM?) -> () )
 }
 
 
 // MARK: View Model
 struct ProfileVM {
     fileprivate let myData = CoreDataStack()
-//    fileprivate var user: User?
     
     var profilePic: UIImage?
     var userName: String?
@@ -33,6 +31,15 @@ struct ProfileVM {
     }
 }
 
+// MARK: Presentor
+extension ProfileVM: ProfilePresentor {
+    mutating func updateProfile(completion: @escaping (ProfileVM?) -> () ) {
+        print("update views on PrifileVC")
+        getUserData()      // calls interactor to get data
+        completion(self)   // callback to update ProfileVC
+        
+    }
+}
 
 // MARK: Interactor
 extension ProfileVM: ProfileInteractor {
@@ -46,20 +53,9 @@ extension ProfileVM: ProfileInteractor {
         profilePic = UIImage(data: (user?.pictureData)!)
         userName = user?.name
         weight = user?.weight
-        height = user?.height
-        
-        updateProfile()
+        height = user?.height        
     }
     
 }
 
-// MARK: Presentor
-extension ProfileVM: ProfilePresentor {
-    func updateProfile() {
-        print("update views on PrifileVC")
-        // update viewController views
-        
-    }
-    
-    
-}
+

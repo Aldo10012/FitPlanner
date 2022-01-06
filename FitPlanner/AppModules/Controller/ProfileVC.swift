@@ -19,6 +19,7 @@ class ProfileVC: UIViewController {
         imgView.image = profilePic!
         imgView.contentMode = .scaleAspectFit
         
+        imgView.clipsToBounds = true
         imgView.tintColor = .FPOffBlack
         imgView.backgroundColor = .gray
         imgView.layer.cornerRadius = 30
@@ -50,7 +51,7 @@ class ProfileVC: UIViewController {
     // MARK: Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getUserData()
+        getUserData()
         setupViews()
     }
     
@@ -79,9 +80,14 @@ class ProfileVC: UIViewController {
     }
     
     // MARK: Helpers
-//    fileprivate func getUserData() {
-//        viewModel.getUserData()
-//    }
+    fileprivate func getUserData() {
+        viewModel.updateProfile(completion: { [self] vm in
+            profilePic = vm?.profilePic
+            userNameLabel.text = vm?.userName
+            weightLabel.text = "\((vm?.weight)!) lbs"
+            heightLabel.text = "\((vm?.height)!) in"
+        })
+    }
 
     
 }
