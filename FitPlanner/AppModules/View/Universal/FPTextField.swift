@@ -17,7 +17,8 @@ class FPTextField: UITextField {
          tintColor: UIColor = .FPOffBlack,
          keyboardType: UIKeyboardType = .default,
          textAlignment: NSTextAlignment = .left,
-         isSecure: Bool = false)
+         isSecure: Bool = false
+    )
 
     {
         super.init(frame: frame)

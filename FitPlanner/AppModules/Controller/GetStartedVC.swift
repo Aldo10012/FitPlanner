@@ -11,6 +11,8 @@ class GetStartedVC: UIViewController {
     
     // MARK: - Properties
     
+    var viewModel = GetStartedVM()
+    
     let card = FPBackground(radius: 8)
     
     let captionLabel = FPLabel(title: "Welcome to FitPlanner", color: .primary, size: 22, weight: .light)
@@ -19,7 +21,7 @@ class GetStartedVC: UIViewController {
     let heightTextField = FPTextField(placeholder: "132", keyboardType: .numberPad)
     let weightTextField = FPTextField(placeholder: "160", keyboardType: .numberPad)
     
-    lazy var nameContainer = InputContainerView(label: "Full name", textField: nameTextField)
+    lazy var nameContainer = InputContainerView(label: "User name", textField: nameTextField)
     lazy var heightContainer = InputContainerView(label: "Height (in)", textField: heightTextField)
     lazy var weightContainer = InputContainerView(label: "Weight (lb)", textField: weightTextField)
     
@@ -45,6 +47,7 @@ class GetStartedVC: UIViewController {
 
         // Do any additional setup after loading the view.
         setupViews()
+        setDelegates()
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
@@ -70,8 +73,7 @@ class GetStartedVC: UIViewController {
         card.anchor(left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 25, paddingRight: 25, height: 530)
         card.centerY(inView: view)
         card.addStandardShadow()
-        
-        
+                
         card.addSubview(captionLabel)
         captionLabel.anchor(top: card.topAnchor, paddingTop: 34)
         captionLabel.centerX(inView: card)
@@ -93,6 +95,46 @@ class GetStartedVC: UIViewController {
         
         card.addSubview(getStartedButton)
         getStartedButton.anchor(top: stack.bottomAnchor, left: card.leftAnchor, right: card.rightAnchor, paddingTop: 68, paddingLeft: 24, paddingRight: 24)
+        
+        checkFormStatus()
+    }
+    
+    
+    // MARK: Helpers
+    fileprivate func setDelegates() {
+        nameTextField.delegate = self
+        heightTextField.delegate = self
+        weightTextField.delegate = self
+    }
+    
+    func checkFormStatus() {
+        if viewModel.formIsValid{
+            getStartedButton.isEnabled = true
+            getStartedButton.checkPrimaryStatus()
+        } else {
+            getStartedButton.isEnabled = false
+            getStartedButton.checkPrimaryStatus()
+        }
+    }
+}
+
+
+// MARK: UITextFieldDelegate
+extension GetStartedVC: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        switch textField {
+        case nameTextField:
+            viewModel.userName = nameTextField.text
+        case heightTextField:
+            viewModel.height = Double(heightTextField.text!)
+        case weightTextField:
+            viewModel.weight = Double(weightTextField.text!)
+        default:
+            break
+        }
+        
+        print(viewModel)
+        checkFormStatus()
     }
 }
 
@@ -110,6 +152,10 @@ extension GetStartedVC: UIImagePickerControllerDelegate, UINavigationControllerD
         plusPhotoButton.layer.borderColor = UIColor.systemGray3.cgColor
         plusPhotoButton.layer.borderWidth = 3.0
         plusPhotoButton.layer.cornerRadius = 100/2
+        
+        viewModel.pictureIsSelected = true
+        viewModel.pictureData = image?.pngData()
+        checkFormStatus()
         
         dismiss(animated: true, completion: nil)
     }
