@@ -8,11 +8,11 @@
 import UIKit
 
 // MARK: Protocols
-protocol ProfileInteractor {
-    mutating func getUserData()
+protocol ProfileInteractorProtocol {
+    func getUserData() -> User?
 }
 
-protocol ProfilePresentor {
+protocol ProfilePresentorProtocol {
     mutating func updateProfile(completion: @escaping (ProfileVM?) -> () )
 }
 
@@ -34,22 +34,12 @@ struct ProfileVM {
 }
 
 // MARK: Presentor
-extension ProfileVM: ProfilePresentor {
+extension ProfileVM: ProfilePresentorProtocol {
+        
     mutating func updateProfile(completion: @escaping (ProfileVM?) -> () ) {
-        print("update views on PrifileVC")
-        getUserData()      // calls interactor to get data
-        completion(self)   // callback to update ProfileVC
         
-    }
-}
-
-// MARK: Interactor
-extension ProfileVM: ProfileInteractor {
-    mutating func getUserData() {
-        print("getting user data")
-        
-        // Get user data form CoreData
-        let user = myData.getUser()
+        // call interactor to get data from CoreData
+        let user = getUserData()
         
         // update properties for view model
         profilePic = UIImage(data: (user?.pictureData)!)
@@ -60,9 +50,21 @@ extension ProfileVM: ProfileInteractor {
         feet = Int(height! / 12)
         inches = Int(height!) - Int(feet! * 12)
         
-        print("workouts", user?.workouts)
+        
+        // callback to update ProfileVC
+        completion(self)
+        
+    }
+}
+
+// MARK: Interactor
+extension ProfileVM: ProfileInteractorProtocol {
+    
+    func getUserData() -> User? {
+        // Get user data form CoreData & return to presentor
+        let user = myData.getUser()
+        return user
     }
     
 }
-
 
