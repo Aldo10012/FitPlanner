@@ -49,7 +49,7 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
         print("THis is where the magic happens")
         
         setupAlertsAndNotifications()
-        print("ALERTS:", alerts)
+//        print("MY EXERCISES: \n", exercises)
 //        myData.createWorkout(
 //            workoutName: name!,
 //            onSun: onSun!, onMon: onMon!, onTue: onTue!, onWed: onWed!, onThu: onThu!, onFri: onFri!, onSat: onSat!,

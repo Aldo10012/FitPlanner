@@ -75,11 +75,4 @@ struct CoreDataStack {
     }
     
     
-    // MARK: Read Workouts
-    
-    
-    // MARK: Update Workouts
-    
-    
-    // MARK: Delete Workouts
 }

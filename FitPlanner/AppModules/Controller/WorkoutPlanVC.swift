@@ -46,12 +46,12 @@ class WorkoutPlanVC: UIViewController {
 
     // MARK: Selectors
     @objc func didTapMarkAsDone() {
-        print("did Tap MarkAsDone")
+//        print("did Tap MarkAsDone")
         Router.popController(self)
     }
     
     @objc func didTapAdd() {
-        print("did Tap Add")
+//        print("did Tap Add")
         getViewStateAndPassToViewModel { [self] in
             viewModel.createWorkout()
             Router.popController(self)
@@ -61,7 +61,7 @@ class WorkoutPlanVC: UIViewController {
     }
     
     @objc func didTapEdit() {
-        print("did Tap Edit")
+//        print("did Tap Edit")
         getViewStateAndPassToViewModel { [self] in
             viewModel.editWorkout()
             Router.popController(self)
@@ -73,6 +73,7 @@ class WorkoutPlanVC: UIViewController {
     @objc func didTapAddExerciseButton() {
         let newExercise = Exercise(context: myData.managedContext)
         viewModel.exercises.append(newExercise)
+        print("1", viewModel.exercises)
         addExerciseCard.tableView.reloadData()
     }
     
@@ -104,7 +105,7 @@ class WorkoutPlanVC: UIViewController {
     fileprivate func modifyViewBasedOnType(viewModel: WorkoutCardVM) {
         switch self.type {
         case .nextWorkout:
-            print(viewModel)
+//            print(viewModel)
             
             workoutcardView = WorkoutCardView(viewModel: viewModel)
             button.setTitle("Mark as done", for: .normal)
@@ -113,7 +114,7 @@ class WorkoutPlanVC: UIViewController {
             break
         
         case .addWorkout:
-            print(viewModel)
+//            print(viewModel)
 
             workoutcardView = WorkoutCardView(viewModel: viewModel)
             button.setTitle("Add", for: .normal)
@@ -125,7 +126,7 @@ class WorkoutPlanVC: UIViewController {
             break
             
         case .editWorkout:
-            print(viewModel)
+//            print(viewModel)
 
             workoutcardView = WorkoutCardView(viewModel: viewModel)
             button.addTarget(self, action: #selector(didTapEdit), for: .touchUpInside)
@@ -166,22 +167,27 @@ class WorkoutPlanVC: UIViewController {
         
         // TODO: This only gets VISIBLE cells, not all cells. Edit to get ALL cells
         // TODO: TableView reshuffles the exercises when u add new one
-        let cells = addExerciseCard.tableView.visibleCells as! Array<ExerciseTableViewCell>
+//        let cells = addExerciseCard.tableView.visibleCells as! Array<ExerciseTableViewCell>
 
-        var onCell: Int = 0
-        for cell in cells {
-            if cell.nameTextField.text == "" || cell.setsTextField.text == "" || cell.repsTextField.text == "" {
-                fail()
-                return
-            }
-            
-            viewModel.exercises[onCell].name = cell.nameTextField.text
-            viewModel.exercises[onCell].reps = Int64(cell.repsTextField.text!)!
-            viewModel.exercises[onCell].sets = Int64(cell.setsTextField.text!)!
-            onCell += 1
-        }
-        
-        print(viewModel)
+//        var onCell: Int = 0
+//
+//        if cells.count == 0 {
+//            fail()
+//            return
+//        }
+//        for cell in cells {
+//            if cell.nameTextField.text == "" || cell.setsTextField.text == "" || cell.repsTextField.text == "" {
+//                fail()
+//                return
+//            }
+//
+//            viewModel.exercises[onCell].name = cell.nameTextField.text
+//            viewModel.exercises[onCell].reps = Int64(cell.repsTextField.text!)!
+//            viewModel.exercises[onCell].sets = Int64(cell.setsTextField.text!)!
+//            onCell += 1
+//        }
+//
+        print("2", viewModel.exercises)
         success()
     }
 
@@ -196,11 +202,37 @@ extension WorkoutPlanVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId.exerciseCell) as! ExerciseTableViewCell
+        cell.numberLabel.text = "\(indexPath.row + 1)"
+        cell.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 30
     }
+    
+}
+
+// MARK: Exercise Delegate
+extension WorkoutPlanVC: ExerciseDelegate {
+    // There methods automatically update the ViewModel when user edits exercise when they are typing
+    
+    func didUpdateName(indexPath: Int?, name: String?) {
+        viewModel.exercises[indexPath!].name = name
+        print("a", viewModel.exercises)
+    }
+    
+    func didUpdateSets(indexPath: Int?, sets: Int64?) {
+        viewModel.exercises[indexPath!].sets = sets!
+        print("b", viewModel.exercises)
+    }
+    
+    func didUpdateReps(indexPath: Int?, reps: Int64?) {
+        viewModel.exercises[indexPath!].reps = reps!
+        print("c", viewModel.exercises)
+    }
+    
+    
+    
     
 }
