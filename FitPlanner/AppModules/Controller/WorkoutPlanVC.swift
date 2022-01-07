@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 enum WorkoutPlanType {
     case nextWorkout
@@ -17,6 +18,8 @@ class WorkoutPlanVC: UIViewController {
 
     // MARK: - Properties    
     var type: WorkoutPlanType!
+    var viewModel = WorkoutPlanVM()
+    let myData = CoreDataStack()
     
     var workoutNameTextField = FPTextField(placeholder: "Workout name", size: 30, weight: .light)
     var workoutcardView: WorkoutCardView!
@@ -49,12 +52,28 @@ class WorkoutPlanVC: UIViewController {
     
     @objc func didTapAdd() {
         print("did Tap Add")
-        Router.popController(self)
+        getViewStateAndPassToViewModel { [self] in
+            viewModel.createWorkout()
+            Router.popController(self)
+        } fail: {
+            AlertManager.showFillInExercises(on: self)
+        }
     }
     
     @objc func didTapEdit() {
         print("did Tap Edit")
-        Router.popController(self)
+        getViewStateAndPassToViewModel { [self] in
+            viewModel.editWorkout()
+            Router.popController(self)
+        } fail: {
+            AlertManager.showFillInExercises(on: self)
+        }
+    }
+    
+    @objc func didTapAddExerciseButton() {
+        let newExercise = Exercise(context: myData.managedContext)
+        viewModel.exercises.append(newExercise)
+        addExerciseCard.tableView.reloadData()
     }
     
     
@@ -100,7 +119,8 @@ class WorkoutPlanVC: UIViewController {
             button.setTitle("Add", for: .normal)
             button.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
             workoutcardView.label.text = "Schedule"
-//            workoutNameTextField.becomeFirstResponder()
+            addExerciseCard.hasAddButton()
+            addExerciseCard.addExerciseButton.addTarget(self, action: #selector(didTapAddExerciseButton), for: .touchUpInside)
             makeDayOfWeekButtonsEditable()
             break
             
@@ -112,6 +132,8 @@ class WorkoutPlanVC: UIViewController {
             button.setTitle("Edit", for: .normal)
             workoutcardView.label.text = "Schedule"
             workoutNameTextField.text = viewModel.title
+            addExerciseCard.hasAddButton()
+            addExerciseCard.addExerciseButton.addTarget(self, action: #selector(didTapAddExerciseButton), for: .touchUpInside)
             makeDayOfWeekButtonsEditable()
             break
             
@@ -131,6 +153,35 @@ class WorkoutPlanVC: UIViewController {
         workoutcardView.SatButton.canEdit = true
     }
     
+    // MARK: Helpers
+    fileprivate func getViewStateAndPassToViewModel(success: @escaping() -> (), fail: @escaping() -> () ) {
+        viewModel.name = workoutNameTextField.text
+        viewModel.onSun = workoutcardView.SunButton.workoutIsScheduled
+        viewModel.onMon = workoutcardView.MonButton.workoutIsScheduled
+        viewModel.onTue = workoutcardView.TueButton.workoutIsScheduled
+        viewModel.onWed = workoutcardView.WedButton.workoutIsScheduled
+        viewModel.onThu = workoutcardView.ThuButton.workoutIsScheduled
+        viewModel.onFri = workoutcardView.FriButton.workoutIsScheduled
+        viewModel.onSat = workoutcardView.SatButton.workoutIsScheduled
+        
+        let cells = addExerciseCard.tableView.visibleCells as! Array<ExerciseTableViewCell>
+
+        var onCell: Int = 0
+        for cell in cells {
+            if cell.nameTextField.text == "" || cell.setsTextField.text == "" || cell.repsTextField.text == "" {
+                fail()
+                return
+            }
+            
+            viewModel.exercises[onCell].name = cell.nameTextField.text
+            viewModel.exercises[onCell].reps = Int64(cell.repsTextField.text!)!
+            viewModel.exercises[onCell].sets = Int64(cell.setsTextField.text!)!
+            onCell += 1
+        }
+        
+        print(viewModel)
+        success()
+    }
 
 }
 
@@ -138,7 +189,7 @@ class WorkoutPlanVC: UIViewController {
 // MARK: TableView Protocols
 extension WorkoutPlanVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return viewModel.exercises.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

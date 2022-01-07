@@ -17,6 +17,8 @@
 		630B47502787736F00E6FA4B /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B474F2787736F00E6FA4B /* ProfileVM.swift */; };
 		630B4752278776CF00E6FA4B /* GetStartedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B4751278776CF00E6FA4B /* GetStartedVM.swift */; };
 		630B47542787869900E6FA4B /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B47532787869900E6FA4B /* UserDefaultManager.swift */; };
+		630B47572787B75000E6FA4B /* WorkoutPlanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B47562787B75000E6FA4B /* WorkoutPlanVM.swift */; };
+		630B47592787C74600E6FA4B /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B47582787C74600E6FA4B /* AlertManager.swift */; };
 		636CE251278508C400BB5664 /* WorkoutCardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE250278508C400BB5664 /* WorkoutCardVM.swift */; };
 		636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE253278509B700BB5664 /* LargeCalendarView.swift */; };
 		636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* WorkoutCardView.swift */; };
@@ -78,6 +80,8 @@
 		630B474F2787736F00E6FA4B /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		630B4751278776CF00E6FA4B /* GetStartedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedVM.swift; sourceTree = "<group>"; };
 		630B47532787869900E6FA4B /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		630B47562787B75000E6FA4B /* WorkoutPlanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanVM.swift; sourceTree = "<group>"; };
+		630B47582787C74600E6FA4B /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		636CE250278508C400BB5664 /* WorkoutCardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardVM.swift; sourceTree = "<group>"; };
 		636CE253278509B700BB5664 /* LargeCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCalendarView.swift; sourceTree = "<group>"; };
 		636CE25527851C1300BB5664 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				630582C9278649590044399A /* HomeVM.swift */,
 				630582C127861D740044399A /* WorkoutLogVM.swift */,
 				630B474F2787736F00E6FA4B /* ProfileVM.swift */,
+				630B47562787B75000E6FA4B /* WorkoutPlanVM.swift */,
 			);
 			path = "For Controllers";
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				63B21DF22784DD2700E5DCE9 /* FPTextField.swift */,
 				63B21DFC2784E71A00E5DCE9 /* FPButton.swift */,
 				636CE25727851D2900BB5664 /* FPWeekButton.swift */,
+				630B47582787C74600E6FA4B /* AlertManager.swift */,
 			);
 			path = Universal;
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */,
 				63B21DAE2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld in Sources */,
 				636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */,
+				630B47572787B75000E6FA4B /* WorkoutPlanVM.swift in Sources */,
 				63B21DF92784DFD700E5DCE9 /* FPBackground.swift in Sources */,
 				63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */,
 				630582C427862A180044399A /* CellId.swift in Sources */,
@@ -552,6 +559,7 @@
 				63B21DF72784DF7D00E5DCE9 /* InputContainerView.swift in Sources */,
 				630582C227861D740044399A /* WorkoutLogVM.swift in Sources */,
 				63B21DED2784D70F00E5DCE9 /* UIColor-ext.swift in Sources */,
+				630B47592787C74600E6FA4B /* AlertManager.swift in Sources */,
 				63B21DE82784D69800E5DCE9 /* Router.swift in Sources */,
 				636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */,
 				630B4752278776CF00E6FA4B /* GetStartedVM.swift in Sources */,

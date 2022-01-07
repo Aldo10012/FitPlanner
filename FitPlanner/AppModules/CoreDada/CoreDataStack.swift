@@ -50,4 +50,35 @@ struct CoreDataStack {
             return nil
         }
     }
+    
+    
+    // MARK: Create Workout
+    func createWorkout(workoutName: String,
+                       onSun: Bool, onMon: Bool, onTue: Bool, onWed: Bool, onThu: Bool, onFri: Bool, onSat: Bool,
+                       alerts: [Alert], exercises: [Exercise]
+    ) {
+        let newWorkout = Workout(context: managedContext)
+        newWorkout.name = workoutName
+        newWorkout.onSun = onSun
+        newWorkout.onMon = onMon
+        newWorkout.onTue = onTue
+        newWorkout.onWed = onWed
+        newWorkout.onThu = onThu
+        newWorkout.onFri = onFri
+        newWorkout.onSat = onSat
+        
+//        newWorkout.alerts = alerts
+//        newWorkout.exercises = exercises
+        
+                
+    }
+    
+    
+    // MARK: Read Workouts
+    
+    
+    // MARK: Update Workouts
+    
+    
+    // MARK: Delete Workouts
 }

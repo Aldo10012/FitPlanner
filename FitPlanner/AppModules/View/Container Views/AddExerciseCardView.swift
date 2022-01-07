@@ -17,6 +17,15 @@ class AddExerciseCardView: UIView {
     let setsLabel = FPLabel(title: "sets", color: .primary, size: 16, weight: .light, alignment: .center)
     var tableView = UITableView()
     
+    let addExerciseButton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(systemName: "plus.circle"), for: .normal)
+        btn.imageView?.contentMode = .scaleAspectFill
+        btn.tintColor = .FPBlue
+        btn.setDimensions(height: 20, width: 20)
+        return btn
+    }()
+    
     
     // MARK: Init
     init() {
@@ -43,6 +52,12 @@ class AddExerciseCardView: UIView {
 //        tableView.delegate = self
 //        tableView.dataSource = self
         tableView.separatorStyle = .none
+    }
+    
+    open func hasAddButton() {
+        addSubviews(addExerciseButton)
+        addExerciseButton.anchor(right: rightAnchor, paddingRight: 15)
+        addExerciseButton.centerY(inView: mainLabel)
     }
     
     required init?(coder: NSCoder) {

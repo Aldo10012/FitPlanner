@@ -59,6 +59,8 @@ extension ProfileVM: ProfileInteractor {
         
         feet = Int(height! / 12)
         inches = Int(height!) - Int(feet! * 12)
+        
+        print("workouts", user?.workouts)
     }
     
 }
