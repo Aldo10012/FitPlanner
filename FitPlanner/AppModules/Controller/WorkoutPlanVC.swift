@@ -165,30 +165,34 @@ class WorkoutPlanVC: UIViewController {
         viewModel.onFri = workoutcardView.FriButton.workoutIsScheduled
         viewModel.onSat = workoutcardView.SatButton.workoutIsScheduled
         
-        // TODO: This only gets VISIBLE cells, not all cells. Edit to get ALL cells
         // TODO: TableView reshuffles the exercises when u add new one
-//        let cells = addExerciseCard.tableView.visibleCells as! Array<ExerciseTableViewCell>
-
-//        var onCell: Int = 0
-//
-//        if cells.count == 0 {
-//            fail()
-//            return
-//        }
-//        for cell in cells {
-//            if cell.nameTextField.text == "" || cell.setsTextField.text == "" || cell.repsTextField.text == "" {
-//                fail()
-//                return
-//            }
-//
-//            viewModel.exercises[onCell].name = cell.nameTextField.text
-//            viewModel.exercises[onCell].reps = Int64(cell.repsTextField.text!)!
-//            viewModel.exercises[onCell].sets = Int64(cell.setsTextField.text!)!
-//            onCell += 1
-//        }
-//
+        
+        if viewModel.onSun == false && viewModel.onMon == false && viewModel.onTue == false && viewModel.onWed == false && viewModel.onThu == false && viewModel.onFri == false && viewModel.onSat == false {
+            fail()
+            return
+        }
+        
+        if workoutNameTextField.text == "" {
+            fail()
+            return
+        }
+        
+        if viewModel.exercises.count == 0 {
+            fail()
+            return
+        }
+        
+        for ex in viewModel.exercises {
+            if ex.name == "" || ex.sets == 0 || ex.reps == 0 {
+                fail()
+                return
+            }
+        }
+        
+        // setup success case
         print("2", viewModel.exercises)
         success()
+        
     }
 
 }
