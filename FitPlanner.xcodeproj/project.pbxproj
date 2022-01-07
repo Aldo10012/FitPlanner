@@ -23,6 +23,8 @@
 		636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE253278509B700BB5664 /* LargeCalendarView.swift */; };
 		636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* WorkoutCardView.swift */; };
 		636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25727851D2900BB5664 /* FPWeekButton.swift */; };
+		6394D2D72788BA740019A935 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D62788BA740019A935 /* NotificationManager.swift */; };
+		6394D2D92788D0060019A935 /* Date-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D82788D0060019A935 /* Date-ext.swift */; };
 		63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */; };
 		63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */; };
 		63B21DA82784C5D800E5DCE9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA72784C5D800E5DCE9 /* HomeVC.swift */; };
@@ -86,6 +88,8 @@
 		636CE253278509B700BB5664 /* LargeCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCalendarView.swift; sourceTree = "<group>"; };
 		636CE25527851C1300BB5664 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
 		636CE25727851D2900BB5664 /* FPWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWeekButton.swift; sourceTree = "<group>"; };
+		6394D2D62788BA740019A935 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		6394D2D82788D0060019A935 /* Date-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-ext.swift"; sourceTree = "<group>"; };
 		63B21DA02784C5D800E5DCE9 /* FitPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
 				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
 				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
+				6394D2D82788D0060019A935 /* Date-ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			children = (
 				630582C327862A180044399A /* CellId.swift */,
 				630B47532787869900E6FA4B /* UserDefaultManager.swift */,
+				6394D2D62788BA740019A935 /* NotificationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -556,6 +562,7 @@
 				63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */,
 				630582C427862A180044399A /* CellId.swift in Sources */,
 				63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */,
+				6394D2D92788D0060019A935 /* Date-ext.swift in Sources */,
 				63B21DF72784DF7D00E5DCE9 /* InputContainerView.swift in Sources */,
 				630582C227861D740044399A /* WorkoutLogVM.swift in Sources */,
 				63B21DED2784D70F00E5DCE9 /* UIColor-ext.swift in Sources */,
@@ -576,6 +583,7 @@
 				63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */,
 				63B21DF32784DD2700E5DCE9 /* FPTextField.swift in Sources */,
 				630582CA278649590044399A /* HomeVM.swift in Sources */,
+				6394D2D72788BA740019A935 /* NotificationManager.swift in Sources */,
 				630582D127868A9B0044399A /* AddExerciseCardView.swift in Sources */,
 				63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */,
 				630B47502787736F00E6FA4B /* ProfileVM.swift in Sources */,

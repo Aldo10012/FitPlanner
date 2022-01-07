@@ -164,6 +164,8 @@ class WorkoutPlanVC: UIViewController {
         viewModel.onFri = workoutcardView.FriButton.workoutIsScheduled
         viewModel.onSat = workoutcardView.SatButton.workoutIsScheduled
         
+        // TODO: This only gets VISIBLE cells, not all cells. Edit to get ALL cells
+        // TODO: TableView reshuffles the exercises when u add new one
         let cells = addExerciseCard.tableView.visibleCells as! Array<ExerciseTableViewCell>
 
         var onCell: Int = 0

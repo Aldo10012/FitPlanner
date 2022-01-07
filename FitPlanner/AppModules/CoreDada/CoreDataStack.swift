@@ -70,7 +70,8 @@ struct CoreDataStack {
 //        newWorkout.alerts = alerts
 //        newWorkout.exercises = exercises
         
-                
+        // save context
+        
     }
     
     
