@@ -168,24 +168,16 @@ class WorkoutPlanVC: UIViewController {
         // TODO: TableView reshuffles the exercises when u add new one
         
         if viewModel.onSun == false && viewModel.onMon == false && viewModel.onTue == false && viewModel.onWed == false && viewModel.onThu == false && viewModel.onFri == false && viewModel.onSat == false {
-            fail()
-            return
+            fail(); return
         }
         
-        if workoutNameTextField.text == "" {
-            fail()
-            return
-        }
+        if workoutNameTextField.text == "" { fail(); return }
         
-        if viewModel.exercises.count == 0 {
-            fail()
-            return
-        }
+        if viewModel.exercises.count == 0 { fail(); return }
         
         for ex in viewModel.exercises {
             if ex.name == "" || ex.sets == 0 || ex.reps == 0 {
-                fail()
-                return
+                fail(); return
             }
         }
         

@@ -74,5 +74,19 @@ struct CoreDataStack {
         
     }
     
+    // MARK: Get workouts
+    func getWorkouts() -> [Workout] {
+        let fetchRequest = Workout.fetchRequest()
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            return result
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return []
+        }
+    }
+    
     
 }
