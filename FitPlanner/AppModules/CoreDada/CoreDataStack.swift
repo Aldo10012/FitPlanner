@@ -67,9 +67,10 @@ struct CoreDataStack {
         newWorkout.onFri = onFri
         newWorkout.onSat = onSat
         
-//        newWorkout.alerts = alerts
-//        newWorkout.exercises = exercises
+        newWorkout.alerts = NSSet(array: alerts)  //alerts
+        newWorkout.exercises = NSSet(array: exercises) //exercises
         
+        print("NEW WORKOUT \n", newWorkout)
         // save context
         
     }

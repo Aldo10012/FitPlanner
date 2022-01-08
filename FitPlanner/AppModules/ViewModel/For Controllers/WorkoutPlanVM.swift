@@ -50,11 +50,11 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
         
         setupAlertsAndNotifications()
 //        print("MY EXERCISES: \n", exercises)
-//        myData.createWorkout(
-//            workoutName: name!,
-//            onSun: onSun!, onMon: onMon!, onTue: onTue!, onWed: onWed!, onThu: onThu!, onFri: onFri!, onSat: onSat!,
-//            alerts: alerts,
-//            exercises: exercises)
+        myData.createWorkout(
+            workoutName: name!,
+            onSun: onSun!, onMon: onMon!, onTue: onTue!, onWed: onWed!, onThu: onThu!, onFri: onFri!, onSat: onSat!,
+            alerts: alerts,
+            exercises: exercises)
         
     }
     
