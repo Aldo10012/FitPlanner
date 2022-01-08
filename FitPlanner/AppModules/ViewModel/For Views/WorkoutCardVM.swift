@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import CoreData
 
 struct WorkoutCardVM {
+    var workout: Workout!
     
     var title: String!
-    
     var onSun: Bool!
     var onMon: Bool!
     var onTue: Bool!

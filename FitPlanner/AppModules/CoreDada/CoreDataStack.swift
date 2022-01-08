@@ -67,11 +67,15 @@ struct CoreDataStack {
         newWorkout.onFri = onFri
         newWorkout.onSat = onSat
         
-        newWorkout.alerts = NSSet(array: alerts)  //alerts
-        newWorkout.exercises = NSSet(array: exercises) //exercises
+        newWorkout.alerts = NSSet(array: alerts)
+        newWorkout.exercises = NSSet(array: exercises)
         
-        print("NEW WORKOUT \n", newWorkout)
         // save context
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
         
     }
     
@@ -86,6 +90,21 @@ struct CoreDataStack {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             return []
+        }
+    }
+    
+    // MARK: - Delete todo
+    func deleteWorkout(_ workout: Workout) {
+        do {
+            try managedContext.delete(workout)
+            for alert in workout.alerts! {
+                let id: String = workout.name! + "-" + getDateAsString((alert as! Alert).date!)
+                NotificationManager().deleteNotification(withID: id)
+            }
+                        
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not delete. \(error), \(error.userInfo)")
         }
     }
     

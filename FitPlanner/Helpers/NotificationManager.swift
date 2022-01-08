@@ -10,7 +10,8 @@ import UIKit
 
 class NotificationManager {
     
-    func setupLocalNotification(name: String, date: Date) {
+    /// id is name of workout + date "\(name)-\(date)" ~ "Push-12:10:2020"
+    func setupLocalNotification(name: String, date: Date, id: String) {
         // Step 1: Ask for permission
         let center = UNUserNotificationCenter.current()
         
@@ -30,14 +31,19 @@ class NotificationManager {
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         // Step 4: Create the request
-        
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
         // Step 5: Register the request
         center.add(request) { (error) in
             // Check the error parameter and handle any errors
         }
+    }
+    
+    /// id is name of workout + date "\(name)-\(date)" ~ "Push-12:10:2020"
+    func deleteNotification(withID id: String) {
+        let center = UNUserNotificationCenter.current()
+        
+        center.removePendingNotificationRequests(withIdentifiers: [id])
     }
     
 }

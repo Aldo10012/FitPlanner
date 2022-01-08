@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import CoreData
 
 class WorkoutLogVC: UIViewController {
 
     // MARK: Properties
+    let myData = CoreDataStack()
     let yourWorkoutsLabel = FPLabel(title: "Your workouts", color: .primary, size: 20, weight: .medium)
     
-    var workoutLogViewModel = WorkoutLogVM()
+    var viewModel = WorkoutLogVM()
     var tableView = UITableView()
     
     let createNewWorkoutButton = FPButton(type: .primary, title: "Create new workout", target: self, action: #selector(didTapCreateWorkoutButton))
@@ -23,6 +25,22 @@ class WorkoutLogVC: UIViewController {
         super.viewDidLoad()
 
         setupViews()
+        
+//        viewModel.onViewDidLoad {
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.onViewDidLoad {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     
@@ -51,7 +69,7 @@ class WorkoutLogVC: UIViewController {
         tableView.dataSource = self
         tableView.register(WorkoutCardTableViewCell.self, forCellReuseIdentifier: CellId.workoutCell)
         
-        print(workoutLogViewModel.yourWorkouts.count)
+        print(viewModel.yourWorkouts.count)
         
     }
 }
@@ -60,11 +78,11 @@ class WorkoutLogVC: UIViewController {
 // MARK: TableView Protocols
 extension WorkoutLogVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.workoutLogViewModel.yourWorkouts.count
+        return viewModel.yourWorkouts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let viewModelToUse = self.workoutLogViewModel.yourWorkouts[indexPath.row]
+        let viewModelToUse = self.viewModel.yourWorkouts[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId.workoutCell) as! WorkoutCardTableViewCell
         cell.selectionStyle = .none
@@ -79,17 +97,17 @@ extension WorkoutLogVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected workout")
-        print(workoutLogViewModel.yourWorkouts[indexPath.row])
+        print(viewModel.yourWorkouts[indexPath.row])
         
-        let viewModelToUse = workoutLogViewModel.yourWorkouts[indexPath.row]
+        let viewModelToUse = viewModel.yourWorkouts[indexPath.row]
         Router.pushToWorkoutPlan(from: self, type: .editWorkout, viewModel: viewModelToUse)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let object = workoutLogViewModel.yourWorkouts[indexPath.row]
-            self.workoutLogViewModel.yourWorkouts.remove(at: indexPath.row)
-//            myData.deleteTodoItem(object)
+            let object = viewModel.yourWorkouts[indexPath.row]
+            self.viewModel.yourWorkouts.remove(at: indexPath.row)
+            myData.deleteWorkout(object.workout)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         }

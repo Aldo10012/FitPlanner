@@ -82,3 +82,11 @@ extension Date {
     }
   }
 }
+
+func getDateAsString(_ date: Date) -> String {
+  let dateFormatter = DateFormatter()
+  dateFormatter.dateFormat = "EEE"
+  let dateAsString = dateFormatter.string(from: date)
+
+  return dateAsString
+}

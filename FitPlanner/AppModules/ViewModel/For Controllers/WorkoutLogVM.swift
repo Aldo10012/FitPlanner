@@ -11,7 +11,7 @@ import CoreData
 
 // MARK: Protocols
 protocol WorkoutLogPresentor {
-    mutating func onViewDidLoad()
+    mutating func onViewDidLoad(completion: @escaping() -> ())
 }
 
 protocol WorkoutLogInteractor {
@@ -24,17 +24,14 @@ struct WorkoutLogVM {
     fileprivate var myData = CoreDataStack()
 
     
-    var yourWorkouts: [WorkoutCardVM] = [
-        WorkoutCardVM(title: "Workout A", onSun: false, onMon: true, onTue: false, onWed: true, onThu: false, onFri: true, onSat: false),
-        WorkoutCardVM(title: "Workout B", onSun: true, onMon: false, onTue: true, onWed: false, onThu: true, onFri: false, onSat: true)
-    ]
+    var yourWorkouts: [WorkoutCardVM] = []
     
 
 }
 
 // MARK: Presentor
 extension WorkoutLogVM: WorkoutLogPresentor {
-    mutating func onViewDidLoad() {
+    mutating func onViewDidLoad(completion: @escaping() -> ()) {
         
         // Get workouts from Interactor
         let usersWorkouts = getWorkouts()
@@ -42,11 +39,12 @@ extension WorkoutLogVM: WorkoutLogPresentor {
         // Manipulate viewModel as needed
         for w in usersWorkouts {
             yourWorkouts.append(
-                WorkoutCardVM(title: w.name, onSun: w.onSun, onMon: w.onMon, onTue: w.onTue, onWed: w.onWed, onThu: w.onThu, onFri: w.onFri, onSat: w.onSat)
+                WorkoutCardVM(workout: w, title: w.name, onSun: w.onSun, onMon: w.onMon, onTue: w.onTue, onWed: w.onWed, onThu: w.onThu, onFri: w.onFri, onSat: w.onSat)
             )
         }
         
         // Update View
+        completion()
     }
 }
 

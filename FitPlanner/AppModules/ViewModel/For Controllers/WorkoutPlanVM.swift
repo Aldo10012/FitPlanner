@@ -84,14 +84,16 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
             alerts.append(newAlert)
         }
         
-        
-        
         // 2. setup local notification based on viewModel.alerts[i].date
-//        let notificationManager = NotificationManager()
+        let notificationManager = NotificationManager()
 //
-//        for alert in alerts {
-//            notificationManager.setupLocalNotification(name: name!, date: alert.date!)
-//        }
+        for alert in alerts {
+            let idString: String = name! + "-" + getDateAsString(alert.date!)
+            
+            notificationManager.setupLocalNotification(
+                name: name!,
+                date: alert.date!, id: idString)
+        }
     }
     
     
