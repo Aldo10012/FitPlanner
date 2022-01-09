@@ -11,7 +11,7 @@ import UIKit
 // MARK: Protocols
 protocol WorkoutPlanInteractor {
     mutating func createWorkout()
-    func editWorkout()
+    mutating func editWorkout()
     func markWorkoutAsDone()
 }
 
@@ -23,6 +23,7 @@ protocol WorkoutPlanPresentor {
 // MARK: ViewModel
 struct WorkoutPlanVM {
     fileprivate var myData = CoreDataStack()
+    var object: Workout?
     
     var name: String?
     var onSun: Bool?
@@ -58,8 +59,21 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
         
     }
     
-    func editWorkout() {
+    mutating func editWorkout() {
         print("edit workout")
+        object?.name = name
+        object?.onSun = onSun!
+        object?.onMon = onMon!
+        object?.onTue = onTue!
+        object?.onWed = onWed!
+        object?.onThu = onThu!
+        object?.onFri = onFri!
+        object?.onSat = onSat!
+        object?.exercises = NSSet(array: exercises)
+        self.deleteOldAlertsAndSetNewOnes()
+        
+        myData.updateWorkout(object!)
+        
     }
     
     func markWorkoutAsDone() {
@@ -67,6 +81,7 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
     }
     
     
+    // MARK: Helpers
     mutating func setupAlertsAndNotifications() {
         // 1. update viewModel.alerts based on which days are selected
         if onSun! { createAndAppendAlert(dayOfWeek: .sunday) }
@@ -94,6 +109,20 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
                 name: name!,
                 date: alert.date!, id: idString)
         }
+    }
+    
+    mutating func deleteOldAlertsAndSetNewOnes() {
+        // clear notifications
+        for alert in alerts {
+            let idString: String = name! + "-" + getDateAsString(alert.date!)
+            NotificationManager().deleteNotification(withID: idString)
+        }
+        // clear object alerts
+        self.object?.alerts = []
+        
+        // new alerts & notifications
+        self.setupAlertsAndNotifications()
+        self.object?.alerts = NSSet(array: self.alerts)
     }
     
     

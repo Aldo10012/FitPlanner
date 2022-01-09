@@ -128,6 +128,7 @@ class WorkoutPlanVC: UIViewController {
         case .editWorkout:
             print("viewModel", viewModel.workout.exercises)
             
+            self.viewModel.object = viewModel.workout
             self.viewModel.exercises = (viewModel.workout.exercises)?.allObjects as [Exercise]
             
 
@@ -189,6 +190,7 @@ class WorkoutPlanVC: UIViewController {
         success()
         
     }
+    
 
 }
 

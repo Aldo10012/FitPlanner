@@ -93,6 +93,15 @@ struct CoreDataStack {
         }
     }
     
+    // MARK: Update Workout
+    func updateWorkout(_ workout: Workout) {
+//        workout
+        do {
+            try managedContext.save()
+        }
+        catch {}
+    }
+    
     // MARK: - Delete todo
     func deleteWorkout(_ workout: Workout) {
         do {
