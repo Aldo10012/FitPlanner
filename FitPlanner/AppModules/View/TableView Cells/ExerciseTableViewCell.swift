@@ -74,16 +74,29 @@ class ExerciseTableViewCell: UITableViewCell {
     }
     
     @objc func didChangeSets() {
+        let setsAmount: Int64
+        if setsTextField.text == "" {
+            setsAmount = 0
+        } else {
+            setsAmount = Int64(setsTextField.text!)!
+        }
+        
         delegate.didUpdateSets(
             indexPath: Int(numberLabel.text!)! - 1,
-            sets: Int64(setsTextField.text!)!
+            sets: setsAmount
         )
     }
     
     @objc func didChangeReps() {
+        let repsAmount: Int64
+        if repsTextField.text == "" {
+            repsAmount = 0
+        } else {
+            repsAmount = Int64(repsTextField.text!)!
+        }
         delegate.didUpdateReps(
             indexPath: Int(numberLabel.text!)! - 1,
-            reps: Int64(repsTextField.text!)!
+            reps: repsAmount
         )
     }
     
