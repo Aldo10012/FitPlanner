@@ -26,16 +26,6 @@ class WorkoutLogVC: UIViewController {
 
         setupViews()
         
-//        viewModel.onViewDidLoad {
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
         viewModel.onViewDidLoad {
             DispatchQueue.main.async {
                 self.tableView.reloadData()

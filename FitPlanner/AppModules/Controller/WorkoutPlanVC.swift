@@ -126,7 +126,10 @@ class WorkoutPlanVC: UIViewController {
             break
             
         case .editWorkout:
-//            print(viewModel)
+            print("viewModel", viewModel.workout.exercises)
+            
+            self.viewModel.exercises = (viewModel.workout.exercises)?.allObjects as [Exercise]
+            
 
             workoutcardView = WorkoutCardView(viewModel: viewModel)
             button.addTarget(self, action: #selector(didTapEdit), for: .touchUpInside)
@@ -200,6 +203,14 @@ extension WorkoutPlanVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId.exerciseCell) as! ExerciseTableViewCell
         cell.numberLabel.text = "\(indexPath.row + 1)"
         cell.delegate = self
+        
+        if self.type == .editWorkout {
+            let object = self.viewModel.exercises[indexPath.row]
+            cell.nameTextField.text = object.name
+            cell.repsTextField.text = String(object.reps)
+            cell.setsTextField.text = String(object.sets)
+        }
+        
         return cell
     }
     
