@@ -33,6 +33,15 @@ class WorkoutLogVC: UIViewController {
         }
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        viewModel.onViewDidLoad {
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
+//    }
+    
     
     // MARK: Selectors
     @objc func didTapCreateWorkoutButton() {
@@ -52,7 +61,7 @@ class WorkoutLogVC: UIViewController {
         createNewWorkoutButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
         
         view.addSubview(tableView)
-        tableView.anchor(top: yourWorkoutsLabel.bottomAnchor, left: view.leftAnchor, bottom: createNewWorkoutButton.topAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
+        tableView.anchor(top: yourWorkoutsLabel.bottomAnchor, left: view.leftAnchor, bottom: createNewWorkoutButton.topAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 10, paddingBottom: 20, paddingRight: 10)
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         tableView.delegate = self

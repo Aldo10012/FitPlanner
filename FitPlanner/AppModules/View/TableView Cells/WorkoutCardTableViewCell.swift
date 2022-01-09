@@ -32,7 +32,7 @@ class WorkoutCardTableViewCell: UITableViewCell {
     // MARK: Helpers
     fileprivate func setupViews() {
         addSubview(workoutCard)
-        workoutCard.anchor(left: leftAnchor, right: rightAnchor)
+        workoutCard.anchor(left: leftAnchor, right: rightAnchor, paddingLeft: 10, paddingRight: 10)
         workoutCard.centerY(inView: self)
     }
     
