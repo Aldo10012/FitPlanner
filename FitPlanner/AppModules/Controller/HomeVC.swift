@@ -11,8 +11,7 @@ import FSCalendar
 class HomeVC: UIViewController {
     
     // MARK: Properties
-    let udManager = UserDefaultManager()
-    var getStartedVC = GetStartedVC()
+    var viewModel = HomeVM()
     let getStartedDelegate = self
     
     let nextWorkoutLabel = FPLabel(title: "Your next workout", color: .primary, size: 20, weight: .medium)
@@ -32,12 +31,12 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // if user is Registered, setupUI
-        // else, navigate to GetStartedVC()
-        
+        let udManager = UserDefaultManager()
         if udManager.checkIfUserIsRegistered() {
             setupUI()
+            updateUI()
         } else {
+            let getStartedVC = GetStartedVC()
             getStartedVC.getStartedDelegate = self
             Router.presentController(from: self, to: getStartedVC, animated: false)
         }
@@ -76,6 +75,16 @@ class HomeVC: UIViewController {
         
         largetCalendarCard.calendar.delegate = self
         largetCalendarCard.calendar.dataSource = self
+    }
+    
+    fileprivate func updateUI() {
+        viewModel.updateActivityCalendar {
+            DispatchQueue.main.async {
+                for activity in self.viewModel.activity! {
+                    self.largetCalendarCard.calendar.select(activity.date)
+                }
+            }
+        }
     }
 
 }

@@ -117,5 +117,19 @@ struct CoreDataStack {
         }
     }
     
-    
+    // MARK: Get Activity
+    func getActivity() -> [Activity] {
+        
+        // Prepare fetchRequest
+        let fetchRequest = Activity.fetchRequest()
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            return result
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return []
+        }
+    }
 }

@@ -11,13 +11,13 @@ import CoreData
 // MARK: Protocols
 protocol HomePresentor {
     mutating func updateNextWorkoutCard(completion: @escaping(Result<String, String>) -> ())
-    mutating func updateActivityCalendar(completion: @escaping(Result<String, String>) -> ())
+    mutating func updateActivityCalendar(completion: @escaping() -> ())
 }
 
 protocol HomeInteractor {
     var myData: CoreDataStack { get }
     func getNextWorkout() -> Workout?
-    func getActivity() -> [Activity]?
+    func getActivity() -> [Activity]
 }
 
 
@@ -37,9 +37,10 @@ extension HomeVM: HomePresentor {
         self.nextWorkout.workout = nextWorkout
     }
     
-    mutating func updateActivityCalendar(completion: @escaping (Result<String, String>) -> ()) {
+    mutating func updateActivityCalendar(completion: @escaping () -> ()) {
         print("")
         self.activity = getActivity()
+        completion()
     }
 }
 
@@ -55,8 +56,8 @@ extension HomeVM: HomeInteractor {
         return nil
     }
     
-    func getActivity() -> [Activity]? {
-        return nil
+    func getActivity() -> [Activity] {
+        return myData.getActivity()
     }
 }
 
