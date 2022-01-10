@@ -37,6 +37,7 @@ class WorkoutPlanVC: UIViewController {
     convenience init(type: WorkoutPlanType, viewModel: WorkoutCardVM) {
         self.init()
         self.type = type
+        print("WORKOUT TYPE:", self.type!, "- init")
         modifyViewBasedOnType(viewModel: viewModel)
     }
     
@@ -111,9 +112,14 @@ class WorkoutPlanVC: UIViewController {
     
     // MARK: Check type
     fileprivate func modifyViewBasedOnType(viewModel: WorkoutCardVM) {
+        print("WORKOUT TYPE:", self.type!, "- abc")
         switch self.type {
         case .nextWorkout:
 //            print(viewModel)
+            
+            workoutNameTextField.text = viewModel.title
+            self.viewModel.object = viewModel.workout
+            self.viewModel.exercises = (viewModel.workout.exercises)?.allObjects as [Exercise]
             
             workoutcardView = WorkoutCardView(viewModel: viewModel)
             button.setTitle("Mark as done", for: .normal)
@@ -214,11 +220,29 @@ extension WorkoutPlanVC: UITableViewDelegate, UITableViewDataSource {
         cell.numberLabel.text = "\(indexPath.row + 1)"
         cell.delegate = self
         
-        if self.type == .editWorkout {
+        print("WORKOUT TYPE:", self.type!, "- ref")
+        switch self.type! {
+        case .addWorkout:
+            print("WORKOUT TYPE: add")
+            
+        case .editWorkout:
+            print("WORKOUT TYPE: edit")
             let object = self.viewModel.exercises[indexPath.row]
             cell.nameTextField.text = object.name
             cell.repsTextField.text = String(object.reps)
             cell.setsTextField.text = String(object.sets)
+            
+        case .nextWorkout:
+            print("WORKOUT TYPE: next")
+            let object = self.viewModel.exercises[indexPath.row]
+            cell.nameTextField.text = object.name
+            cell.repsTextField.text = String(object.reps)
+            cell.setsTextField.text = String(object.sets)
+            
+            cell.nameTextField.isEnabled = false
+            cell.repsTextField.isEnabled = false
+            cell.setsTextField.isEnabled = false
+            
         }
         
         return cell
