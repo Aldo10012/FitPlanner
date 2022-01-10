@@ -33,8 +33,21 @@ extension HomeVM: HomePresentor {
     
     mutating func updateNextWorkoutCard(completion: @escaping(Result<String, String>) -> ()) {
         print("")
-        let nextWorkout = getNextWorkout()
-        self.nextWorkout.workout = nextWorkout
+        let theNextWorkout = getNextWorkout()
+        if theNextWorkout == nil { completion(Result.failure("fail"))}
+        
+        self.nextWorkout.workout = theNextWorkout
+        self.nextWorkout.title = theNextWorkout?.name
+        
+        self.nextWorkout.onSun = theNextWorkout?.onSun
+        self.nextWorkout.onMon = theNextWorkout?.onMon
+        self.nextWorkout.onTue = theNextWorkout?.onTue
+        self.nextWorkout.onWed = theNextWorkout?.onWed
+        self.nextWorkout.onThu = theNextWorkout?.onThu
+        self.nextWorkout.onFri = theNextWorkout?.onFri
+        self.nextWorkout.onSat = theNextWorkout?.onSat
+        
+        completion(Result.success("success"))
     }
     
     mutating func updateActivityCalendar(completion: @escaping () -> ()) {
@@ -51,9 +64,7 @@ extension HomeVM: HomeInteractor {
     
     func getNextWorkout() -> Workout? {
         print("")
-        // TODO: get next workout
-        // if there is a workout, return it, else, return nil
-        return nil
+        return myData.getNextWorkout()
     }
     
     func getActivity() -> [Activity] {

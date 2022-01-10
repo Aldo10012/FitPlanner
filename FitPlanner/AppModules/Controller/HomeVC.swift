@@ -41,11 +41,11 @@ class HomeVC: UIViewController {
             Router.presentController(from: self, to: getStartedVC, animated: false)
         }
         
-        var formattedDate = formatter.dateFormat = "eeee"
-        print("\(formatter.string(from: Date.today()))")
+//        var formattedDate = formatter.dateFormat = "eeee"
+//        print("\(formatter.string(from: Date.today()))")
         
-        let mydata = CoreDataStack()
-        print(mydata.getNextWorkout())
+//        let mydata = CoreDataStack()
+//        print(mydata.getNextWorkout())
         
     }
 
@@ -53,7 +53,8 @@ class HomeVC: UIViewController {
     // MARK: Selectors
     @objc func didTapViewNextWorkoutButton() {
         /// need to pass viewModel of type WorkoutCardVM
-        //Router.pushToWorkoutPlan(from: self, type: .nextWorkout)
+        print("tap next workout\n", self.viewModel.nextWorkout)
+        Router.pushToWorkoutPlan(from: self, type: .nextWorkout, viewModel: self.viewModel.nextWorkout)
     }
     
     
@@ -84,6 +85,18 @@ class HomeVC: UIViewController {
     }
     
     fileprivate func updateUI() {
+        viewModel.updateNextWorkoutCard { result in
+            switch result {
+            case let .success(x):
+                DispatchQueue.main.async {
+                    self.nextWorkoutCard.workoutNameLabel.text! = self.viewModel.nextWorkout.title
+                }
+                break
+            case let.failure(y):
+                break
+            }
+        }
+        
         viewModel.updateActivityCalendar {
             DispatchQueue.main.async {
                 for activity in self.viewModel.activity! {
