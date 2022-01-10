@@ -25,6 +25,7 @@
 		636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25727851D2900BB5664 /* FPWeekButton.swift */; };
 		6394D2D72788BA740019A935 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D62788BA740019A935 /* NotificationManager.swift */; };
 		6394D2D92788D0060019A935 /* Date-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D82788D0060019A935 /* Date-ext.swift */; };
+		639F9757278BDA2E007DF038 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F9756278BDA2E007DF038 /* Result.swift */; };
 		63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */; };
 		63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */; };
 		63B21DA82784C5D800E5DCE9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DA72784C5D800E5DCE9 /* HomeVC.swift */; };
@@ -90,6 +91,7 @@
 		636CE25727851D2900BB5664 /* FPWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWeekButton.swift; sourceTree = "<group>"; };
 		6394D2D62788BA740019A935 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		6394D2D82788D0060019A935 /* Date-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-ext.swift"; sourceTree = "<group>"; };
+		639F9756278BDA2E007DF038 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		63B21DA02784C5D800E5DCE9 /* FitPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B21DA32784C5D800E5DCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63B21DA52784C5D800E5DCE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				630582C327862A180044399A /* CellId.swift */,
+				639F9756278BDA2E007DF038 /* Result.swift */,
 				630B47532787869900E6FA4B /* UserDefaultManager.swift */,
 				6394D2D62788BA740019A935 /* NotificationManager.swift */,
 			);
@@ -554,6 +557,7 @@
 			files = (
 				63B21DFB2784E3DA00E5DCE9 /* UIView-ext.swift in Sources */,
 				63B21DA82784C5D800E5DCE9 /* HomeVC.swift in Sources */,
+				639F9757278BDA2E007DF038 /* Result.swift in Sources */,
 				63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */,
 				63B21DAE2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld in Sources */,
 				636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */,

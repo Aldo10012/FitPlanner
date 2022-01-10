@@ -33,15 +33,6 @@ class WorkoutLogVC: UIViewController {
         }
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        viewModel.onViewDidLoad {
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//        }
-//    }
-    
     
     // MARK: Selectors
     @objc func didTapCreateWorkoutButton() {
@@ -115,6 +106,8 @@ extension WorkoutLogVC: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+
+// MARK: WorkoutChangedDelegate
 extension WorkoutLogVC: WorkoutChangedDelegate {
     func updateWorkoutList() {
         print("User did make a change")

@@ -47,6 +47,7 @@ class HomeVC: UIViewController {
     
     // MARK: Selectors
     @objc func didTapViewNextWorkoutButton() {
+        /// need to pass viewModel of type WorkoutCardVM
         //Router.pushToWorkoutPlan(from: self, type: .nextWorkout)
     }
     
