@@ -102,7 +102,7 @@ struct CoreDataStack {
         catch {}
     }
     
-    // MARK: - Delete todo
+    // MARK: - Delete Workout
     func deleteWorkout(_ workout: Workout) {
         do {
             try managedContext.delete(workout)
@@ -116,6 +116,23 @@ struct CoreDataStack {
             print("Could not delete. \(error), \(error.userInfo)")
         }
     }
+    
+    // MARK: Get Next Workout
+    func getNextWorkout() -> Workout? {
+        let fetchRequest = Workout.fetchRequest()
+        let futureWorkouts = NSPredicate(format: "date > %@", Date.today() as CVarArg)
+        
+        do {
+            let allWorkouts = try managedContext.fetch(fetchRequest)
+            let nextWorkout = findNextWorkout(from: allWorkouts)
+            return nextWorkout
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return nil
+        }
+    }
+    
     
     // MARK: Get Activity
     func getActivity() -> [Activity] {
@@ -132,4 +149,58 @@ struct CoreDataStack {
             return []
         }
     }
+    
+    
+    
+    
+    // MARK: Helpers
+    func findNextWorkout(from workouts: [Workout]) -> Workout? {
+//        if workouts.count == 0 { return nil }
+        
+        for workout in workouts {
+            if (checkIf(workout: workout, isOn: Date.today()) != nil) {
+                return workout
+            }
+            else if (checkIf(workout: workout, isOn: Date().skip(numOfDays: 1)) != nil) {
+                return workout
+            }
+            else if (checkIf(workout: workout, isOn: Date().skip(numOfDays: 2)) != nil) {
+                return workout
+            }
+            else if (checkIf(workout: workout, isOn: Date().skip(numOfDays: 3)) != nil) {
+                return workout
+            }
+            else if (checkIf(workout: workout, isOn: Date().skip(numOfDays: 4)) != nil) {
+                return workout
+            }
+            else if (checkIf(workout: workout, isOn: Date().skip(numOfDays: 5)) != nil) {
+                return workout
+            }
+            else if (checkIf(workout: workout, isOn: Date().skip(numOfDays: 6)) != nil) {
+                return workout
+            }
+            
+        }
+        
+        return nil
+    }
+    
+    func checkIf(workout: Workout, isOn dateSelected: Date) -> Workout? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "eeee"
+        
+        let dateSelected = getDateAsString(dateSelected)
+        
+        let listofAlerts = (workout.alerts)?.allObjects as! [Alert]
+        for alert in listofAlerts {
+            let yourWorkoutDate = getDateAsString(alert.date!)
+            
+            if dateSelected == yourWorkoutDate {
+                return workout
+            }
+        }
+        
+        return nil
+    }
+    
 }

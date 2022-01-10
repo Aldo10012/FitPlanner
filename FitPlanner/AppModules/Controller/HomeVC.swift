@@ -41,6 +41,12 @@ class HomeVC: UIViewController {
             Router.presentController(from: self, to: getStartedVC, animated: false)
         }
         
+        var formattedDate = formatter.dateFormat = "eeee"
+        print("\(formatter.string(from: Date.today()))")
+        
+        let mydata = CoreDataStack()
+        print(mydata.getNextWorkout())
+        
     }
 
     
@@ -105,5 +111,6 @@ extension HomeVC: FSCalendarDataSource, FSCalendarDelegate{
 extension HomeVC: GetStartedDelegate {
     func didRegister() {
         setupUI()
+        updateUI()
     }
 }
