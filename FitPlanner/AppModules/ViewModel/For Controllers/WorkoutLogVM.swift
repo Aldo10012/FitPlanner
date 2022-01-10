@@ -12,6 +12,7 @@ import CoreData
 // MARK: Protocols
 protocol WorkoutLogPresentor {
     mutating func onViewDidLoad(completion: @escaping() -> ())
+    mutating func onWorkoutsWereChanged(completion: @escaping() -> ())
 }
 
 protocol WorkoutLogInteractor {
@@ -34,6 +35,23 @@ extension WorkoutLogVM: WorkoutLogPresentor {
     mutating func onViewDidLoad(completion: @escaping() -> ()) {
         
         // Get workouts from Interactor
+        let usersWorkouts = getWorkouts()
+        
+        // Manipulate viewModel as needed
+        for w in usersWorkouts {
+            yourWorkouts.append(
+                WorkoutCardVM(workout: w, title: w.name, onSun: w.onSun, onMon: w.onMon, onTue: w.onTue, onWed: w.onWed, onThu: w.onThu, onFri: w.onFri, onSat: w.onSat)
+            )
+        }
+        
+        // Update View
+        completion()
+    }
+    
+    mutating func onWorkoutsWereChanged(completion: @escaping() -> ()) {
+        
+        // Get workouts from Interactor
+        yourWorkouts = []
         let usersWorkouts = getWorkouts()
         
         // Manipulate viewModel as needed

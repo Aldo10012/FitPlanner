@@ -114,3 +114,16 @@ extension WorkoutLogVC: UITableViewDelegate, UITableViewDataSource {
     
     
 }
+
+extension WorkoutLogVC: WorkoutChangedDelegate {
+    func updateWorkoutList() {
+        print("User did make a change")
+        viewModel.onWorkoutsWereChanged {
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
+}

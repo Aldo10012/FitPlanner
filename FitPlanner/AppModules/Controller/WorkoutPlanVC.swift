@@ -14,12 +14,18 @@ enum WorkoutPlanType {
     case editWorkout
 }
 
+protocol WorkoutChangedDelegate {
+    func updateWorkoutList()
+}
+
 class WorkoutPlanVC: UIViewController {
 
     // MARK: - Properties    
     var type: WorkoutPlanType!
     var viewModel = WorkoutPlanVM()
     let myData = CoreDataStack()
+    
+    var delegate: WorkoutChangedDelegate!
     
     var workoutNameTextField = FPTextField(placeholder: "Workout name", size: 30, weight: .light)
     var workoutcardView: WorkoutCardView!
@@ -54,6 +60,7 @@ class WorkoutPlanVC: UIViewController {
 //        print("did Tap Add")
         getViewStateAndPassToViewModel { [self] in
             viewModel.createWorkout()
+            delegate.updateWorkoutList()
             Router.popController(self)
         } fail: {
             AlertManager.showFillInExercises(on: self)
@@ -64,6 +71,7 @@ class WorkoutPlanVC: UIViewController {
 //        print("did Tap Edit")
         getViewStateAndPassToViewModel { [self] in
             viewModel.editWorkout()
+            delegate.updateWorkoutList()
             Router.popController(self)
         } fail: {
             AlertManager.showFillInExercises(on: self)
