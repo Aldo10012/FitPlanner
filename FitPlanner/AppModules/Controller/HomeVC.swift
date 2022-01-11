@@ -48,6 +48,21 @@ class HomeVC: UIViewController {
 //        print(mydata.getNextWorkout())
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.updateNextWorkoutCard { result in
+            switch result {
+            case let .success(x):
+                DispatchQueue.main.async {
+                    self.nextWorkoutCard.workoutNameLabel.text! = self.viewModel.nextWorkout.title
+                    self.nextWorkoutCard.dateLabel.text! = self.viewModel.nextWorkoutDate
+                }
+                break
+            case let.failure(y):
+                break
+            }
+        }
+    }
 
     
     // MARK: Selectors
