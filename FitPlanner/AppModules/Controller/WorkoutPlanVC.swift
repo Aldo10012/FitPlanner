@@ -124,6 +124,12 @@ class WorkoutPlanVC: UIViewController {
             workoutcardView = WorkoutCardView(viewModel: viewModel)
             button.setTitle("Mark as done", for: .normal)
             button.addTarget(self, action: #selector(didTapMarkAsDone), for: .touchUpInside)
+            
+            if Date.today() != dateOfNextWorkout {
+                button.isEnabled = false
+                button.checkPrimaryStatus()
+            }
+            
             workoutNameTextField.isEnabled = false
             break
         
