@@ -105,3 +105,4 @@ extension Date {
     }
 }
 
+var dateOfNextWorkout: Date = Date()

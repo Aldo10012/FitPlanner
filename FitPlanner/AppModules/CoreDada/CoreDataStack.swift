@@ -189,13 +189,14 @@ struct CoreDataStack {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "eeee"
         
-        let dateSelected = getDateAsString(dateSelected)
+        let selectedDate = getDateAsString(dateSelected)
         
         let listofAlerts = (workout.alerts)?.allObjects as! [Alert]
         for alert in listofAlerts {
             let yourWorkoutDate = getDateAsString(alert.date!)
             
-            if dateSelected == yourWorkoutDate {
+            if selectedDate == yourWorkoutDate {
+                dateOfNextWorkout = dateSelected
                 return workout
             }
         }
@@ -204,3 +205,5 @@ struct CoreDataStack {
     }
     
 }
+
+

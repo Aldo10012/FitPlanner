@@ -25,6 +25,8 @@ protocol HomeInteractor {
 struct HomeVM {
     var nextWorkout = WorkoutCardVM()
     var activity: [Activity]? = []
+    
+    var nextWorkoutDate: String = ""
 }
 
 
@@ -46,6 +48,9 @@ extension HomeVM: HomePresentor {
         self.nextWorkout.onThu = theNextWorkout?.onThu
         self.nextWorkout.onFri = theNextWorkout?.onFri
         self.nextWorkout.onSat = theNextWorkout?.onSat
+        
+        print( getDateAsStringLong(dateOfNextWorkout) )
+        self.nextWorkoutDate = getDateAsStringLong(dateOfNextWorkout)
         
         completion(Result.success("success"))
     }

@@ -90,6 +90,7 @@ class HomeVC: UIViewController {
             case let .success(x):
                 DispatchQueue.main.async {
                     self.nextWorkoutCard.workoutNameLabel.text! = self.viewModel.nextWorkout.title
+                    self.nextWorkoutCard.dateLabel.text! = self.viewModel.nextWorkoutDate
                 }
                 break
             case let.failure(y):
