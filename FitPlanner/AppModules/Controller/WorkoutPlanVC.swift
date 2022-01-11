@@ -125,7 +125,7 @@ class WorkoutPlanVC: UIViewController {
             button.setTitle("Mark as done", for: .normal)
             button.addTarget(self, action: #selector(didTapMarkAsDone), for: .touchUpInside)
             
-            if Date.today() != dateOfNextWorkout {
+            if getDateAsString(Date.today()) != getDateAsString(dateOfNextWorkout) {
                 button.isEnabled = false
                 button.checkPrimaryStatus()
             }
