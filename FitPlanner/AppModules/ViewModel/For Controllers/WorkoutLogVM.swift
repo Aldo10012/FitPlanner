@@ -22,7 +22,7 @@ protocol WorkoutLogInteractor {
 
 // MARK: ViewModel
 struct WorkoutLogVM {
-    fileprivate var myData = CoreDataStack()
+    fileprivate var myData = CoreDataStack.shared
 
     
     var yourWorkouts: [WorkoutCardVM] = []

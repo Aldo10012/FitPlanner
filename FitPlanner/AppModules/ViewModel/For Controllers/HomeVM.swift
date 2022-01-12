@@ -15,7 +15,6 @@ protocol HomePresentor {
 }
 
 protocol HomeInteractor {
-    var myData: CoreDataStack { get }
     func getNextWorkout() -> Workout?
     func getActivity() -> [Activity]
 }
@@ -23,6 +22,7 @@ protocol HomeInteractor {
 
 // MARK: ViewModel
 struct HomeVM {
+    var myData = CoreDataStack.shared
     var nextWorkout = WorkoutCardVM()
     var activity: [Activity]? = []
     
@@ -65,7 +65,6 @@ extension HomeVM: HomePresentor {
 
 // MARK: Interactor
 extension HomeVM: HomeInteractor {
-    var myData: CoreDataStack { return CoreDataStack() }
     
     func getNextWorkout() -> Workout? {
         print("")

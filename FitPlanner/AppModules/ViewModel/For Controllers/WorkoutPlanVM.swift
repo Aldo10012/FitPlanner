@@ -22,7 +22,7 @@ protocol WorkoutPlanPresentor {
 
 // MARK: ViewModel
 struct WorkoutPlanVM {
-    fileprivate var myData = CoreDataStack()
+    fileprivate var myData = CoreDataStack.shared
     var object: Workout?
     
     var name: String?

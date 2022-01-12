@@ -19,7 +19,7 @@ protocol ProfilePresentorProtocol {
 
 // MARK: View Model
 struct ProfileVM {
-    fileprivate let myData = CoreDataStack()
+    fileprivate let myData = CoreDataStack.shared
     
     var profilePic: UIImage?
     var userName: String?

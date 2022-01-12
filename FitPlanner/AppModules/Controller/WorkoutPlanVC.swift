@@ -23,7 +23,7 @@ class WorkoutPlanVC: UIViewController {
     // MARK: - Properties    
     var type: WorkoutPlanType!
     var viewModel = WorkoutPlanVM()
-    let myData = CoreDataStack()
+    let myData = CoreDataStack.shared
     
     var delegate: WorkoutChangedDelegate!
     
