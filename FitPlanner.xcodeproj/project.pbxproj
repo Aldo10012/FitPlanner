@@ -61,6 +61,7 @@
 		63BD4B28278F63FD00DDA2F4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F9756278BDA2E007DF038 /* Result.swift */; };
 		63BD4B29278F640000DDA2F4 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B47532787869900E6FA4B /* UserDefaultManager.swift */; };
 		63BD4B2A278F640300DDA2F4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D62788BA740019A935 /* NotificationManager.swift */; };
+		63BD4B2B278F6B7A00DDA2F4 /* UIColor-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */; };
 		863B1A4C3DD9E776E043DB9B /* Pods_FitPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -228,7 +229,6 @@
 		630B4755278789EC00E6FA4B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
 				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
 				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
 				630582C327862A180044399A /* CellId.swift */,
@@ -394,6 +394,7 @@
 				639F9756278BDA2E007DF038 /* Result.swift */,
 				630B47532787869900E6FA4B /* UserDefaultManager.swift */,
 				6394D2D62788BA740019A935 /* NotificationManager.swift */,
+				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -662,6 +663,7 @@
 				63BD4B2A278F640300DDA2F4 /* NotificationManager.swift in Sources */,
 				63BD4B25278F63F400DDA2F4 /* FitPlanner.xcdatamodeld in Sources */,
 				637D87C8278E040C00359073 /* FitPlannerWidgets.swift in Sources */,
+				63BD4B2B278F6B7A00DDA2F4 /* UIColor-ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
