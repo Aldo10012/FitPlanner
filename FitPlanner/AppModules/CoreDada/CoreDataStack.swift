@@ -15,11 +15,25 @@ struct CoreDataStack {
     
     static let shared = CoreDataStack()
     
-    let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//    let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+//    lazy var managedContext = self.persistentContainer.viewContext
+    
+    let persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "FitPlanner")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
     
     
     // MARK: Create user
     func registerNewUser(userName: String, height: Double, weight: Double, pictureData: Data) {
+        let managedContext = persistentContainer.viewContext
+        
         let newUser = User(context: managedContext)
         newUser.name = userName
         newUser.height = height
@@ -37,6 +51,7 @@ struct CoreDataStack {
     
     // MARK: Get user
     func getUser() -> User? {
+        let managedContext = persistentContainer.viewContext
         
         // Prepare fetchRequest
         let fetchRequest = User.fetchRequest()
@@ -57,6 +72,8 @@ struct CoreDataStack {
                        onSun: Bool, onMon: Bool, onTue: Bool, onWed: Bool, onThu: Bool, onFri: Bool, onSat: Bool,
                        alerts: [Alert], exercises: [Exercise]
     ) {
+        let managedContext = persistentContainer.viewContext
+        
         let newWorkout = Workout(context: managedContext)
         newWorkout.name = workoutName
         newWorkout.onSun = onSun
@@ -81,6 +98,7 @@ struct CoreDataStack {
     
     // MARK: Get workouts
     func getWorkouts() -> [Workout] {
+        let managedContext = persistentContainer.viewContext
         let fetchRequest = Workout.fetchRequest()
         
         do {
@@ -95,6 +113,7 @@ struct CoreDataStack {
     
     // MARK: Update Workout
     func updateWorkout(_ workout: Workout) {
+        let managedContext = persistentContainer.viewContext
 //        workout
         do {
             try managedContext.save()
@@ -104,6 +123,7 @@ struct CoreDataStack {
     
     // MARK: - Delete Workout
     func deleteWorkout(_ workout: Workout) {
+        let managedContext = persistentContainer.viewContext
         do {
             try managedContext.delete(workout)
             for alert in workout.alerts! {
@@ -119,6 +139,7 @@ struct CoreDataStack {
     
     // MARK: Get Next Workout
     func getNextWorkout() -> Workout? {
+        let managedContext = persistentContainer.viewContext
         let fetchRequest = Workout.fetchRequest()
         let futureWorkouts = NSPredicate(format: "date > %@", Date.today() as CVarArg)
         
@@ -136,6 +157,7 @@ struct CoreDataStack {
     
     // MARK: Get Activity
     func getActivity() -> [Activity] {
+        let managedContext = persistentContainer.viewContext
         
         // Prepare fetchRequest
         let fetchRequest = Activity.fetchRequest()

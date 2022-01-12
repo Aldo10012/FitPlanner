@@ -80,7 +80,7 @@ class WorkoutPlanVC: UIViewController {
     }
     
     @objc func didTapAddExerciseButton() {
-        let newExercise = Exercise(context: myData.managedContext)
+        let newExercise = Exercise(context: myData.persistentContainer.viewContext)
         viewModel.exercises.append(newExercise)
         print("1", viewModel.exercises)
         addExerciseCard.tableView.reloadData()
