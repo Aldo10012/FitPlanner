@@ -55,6 +55,12 @@
 		63B21DFB2784E3DA00E5DCE9 /* UIView-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */; };
 		63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFC2784E71A00E5DCE9 /* FPButton.swift */; };
 		63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */; };
+		63BD4B25278F63F400DDA2F4 /* FitPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DAC2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld */; };
+		63BD4B26278F63F800DDA2F4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */; };
+		63BD4B27278F63FB00DDA2F4 /* Date-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D82788D0060019A935 /* Date-ext.swift */; };
+		63BD4B28278F63FD00DDA2F4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F9756278BDA2E007DF038 /* Result.swift */; };
+		63BD4B29278F640000DDA2F4 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B47532787869900E6FA4B /* UserDefaultManager.swift */; };
+		63BD4B2A278F640300DDA2F4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D62788BA740019A935 /* NotificationManager.swift */; };
 		863B1A4C3DD9E776E043DB9B /* Pods_FitPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -225,7 +231,7 @@
 				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
 				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
 				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
-				6394D2D82788D0060019A935 /* Date-ext.swift */,
+				630582C327862A180044399A /* CellId.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 		63B21D972784C5D800E5DCE9 = {
 			isa = PBXGroup;
 			children = (
+				63BD4B24278F63B900DDA2F4 /* Shared */,
 				63B21DA22784C5D800E5DCE9 /* FitPlanner */,
 				637D87C6278E040C00359073 /* FitPlannerWidgets */,
 				63B21DBC2784C5DB00E5DCE9 /* FitPlannerTests */,
@@ -288,7 +295,6 @@
 				63B21DD72784C83700E5DCE9 /* Resources */,
 				63B21DE52784D1D100E5DCE9 /* AppModules */,
 				630B4755278789EC00E6FA4B /* Extensions */,
-				63B21DE62784D23D00E5DCE9 /* Helpers */,
 			);
 			path = FitPlanner;
 			sourceTree = "<group>";
@@ -373,7 +379,6 @@
 		63B21DE52784D1D100E5DCE9 /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
-				63B21DD82784C85C00E5DCE9 /* CoreDada */,
 				63B21DD92784C86C00E5DCE9 /* View */,
 				63B21DDA2784C88200E5DCE9 /* Controller */,
 				636CE24F278508A200BB5664 /* ViewModel */,
@@ -385,7 +390,7 @@
 		63B21DE62784D23D00E5DCE9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				630582C327862A180044399A /* CellId.swift */,
+				6394D2D82788D0060019A935 /* Date-ext.swift */,
 				639F9756278BDA2E007DF038 /* Result.swift */,
 				630B47532787869900E6FA4B /* UserDefaultManager.swift */,
 				6394D2D62788BA740019A935 /* NotificationManager.swift */,
@@ -415,6 +420,15 @@
 				630582D027868A9B0044399A /* AddExerciseCardView.swift */,
 			);
 			path = "Container Views";
+			sourceTree = "<group>";
+		};
+		63BD4B24278F63B900DDA2F4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DD82784C85C00E5DCE9 /* CoreDada */,
+				63B21DE62784D23D00E5DCE9 /* Helpers */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		708B87A3BFAE443449752F82 /* Frameworks */ = {
@@ -641,6 +655,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BD4B29278F640000DDA2F4 /* UserDefaultManager.swift in Sources */,
+				63BD4B26278F63F800DDA2F4 /* CoreDataStack.swift in Sources */,
+				63BD4B28278F63FD00DDA2F4 /* Result.swift in Sources */,
+				63BD4B27278F63FB00DDA2F4 /* Date-ext.swift in Sources */,
+				63BD4B2A278F640300DDA2F4 /* NotificationManager.swift in Sources */,
+				63BD4B25278F63F400DDA2F4 /* FitPlanner.xcdatamodeld in Sources */,
 				637D87C8278E040C00359073 /* FitPlannerWidgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
