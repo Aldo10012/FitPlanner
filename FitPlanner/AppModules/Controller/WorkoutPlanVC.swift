@@ -99,9 +99,10 @@ class WorkoutPlanVC: UIViewController {
         workoutNameTextField.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 30, paddingLeft: 20)
         
         workoutcardView.anchor(top: workoutNameTextField.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
-                               paddingTop: 30, paddingLeft: 20, paddingRight: 30)
+                               paddingTop: 30, paddingLeft: 20, paddingRight: 20)
         
         button.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
+        button.layer.zPosition = 2
         
         addExerciseCard.addStandardShadow()
         addExerciseCard.anchor(top: workoutcardView.bottomAnchor, left: workoutcardView.leftAnchor, right: workoutcardView.rightAnchor, paddingTop: 30, height: 250)
