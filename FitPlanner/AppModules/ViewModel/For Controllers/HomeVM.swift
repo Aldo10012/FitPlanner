@@ -36,7 +36,12 @@ extension HomeVM: HomePresentor {
     mutating func updateNextWorkoutCard(completion: @escaping(Result<String, String>) -> ()) {
         print("")
         let theNextWorkout = getNextWorkout()
-        if theNextWorkout == nil { completion(Result.failure("fail"))}
+        print(theNextWorkout)
+        if theNextWorkout == nil {
+            print("did fail")
+            completion(Result.failure("fail"))
+            return
+        }
         
         self.nextWorkout.workout = theNextWorkout
         self.nextWorkout.title = theNextWorkout?.name

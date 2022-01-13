@@ -104,6 +104,7 @@ class HomeVC: UIViewController {
             switch result {
             case let .success(x):
                 DispatchQueue.main.async {
+                    print("next workout\n", self.viewModel.nextWorkout)
                     self.nextWorkoutCard.workoutNameLabel.text! = self.viewModel.nextWorkout.title
                     self.nextWorkoutCard.dateLabel.text! = self.viewModel.nextWorkoutDate
                 }

@@ -13,7 +13,6 @@ import UIKit
 
 class NSCustomPersistentContainer: NSPersistentContainer {
     // https://medium.com/@manibatra23/sharing-data-using-core-data-ios-app-and-extension-fb0a176eaee9
-    // not sure if this will help. 
     override open class func defaultDirectoryURL() -> URL {
         var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alberto-Dominguez.FitPlanner")
         storeURL = storeURL?.appendingPathComponent("FitPlanner.sqlite")
@@ -32,7 +31,7 @@ struct CoreDataStack {
 //    lazy var managedContext = self.persistentContainer.viewContext
     
     let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "FitPlanner")
+        let container = NSCustomPersistentContainer(name: "FitPlanner")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
