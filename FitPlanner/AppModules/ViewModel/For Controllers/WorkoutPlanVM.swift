@@ -22,7 +22,7 @@ protocol WorkoutPlanPresentor {
 
 // MARK: ViewModel
 struct WorkoutPlanVM {
-    fileprivate var myData = CoreDataStack()
+    fileprivate var myData = CoreDataStack.shared
     var object: Workout?
     
     var name: String?
@@ -94,7 +94,7 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
         
         func createAndAppendAlert(dayOfWeek: Weekday) {
             let date = Date.today().next(dayOfWeek)
-            let newAlert = Alert(context: myData.managedContext)
+            let newAlert = Alert(context: myData.persistentContainer.viewContext)
             newAlert.date = date
             alerts.append(newAlert)
         }

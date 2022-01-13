@@ -15,7 +15,6 @@ protocol HomePresentor {
 }
 
 protocol HomeInteractor {
-    var myData: CoreDataStack { get }
     func getNextWorkout() -> Workout?
     func getActivity() -> [Activity]
 }
@@ -23,6 +22,7 @@ protocol HomeInteractor {
 
 // MARK: ViewModel
 struct HomeVM {
+    var myData = CoreDataStack.shared
     var nextWorkout = WorkoutCardVM()
     var activity: [Activity]? = []
     
@@ -36,7 +36,12 @@ extension HomeVM: HomePresentor {
     mutating func updateNextWorkoutCard(completion: @escaping(Result<String, String>) -> ()) {
         print("")
         let theNextWorkout = getNextWorkout()
-        if theNextWorkout == nil { completion(Result.failure("fail"))}
+        print(theNextWorkout)
+        if theNextWorkout == nil {
+            print("did fail")
+            completion(Result.failure("fail"))
+            return
+        }
         
         self.nextWorkout.workout = theNextWorkout
         self.nextWorkout.title = theNextWorkout?.name
@@ -65,7 +70,6 @@ extension HomeVM: HomePresentor {
 
 // MARK: Interactor
 extension HomeVM: HomeInteractor {
-    var myData: CoreDataStack { return CoreDataStack() }
     
     func getNextWorkout() -> Workout? {
         print("")

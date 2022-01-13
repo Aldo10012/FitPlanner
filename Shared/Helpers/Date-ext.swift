@@ -99,6 +99,14 @@ func getDateAsStringLong(_ date: Date) -> String {
   return dateAsString
 }
 
+func getMonthAndDateAsString(_ date: Date) -> String {
+  let dateFormatter = DateFormatter()
+  dateFormatter.dateFormat = "MMMM dd"
+  let dateAsString = dateFormatter.string(from: date)
+
+  return dateAsString
+}
+
 extension Date {
     func skip(numOfDays num: Int)-> Date {
         return Calendar.current.date(byAdding: .day, value: num, to: Date.today())!

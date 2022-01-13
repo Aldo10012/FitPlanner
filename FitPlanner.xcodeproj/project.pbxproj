@@ -23,6 +23,10 @@
 		636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE253278509B700BB5664 /* LargeCalendarView.swift */; };
 		636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* WorkoutCardView.swift */; };
 		636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25727851D2900BB5664 /* FPWeekButton.swift */; };
+		637D87C3278E040C00359073 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637D87C2278E040C00359073 /* WidgetKit.framework */; };
+		637D87C5278E040C00359073 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637D87C4278E040C00359073 /* SwiftUI.framework */; };
+		637D87CA278E040D00359073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637D87C9278E040D00359073 /* Assets.xcassets */; };
+		637D87CE278E040D00359073 /* FitPlannerWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 637D87C1278E040C00359073 /* FitPlannerWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6394D2D72788BA740019A935 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D62788BA740019A935 /* NotificationManager.swift */; };
 		6394D2D92788D0060019A935 /* Date-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D82788D0060019A935 /* Date-ext.swift */; };
 		639F9757278BDA2E007DF038 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F9756278BDA2E007DF038 /* Result.swift */; };
@@ -50,10 +54,28 @@
 		63B21DFB2784E3DA00E5DCE9 /* UIView-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */; };
 		63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFC2784E71A00E5DCE9 /* FPButton.swift */; };
 		63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */; };
+		63BD4B25278F63F400DDA2F4 /* FitPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DAC2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld */; };
+		63BD4B26278F63F800DDA2F4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */; };
+		63BD4B27278F63FB00DDA2F4 /* Date-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D82788D0060019A935 /* Date-ext.swift */; };
+		63BD4B28278F63FD00DDA2F4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F9756278BDA2E007DF038 /* Result.swift */; };
+		63BD4B29278F640000DDA2F4 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B47532787869900E6FA4B /* UserDefaultManager.swift */; };
+		63BD4B2A278F640300DDA2F4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D62788BA740019A935 /* NotificationManager.swift */; };
+		63BD4B2B278F6B7A00DDA2F4 /* UIColor-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */; };
+		63BD4B61278F9EF900DDA2F4 /* SmallWIdget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5D278F9C6D00DDA2F4 /* SmallWIdget.swift */; };
+		63BD4B62278F9F0100DDA2F4 /* SmallWIdgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B59278F9C4A00DDA2F4 /* SmallWIdgetEntry.swift */; };
+		63BD4B64278F9F0D00DDA2F4 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */; };
+		63BD4B66278FB46900DDA2F4 /* SmallWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5B278F9C6300DDA2F4 /* SmallWidgetTimeline.swift */; };
 		863B1A4C3DD9E776E043DB9B /* Pods_FitPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		637D87CC278E040D00359073 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63B21D982784C5D800E5DCE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 637D87C0278E040C00359073;
+			remoteInfo = FitPlannerWidgetsExtension;
+		};
 		63B21DBA2784C5DB00E5DCE9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63B21D982784C5D800E5DCE9 /* Project object */;
@@ -69,6 +91,20 @@
 			remoteInfo = FitPlanner;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		637D87CF278E040D00359073 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				637D87CE278E040D00359073 /* FitPlannerWidgetsExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +125,11 @@
 		636CE253278509B700BB5664 /* LargeCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCalendarView.swift; sourceTree = "<group>"; };
 		636CE25527851C1300BB5664 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
 		636CE25727851D2900BB5664 /* FPWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWeekButton.swift; sourceTree = "<group>"; };
+		637D87C1278E040C00359073 /* FitPlannerWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FitPlannerWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		637D87C2278E040C00359073 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		637D87C4278E040C00359073 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		637D87C9278E040D00359073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		637D87CB278E040D00359073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6394D2D62788BA740019A935 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		6394D2D82788D0060019A935 /* Date-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-ext.swift"; sourceTree = "<group>"; };
 		639F9756278BDA2E007DF038 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -120,10 +161,25 @@
 		63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-ext.swift"; sourceTree = "<group>"; };
 		63B21DFC2784E71A00E5DCE9 /* FPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPButton.swift; sourceTree = "<group>"; };
 		63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextWorkoutCard.swift; sourceTree = "<group>"; };
+		63BD4B59278F9C4A00DDA2F4 /* SmallWIdgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWIdgetEntry.swift; sourceTree = "<group>"; };
+		63BD4B5B278F9C6300DDA2F4 /* SmallWidgetTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetTimeline.swift; sourceTree = "<group>"; };
+		63BD4B5D278F9C6D00DDA2F4 /* SmallWIdget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWIdget.swift; sourceTree = "<group>"; };
+		63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
+		63BD4B6A278FBA0500DDA2F4 /* FitPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlanner.entitlements; sourceTree = "<group>"; };
+		63BD4B6B278FBA0C00DDA2F4 /* FitPlannerWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlannerWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		800B54CB5EBAA63B1536A4A6 /* Pods-FitPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitPlanner.debug.xcconfig"; path = "Target Support Files/Pods-FitPlanner/Pods-FitPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		637D87BE278E040C00359073 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				637D87C5278E040C00359073 /* SwiftUI.framework in Frameworks */,
+				637D87C3278E040C00359073 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63B21D9D2784C5D800E5DCE9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,10 +237,9 @@
 		630B4755278789EC00E6FA4B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
 				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
 				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
-				6394D2D82788D0060019A935 /* Date-ext.swift */,
+				630582C327862A180044399A /* CellId.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,10 +261,23 @@
 			path = "Calendar Views";
 			sourceTree = "<group>";
 		};
+		637D87C6278E040C00359073 /* FitPlannerWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				63BD4B58278F9C3200DDA2F4 /* Small WIdget */,
+				637D87C9278E040D00359073 /* Assets.xcassets */,
+				637D87CB278E040D00359073 /* Info.plist */,
+			);
+			path = FitPlannerWidgets;
+			sourceTree = "<group>";
+		};
 		63B21D972784C5D800E5DCE9 = {
 			isa = PBXGroup;
 			children = (
+				63BD4B6B278FBA0C00DDA2F4 /* FitPlannerWidgetsExtension.entitlements */,
+				63BD4B24278F63B900DDA2F4 /* Shared */,
 				63B21DA22784C5D800E5DCE9 /* FitPlanner */,
+				637D87C6278E040C00359073 /* FitPlannerWidgets */,
 				63B21DBC2784C5DB00E5DCE9 /* FitPlannerTests */,
 				63B21DC62784C5DB00E5DCE9 /* FitPlannerUITests */,
 				63B21DA12784C5D800E5DCE9 /* Products */,
@@ -224,6 +292,7 @@
 				63B21DA02784C5D800E5DCE9 /* FitPlanner.app */,
 				63B21DB92784C5DB00E5DCE9 /* FitPlannerTests.xctest */,
 				63B21DC32784C5DB00E5DCE9 /* FitPlannerUITests.xctest */,
+				637D87C1278E040C00359073 /* FitPlannerWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,11 +300,11 @@
 		63B21DA22784C5D800E5DCE9 /* FitPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				63BD4B6A278FBA0500DDA2F4 /* FitPlanner.entitlements */,
 				63B21DD62784C81300E5DCE9 /* Setup */,
 				63B21DD72784C83700E5DCE9 /* Resources */,
 				63B21DE52784D1D100E5DCE9 /* AppModules */,
 				630B4755278789EC00E6FA4B /* Extensions */,
-				63B21DE62784D23D00E5DCE9 /* Helpers */,
 			);
 			path = FitPlanner;
 			sourceTree = "<group>";
@@ -320,7 +389,6 @@
 		63B21DE52784D1D100E5DCE9 /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
-				63B21DD82784C85C00E5DCE9 /* CoreDada */,
 				63B21DD92784C86C00E5DCE9 /* View */,
 				63B21DDA2784C88200E5DCE9 /* Controller */,
 				636CE24F278508A200BB5664 /* ViewModel */,
@@ -332,10 +400,11 @@
 		63B21DE62784D23D00E5DCE9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				630582C327862A180044399A /* CellId.swift */,
+				6394D2D82788D0060019A935 /* Date-ext.swift */,
 				639F9756278BDA2E007DF038 /* Result.swift */,
 				630B47532787869900E6FA4B /* UserDefaultManager.swift */,
 				6394D2D62788BA740019A935 /* NotificationManager.swift */,
+				63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -364,10 +433,32 @@
 			path = "Container Views";
 			sourceTree = "<group>";
 		};
+		63BD4B24278F63B900DDA2F4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				63B21DD82784C85C00E5DCE9 /* CoreDada */,
+				63B21DE62784D23D00E5DCE9 /* Helpers */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		63BD4B58278F9C3200DDA2F4 /* Small WIdget */ = {
+			isa = PBXGroup;
+			children = (
+				63BD4B59278F9C4A00DDA2F4 /* SmallWIdgetEntry.swift */,
+				63BD4B5B278F9C6300DDA2F4 /* SmallWidgetTimeline.swift */,
+				63BD4B5D278F9C6D00DDA2F4 /* SmallWIdget.swift */,
+				63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */,
+			);
+			path = "Small WIdget";
+			sourceTree = "<group>";
+		};
 		708B87A3BFAE443449752F82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */,
+				637D87C2278E040C00359073 /* WidgetKit.framework */,
+				637D87C4278E040C00359073 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -384,6 +475,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		637D87C0278E040C00359073 /* FitPlannerWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 637D87D2278E040D00359073 /* Build configuration list for PBXNativeTarget "FitPlannerWidgetsExtension" */;
+			buildPhases = (
+				637D87BD278E040C00359073 /* Sources */,
+				637D87BE278E040C00359073 /* Frameworks */,
+				637D87BF278E040C00359073 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FitPlannerWidgetsExtension;
+			productName = FitPlannerWidgetsExtension;
+			productReference = 637D87C1278E040C00359073 /* FitPlannerWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		63B21D9F2784C5D800E5DCE9 /* FitPlanner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63B21DCD2784C5DB00E5DCE9 /* Build configuration list for PBXNativeTarget "FitPlanner" */;
@@ -393,10 +501,12 @@
 				63B21D9D2784C5D800E5DCE9 /* Frameworks */,
 				63B21D9E2784C5D800E5DCE9 /* Resources */,
 				4F96CC5FA31D7C2FDF91B77E /* [CP] Embed Pods Frameworks */,
+				637D87CF278E040D00359073 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				637D87CD278E040D00359073 /* PBXTargetDependency */,
 			);
 			name = FitPlanner;
 			productName = FitPlanner;
@@ -446,9 +556,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
+					637D87C0278E040C00359073 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					63B21D9F2784C5D800E5DCE9 = {
 						CreatedOnToolsVersion = 13.1;
 					};
@@ -478,11 +591,20 @@
 				63B21D9F2784C5D800E5DCE9 /* FitPlanner */,
 				63B21DB82784C5DB00E5DCE9 /* FitPlannerTests */,
 				63B21DC22784C5DB00E5DCE9 /* FitPlannerUITests */,
+				637D87C0278E040C00359073 /* FitPlannerWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		637D87BF278E040C00359073 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				637D87CA278E040D00359073 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63B21D9E2784C5D800E5DCE9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -551,6 +673,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		637D87BD278E040C00359073 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63BD4B66278FB46900DDA2F4 /* SmallWidgetTimeline.swift in Sources */,
+				63BD4B29278F640000DDA2F4 /* UserDefaultManager.swift in Sources */,
+				63BD4B26278F63F800DDA2F4 /* CoreDataStack.swift in Sources */,
+				63BD4B28278F63FD00DDA2F4 /* Result.swift in Sources */,
+				63BD4B64278F9F0D00DDA2F4 /* SmallWidgetView.swift in Sources */,
+				63BD4B27278F63FB00DDA2F4 /* Date-ext.swift in Sources */,
+				63BD4B2A278F640300DDA2F4 /* NotificationManager.swift in Sources */,
+				63BD4B25278F63F400DDA2F4 /* FitPlanner.xcdatamodeld in Sources */,
+				63BD4B62278F9F0100DDA2F4 /* SmallWIdgetEntry.swift in Sources */,
+				63BD4B2B278F6B7A00DDA2F4 /* UIColor-ext.swift in Sources */,
+				63BD4B61278F9EF900DDA2F4 /* SmallWIdget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		63B21D9C2784C5D800E5DCE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,6 +756,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		637D87CD278E040D00359073 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 637D87C0278E040C00359073 /* FitPlannerWidgetsExtension */;
+			targetProxy = 637D87CC278E040D00359073 /* PBXContainerItemProxy */;
+		};
 		63B21DBB2784C5DB00E5DCE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 63B21D9F2784C5D800E5DCE9 /* FitPlanner */;
@@ -640,6 +785,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		637D87D0278E040D00359073 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = FitPlannerWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BS4YM2JJ65;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FitPlannerWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FitPlannerWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Alberto-Dominguez.FitPlanner.FitPlannerWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		637D87D1278E040D00359073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = FitPlannerWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BS4YM2JJ65;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FitPlannerWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FitPlannerWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Alberto-Dominguez.FitPlanner.FitPlannerWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		63B21DCB2784C5DB00E5DCE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -760,8 +963,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 800B54CB5EBAA63B1536A4A6 /* Pods-FitPlanner.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitPlanner/FitPlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
@@ -788,8 +993,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51EAFFE8186BBC32A3F45494 /* Pods-FitPlanner.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitPlanner/FitPlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
@@ -911,6 +1118,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		637D87D2278E040D00359073 /* Build configuration list for PBXNativeTarget "FitPlannerWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				637D87D0278E040D00359073 /* Debug */,
+				637D87D1278E040D00359073 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		63B21D9B2784C5D800E5DCE9 /* Build configuration list for PBXProject "FitPlanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

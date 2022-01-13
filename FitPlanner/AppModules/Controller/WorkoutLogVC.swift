@@ -11,7 +11,7 @@ import CoreData
 class WorkoutLogVC: UIViewController {
 
     // MARK: Properties
-    let myData = CoreDataStack()
+    let myData = CoreDataStack.shared
     let yourWorkoutsLabel = FPLabel(title: "Your workouts", color: .primary, size: 20, weight: .medium)
     
     var viewModel = WorkoutLogVM()
