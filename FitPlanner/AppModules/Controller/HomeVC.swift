@@ -25,6 +25,9 @@ class HomeVC: UIViewController {
     let largetCalendarCard = LargeCalendarView()
     
     var formatter = DateFormatter()
+    
+    let scrollView = UIScrollView()
+    let contentView = UIView()
 
     
     // MARK: Life Cycles
@@ -84,23 +87,30 @@ class HomeVC: UIViewController {
     fileprivate func setupUI() {
         view.backgroundColor = .FPBackground
         
-        view.addSubview(nextWorkoutLabel)
-        nextWorkoutLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 40, paddingLeft: 20)
+        view.addSubview(scrollView)
+        scrollView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor)
         
-        view.addSubview(nextWorkoutCard)
-        nextWorkoutCard.anchor(top: nextWorkoutLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 12, paddingLeft: 20, paddingRight: 20)
         
-        view.addSubview(yourActivityLabel)
-        yourActivityLabel.anchor(top: nextWorkoutCard.bottomAnchor, left: view.leftAnchor, paddingTop: 32, paddingLeft: 20)
+        scrollView.addSubview(contentView)
+        contentView.setWidth(as: scrollView.widthAnchor)
+        contentView.setHeight(as: scrollView.heightAnchor)
+        contentView.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingBottom: 1)
         
+
+        contentView.addSubviews(nextWorkoutLabel, nextWorkoutCard, yourActivityLabel, largetCalendarCard)
+
+        nextWorkoutLabel.anchor(top: contentView.topAnchor, left: contentView.leftAnchor, paddingTop: 40, paddingLeft: 20)
+
+        nextWorkoutCard.anchor(top: nextWorkoutLabel.bottomAnchor, left: view.leftAnchor, right: contentView.rightAnchor, paddingTop: 12, paddingLeft: 20, paddingRight: 20)
+
+        yourActivityLabel.anchor(top: nextWorkoutCard.bottomAnchor, left: contentView.leftAnchor, paddingTop: 32, paddingLeft: 20)
+
         // calendar setup
         setupCalendarCard()
     }
     
     fileprivate func setupCalendarCard() {
-        view.addSubview(largetCalendarCard)
-        largetCalendarCard.anchor(top: yourActivityLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
-                                  paddingTop: 12, paddingLeft: 20, paddingRight: 20)
+        largetCalendarCard.anchor(top: yourActivityLabel.bottomAnchor, left: contentView.leftAnchor, right: contentView.rightAnchor, paddingTop: 12, paddingLeft: 20, paddingRight: 20)
         
         largetCalendarCard.calendar.delegate = self
         largetCalendarCard.calendar.dataSource = self
