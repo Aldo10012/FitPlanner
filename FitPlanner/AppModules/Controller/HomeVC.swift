@@ -54,11 +54,18 @@ class HomeVC: UIViewController {
             switch result {
             case let .success(x):
                 DispatchQueue.main.async {
+                    self.nextWorkoutCard.setupButton()
                     self.nextWorkoutCard.workoutNameLabel.text! = self.viewModel.nextWorkout.title
                     self.nextWorkoutCard.dateLabel.text! = self.viewModel.nextWorkoutDate
                 }
                 break
             case let.failure(y):
+                DispatchQueue.main.async {
+                    self.nextWorkoutCard.viewButton.removeFromSuperview()
+                    self.nextWorkoutCard.workoutNameLabel.numberOfLines = 2
+                    self.nextWorkoutCard.workoutNameLabel.text = "No upcomming \nworkouts"
+                    self.nextWorkoutCard.dateLabel.text = ""
+                }
                 break
             }
         }

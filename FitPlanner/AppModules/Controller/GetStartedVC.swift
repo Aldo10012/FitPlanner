@@ -115,6 +115,7 @@ class GetStartedVC: UIViewController {
         nameTextField.delegate = self
         heightTextField.delegate = self
         weightTextField.delegate = self
+        nameTextField.returnKeyType = .next
     }
     
     func checkFormStatus() {
@@ -145,6 +146,17 @@ extension GetStartedVC: UITextFieldDelegate {
         
         print(viewModel)
         checkFormStatus()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case nameTextField:
+            heightTextField.becomeFirstResponder()
+        default:
+            break
+        }
+        
+        return true
     }
 }
 

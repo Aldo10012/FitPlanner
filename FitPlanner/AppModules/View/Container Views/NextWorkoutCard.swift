@@ -42,10 +42,14 @@ class NextWorkoutCard: UIView {
         addSubview(dateLabel)
         dateLabel.anchor(left: imgView.rightAnchor, bottom: imgView.bottomAnchor, paddingLeft: 16, paddingBottom: 10)
         
+        setupButton()
+        
+    }
+    
+    func setupButton() {
         addSubview(viewButton)
         viewButton.anchor(right: rightAnchor, paddingRight: 16, width: 75)
         viewButton.centerY(inView: self)
-        
     }
     
     

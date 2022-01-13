@@ -48,6 +48,8 @@ class WorkoutPlanVC: UIViewController {
 
         // Do any additional setup after loading the view.
         setupViews()
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
 
