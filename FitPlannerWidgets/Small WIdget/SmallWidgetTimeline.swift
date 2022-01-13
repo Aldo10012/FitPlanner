@@ -9,15 +9,19 @@ import WidgetKit
 import SwiftUI
 
 struct SmallWidgetTimeline: TimelineProvider {
+    
+    /// return our snapshotEntry
     func placeholder(in context: Context) -> SmallWidgetEntry {
         SmallWidgetEntry(date: Date(), nextWorkoutName: "", nextWorkoutDate: "")
     }
 
+    /// create the snapshot using the snapshotEntry
     func getSnapshot(in context: Context, completion: @escaping (SmallWidgetEntry) -> ()) {
         let entry = SmallWidgetEntry(date: Date(), nextWorkoutName: "", nextWorkoutDate: "")
         completion(entry)
     }
 
+    /// specify a timeline, with several entries using real data
     func getTimeline(in context: Context, completion: @escaping (Timeline<SmallWidgetEntry>) -> ()) {
         var entries: [SmallWidgetEntry] = []
 
@@ -25,13 +29,13 @@ struct SmallWidgetTimeline: TimelineProvider {
         var name: String
         var date: String
         
-        print(myData.getNextWorkout() )
+        print("next workout:", myData.getNextWorkout() )
         if let nextWorkout = myData.getNextWorkout() {
             name = nextWorkout.name!
             date = getDateAsStringLong(dateOfNextWorkout)
         } else {
-            name = "Workout Name"
-            date = "Today's date"
+            name = "No workouts "
+            date = ""
             
         }
         
