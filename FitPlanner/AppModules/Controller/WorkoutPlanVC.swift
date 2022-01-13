@@ -33,6 +33,9 @@ class WorkoutPlanVC: UIViewController {
 //    var tableView = UITableView()
     var button = FPButton(type: .primary, title: "Button")
     
+    let scrollView = UIScrollView()
+    let contentView = UIView()
+    
     
     convenience init(type: WorkoutPlanType, viewModel: WorkoutCardVM) {
         self.init()
@@ -94,18 +97,28 @@ class WorkoutPlanVC: UIViewController {
         view.backgroundColor = .FPBackground
         title = "Workout Plan"
         
-        view.addSubviews(workoutNameTextField, workoutcardView, button, addExerciseCard)
+        view.addSubviews(scrollView)
+        scrollView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor)
         
-        workoutNameTextField.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 30, paddingLeft: 20)
+        scrollView.addSubview(contentView)
+        contentView.setWidth(as: scrollView.widthAnchor)
+        contentView.setHeight(as: scrollView.heightAnchor)
+        contentView.anchor(top: scrollView.topAnchor, left: scrollView.leftAnchor, bottom: scrollView.bottomAnchor, right: scrollView.rightAnchor, paddingBottom: 150)
         
-        workoutcardView.anchor(top: workoutNameTextField.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
+        
+        contentView.addSubviews(workoutNameTextField, workoutcardView, addExerciseCard)
+        
+        workoutNameTextField.anchor(top: contentView.topAnchor, left: contentView.leftAnchor, paddingTop: 30, paddingLeft: 20)
+        
+        workoutcardView.anchor(top: workoutNameTextField.bottomAnchor, left: contentView.leftAnchor, right: view.rightAnchor,
                                paddingTop: 30, paddingLeft: 20, paddingRight: 20)
-        
-        button.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
-        button.layer.zPosition = 2
         
         addExerciseCard.addStandardShadow()
         addExerciseCard.anchor(top: workoutcardView.bottomAnchor, left: workoutcardView.leftAnchor, right: workoutcardView.rightAnchor, paddingTop: 30, height: 250)
+        
+        view.addSubview(button)
+        button.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
+        button.layer.zPosition = 2
         
         addExerciseCard.tableView.delegate = self
         addExerciseCard.tableView.dataSource = self
@@ -284,5 +297,5 @@ extension WorkoutPlanVC: ExerciseDelegate {
     
     
     
-    
 }
+
