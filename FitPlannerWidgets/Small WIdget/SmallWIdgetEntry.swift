@@ -8,6 +8,9 @@
 import WidgetKit
 import SwiftUI
 
+// this is basically the Model / ViewModel for the widget
 struct SmallWidgetEntry: TimelineEntry {
     let date: Date
+    var nextWorkoutName: String
+    var nextWorkoutDate: String
 }

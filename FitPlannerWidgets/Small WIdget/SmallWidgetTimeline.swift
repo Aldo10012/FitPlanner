@@ -10,22 +10,40 @@ import SwiftUI
 
 struct SmallWidgetTimeline: TimelineProvider {
     func placeholder(in context: Context) -> SmallWidgetEntry {
-        SmallWidgetEntry(date: Date())
+        SmallWidgetEntry(date: Date(), nextWorkoutName: "", nextWorkoutDate: "")
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SmallWidgetEntry) -> ()) {
-        let entry = SmallWidgetEntry(date: Date())
+        let entry = SmallWidgetEntry(date: Date(), nextWorkoutName: "", nextWorkoutDate: "")
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<SmallWidgetEntry>) -> ()) {
         var entries: [SmallWidgetEntry] = []
 
+        let myData = CoreDataStack.shared
+        var name: String
+        var date: String
+        
+        print(myData.getNextWorkout() )
+        if let nextWorkout = myData.getNextWorkout() {
+            name = nextWorkout.name!
+            date = getDateAsStringLong(dateOfNextWorkout)
+        } else {
+            name = "Workout Name"
+            date = "Today's date"
+            
+        }
+        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SmallWidgetEntry(date: entryDate)
+            let entry = SmallWidgetEntry(
+                date: entryDate,
+                nextWorkoutName: name,
+                nextWorkoutDate: date
+            )
             entries.append(entry)
         }
 

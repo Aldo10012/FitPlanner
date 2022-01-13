@@ -23,7 +23,7 @@ struct SmallWidget: Widget {
 
 struct SmallWidget_Previews: PreviewProvider {
     static var previews: some View {
-        SmallWidgetEntryView(entry: SmallWidgetEntry(date: Date()))
+        SmallWidgetEntryView(entry: SmallWidgetEntry(date: Date(), nextWorkoutName: "Hello", nextWorkoutDate: getDateAsStringLong(Date())))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
