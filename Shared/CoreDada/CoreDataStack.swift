@@ -11,6 +11,18 @@ import UIKit
 
 // inspired by https://codereview.stackexchange.com/questions/220783/core-data-wrapper
 
+class NSCustomPersistentContainer: NSPersistentContainer {
+    // https://medium.com/@manibatra23/sharing-data-using-core-data-ios-app-and-extension-fb0a176eaee9
+    // not sure if this will help. 
+    override open class func defaultDirectoryURL() -> URL {
+        var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alberto-Dominguez.FitPlanner")
+        storeURL = storeURL?.appendingPathComponent("FitPlanner.sqlite")
+        return storeURL!
+    }
+
+}
+
+
 struct CoreDataStack {
     
     static let shared = CoreDataStack()
@@ -141,7 +153,8 @@ struct CoreDataStack {
     func getNextWorkout() -> Workout? {
         let managedContext = persistentContainer.viewContext
         let fetchRequest = Workout.fetchRequest()
-        let futureWorkouts = NSPredicate(format: "date > %@", Date.today() as CVarArg)
+        print(fetchRequest)
+        //let futureWorkouts = NSPredicate(format: "date > %@", Date.today() as CVarArg)
         
         do {
             let allWorkouts = try managedContext.fetch(fetchRequest)

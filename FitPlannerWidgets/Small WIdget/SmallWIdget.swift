@@ -5,6 +5,7 @@
 //  Created by Alberto Dominguez on 1/12/22.
 //
 
+import Foundation
 import WidgetKit
 import SwiftUI
 
@@ -24,7 +25,11 @@ struct SmallWidget: Widget {
 
 struct SmallWidget_Previews: PreviewProvider {
     static var previews: some View {
-        SmallWidgetEntryView(entry: SmallWidgetEntry(date: Date(), nextWorkoutName: "Hello", nextWorkoutDate: getDateAsStringLong(Date())))
+        SmallWidgetEntryView(entry: SmallWidgetEntry(
+            date: Date(),
+            nextWorkoutName: "Full Body A",
+            nextWorkoutDate: getDateAsStringLong(Date()) + ",\n" + getMonthAndDateAsString(Date())
+        ))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

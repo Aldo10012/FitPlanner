@@ -5,10 +5,14 @@
 //  Created by Alberto Dominguez on 1/12/22.
 //
 
+import Foundation
 import WidgetKit
 import SwiftUI
 
+/// Creates one or more timeline entries with dates that tell WidgetKit when to display a widget.
 struct SmallWidgetTimeline: TimelineProvider {
+    
+    let myData = CoreDataStack.shared
     
     /// return our snapshotEntry
     func placeholder(in context: Context) -> SmallWidgetEntry {
@@ -25,14 +29,14 @@ struct SmallWidgetTimeline: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<SmallWidgetEntry>) -> ()) {
         var entries: [SmallWidgetEntry] = []
 
-        let myData = CoreDataStack.shared
+        
         var name: String
         var date: String
         
         print("next workout:", myData.getNextWorkout() )
         if let nextWorkout = myData.getNextWorkout() {
             name = nextWorkout.name!
-            date = getDateAsStringLong(dateOfNextWorkout)
+            date = getDateAsStringLong(dateOfNextWorkout) + ",\n" + getMonthAndDateAsString(dateOfNextWorkout)
         } else {
             name = "No workouts "
             date = ""

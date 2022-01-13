@@ -63,8 +63,8 @@
 		63BD4B2B278F6B7A00DDA2F4 /* UIColor-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DEC2784D70F00E5DCE9 /* UIColor-ext.swift */; };
 		63BD4B61278F9EF900DDA2F4 /* SmallWIdget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5D278F9C6D00DDA2F4 /* SmallWIdget.swift */; };
 		63BD4B62278F9F0100DDA2F4 /* SmallWIdgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B59278F9C4A00DDA2F4 /* SmallWIdgetEntry.swift */; };
-		63BD4B63278F9F0500DDA2F4 /* SmallWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5B278F9C6300DDA2F4 /* SmallWidgetTimeline.swift */; };
 		63BD4B64278F9F0D00DDA2F4 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */; };
+		63BD4B66278FB46900DDA2F4 /* SmallWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5B278F9C6300DDA2F4 /* SmallWidgetTimeline.swift */; };
 		863B1A4C3DD9E776E043DB9B /* Pods_FitPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +165,8 @@
 		63BD4B5B278F9C6300DDA2F4 /* SmallWidgetTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetTimeline.swift; sourceTree = "<group>"; };
 		63BD4B5D278F9C6D00DDA2F4 /* SmallWIdget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWIdget.swift; sourceTree = "<group>"; };
 		63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
+		63BD4B6A278FBA0500DDA2F4 /* FitPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlanner.entitlements; sourceTree = "<group>"; };
+		63BD4B6B278FBA0C00DDA2F4 /* FitPlannerWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlannerWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		800B54CB5EBAA63B1536A4A6 /* Pods-FitPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitPlanner.debug.xcconfig"; path = "Target Support Files/Pods-FitPlanner/Pods-FitPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,6 +274,7 @@
 		63B21D972784C5D800E5DCE9 = {
 			isa = PBXGroup;
 			children = (
+				63BD4B6B278FBA0C00DDA2F4 /* FitPlannerWidgetsExtension.entitlements */,
 				63BD4B24278F63B900DDA2F4 /* Shared */,
 				63B21DA22784C5D800E5DCE9 /* FitPlanner */,
 				637D87C6278E040C00359073 /* FitPlannerWidgets */,
@@ -297,6 +300,7 @@
 		63B21DA22784C5D800E5DCE9 /* FitPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				63BD4B6A278FBA0500DDA2F4 /* FitPlanner.entitlements */,
 				63B21DD62784C81300E5DCE9 /* Setup */,
 				63B21DD72784C83700E5DCE9 /* Resources */,
 				63B21DE52784D1D100E5DCE9 /* AppModules */,
@@ -673,7 +677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63BD4B63278F9F0500DDA2F4 /* SmallWidgetTimeline.swift in Sources */,
+				63BD4B66278FB46900DDA2F4 /* SmallWidgetTimeline.swift in Sources */,
 				63BD4B29278F640000DDA2F4 /* UserDefaultManager.swift in Sources */,
 				63BD4B26278F63F800DDA2F4 /* CoreDataStack.swift in Sources */,
 				63BD4B28278F63FD00DDA2F4 /* Result.swift in Sources */,
@@ -786,6 +790,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = FitPlannerWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
@@ -814,6 +819,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = FitPlannerWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
@@ -960,6 +966,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitPlanner/FitPlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
@@ -989,6 +996,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitPlanner/FitPlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;

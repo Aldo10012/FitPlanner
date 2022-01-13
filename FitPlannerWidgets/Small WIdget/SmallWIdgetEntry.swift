@@ -5,6 +5,7 @@
 //  Created by Alberto Dominguez on 1/12/22.
 //
 
+import Foundation
 import WidgetKit
 import SwiftUI
 
