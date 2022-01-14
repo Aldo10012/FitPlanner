@@ -8,6 +8,7 @@
 import CoreData
 import Foundation
 import UIKit
+import WidgetKit
 
 // inspired by https://codereview.stackexchange.com/questions/220783/core-data-wrapper
 
@@ -101,6 +102,7 @@ struct CoreDataStack {
         // save context
         do {
             try managedContext.save()
+            WidgetCenter.shared.reloadAllTimelines()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -128,6 +130,7 @@ struct CoreDataStack {
 //        workout
         do {
             try managedContext.save()
+            WidgetCenter.shared.reloadAllTimelines()
         }
         catch {}
     }
@@ -143,6 +146,7 @@ struct CoreDataStack {
             }
                         
             try managedContext.save()
+            WidgetCenter.shared.reloadAllTimelines()
         } catch let error as NSError {
             print("Could not delete. \(error), \(error.userInfo)")
         }
@@ -181,6 +185,21 @@ struct CoreDataStack {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             return []
+        }
+    }
+    
+    func completedWorkout() {
+        let managedContext = persistentContainer.viewContext
+        
+        let newActivity = Activity(context: managedContext)
+        newActivity.date = Date.today().previous(.thursday)
+        newActivity.complete = true
+        
+        do {
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     

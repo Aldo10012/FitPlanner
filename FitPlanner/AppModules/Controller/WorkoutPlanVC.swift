@@ -59,6 +59,7 @@ class WorkoutPlanVC: UIViewController {
     // MARK: Selectors
     @objc func didTapMarkAsDone() {
 //        print("did Tap MarkAsDone")
+        viewModel.markWorkoutAsDone()
         Router.popController(self)
     }
     

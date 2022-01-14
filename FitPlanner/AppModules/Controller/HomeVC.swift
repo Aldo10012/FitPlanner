@@ -114,6 +114,8 @@ class HomeVC: UIViewController {
         
         largetCalendarCard.calendar.delegate = self
         largetCalendarCard.calendar.dataSource = self
+        largetCalendarCard.calendar.allowsMultipleSelection = true
+        largetCalendarCard.calendar.isUserInteractionEnabled = false
     }
     
     fileprivate func updateUI() {

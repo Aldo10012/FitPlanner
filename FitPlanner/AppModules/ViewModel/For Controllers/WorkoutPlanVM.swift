@@ -78,6 +78,7 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
     
     func markWorkoutAsDone() {
         print("mark workout as done")
+        myData.completedWorkout()
     }
     
     

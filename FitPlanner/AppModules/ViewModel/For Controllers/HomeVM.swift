@@ -63,6 +63,7 @@ extension HomeVM: HomePresentor {
     mutating func updateActivityCalendar(completion: @escaping () -> ()) {
         print("")
         self.activity = getActivity()
+        print("MY ACTIVITY", self.activity)
         completion()
     }
 }

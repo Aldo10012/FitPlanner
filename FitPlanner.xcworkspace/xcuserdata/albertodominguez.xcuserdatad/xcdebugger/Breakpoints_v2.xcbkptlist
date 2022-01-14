@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "56298A3D-7297-4F67-8515-39BE9C22B59D"
-            shouldBeEnabled = "Yes"
+            uuid = "C2740E97-2E0D-490D-AC05-A34C584D3348"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FitPlanner/AppModules/ViewModel/For Controllers/HomeVM.swift"
+            filePath = "FitPlanner/AppModules/Controller/WorkoutPlanVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "updateNextWorkoutCard(completion:)"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "modifyViewBasedOnType(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
