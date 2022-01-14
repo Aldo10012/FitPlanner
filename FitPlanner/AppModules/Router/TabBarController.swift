@@ -24,6 +24,7 @@ class TabBarController: UITabBarController {
 //        tabBar.barTintColor = UIColor.red
         tabBar.tintColor = UIColor.FPBlue
         tabBar.unselectedItemTintColor = UIColor.gray
+        tabBar.overrideUserInterfaceStyle = .light
     }
     
     fileprivate func setupVCs() {
@@ -62,6 +63,8 @@ class TabBarController: UITabBarController {
         navController.tabBarItem.selectedImage = selectedImage
         navController.navigationBar.prefersLargeTitles = true
         rootViewController.navigationItem.title = navBarTitle
+        navController.navigationBar.overrideUserInterfaceStyle = .light
+        
         return navController
     }
 

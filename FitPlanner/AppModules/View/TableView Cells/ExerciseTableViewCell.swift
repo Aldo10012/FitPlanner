@@ -45,6 +45,7 @@ class ExerciseTableViewCell: UITableViewCell {
     // MARK: Helpers
     
     fileprivate func setupViews() {
+        backgroundColor = .clear
         contentView.addSubviews(numberLabel, nameTextField, repsTextField, setsTextField)
         
         for view in [numberLabel, nameTextField, repsTextField, setsTextField] {

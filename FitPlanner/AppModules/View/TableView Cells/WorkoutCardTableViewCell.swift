@@ -32,6 +32,7 @@ class WorkoutCardTableViewCell: UITableViewCell {
     // MARK: Helpers
     fileprivate func setupViews() {
         addSubview(workoutCard)
+        backgroundColor = .clear
         workoutCard.anchor(left: leftAnchor, right: rightAnchor, paddingLeft: 10, paddingRight: 10)
         workoutCard.centerY(inView: self)
     }

@@ -52,6 +52,7 @@ class AddExerciseCardView: UIView {
 //        tableView.delegate = self
 //        tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
     }
     
     open func hasAddButton() {
