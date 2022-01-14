@@ -18,6 +18,10 @@ protocol WorkoutChangedDelegate {
     func updateWorkoutList()
 }
 
+protocol WorkoutMarkedAsDoneDelegate {
+    func workoutWasMarkedAsDone()
+}
+
 class WorkoutPlanVC: UIViewController {
 
     // MARK: - Properties    
@@ -26,6 +30,7 @@ class WorkoutPlanVC: UIViewController {
     let myData = CoreDataStack.shared
     
     var delegate: WorkoutChangedDelegate!
+    var markAsDoneDelegate: WorkoutMarkedAsDoneDelegate?
     
     var workoutNameTextField = FPTextField(placeholder: "Workout name", size: 30, weight: .light)
     var workoutcardView: WorkoutCardView!
@@ -60,6 +65,7 @@ class WorkoutPlanVC: UIViewController {
     @objc func didTapMarkAsDone() {
 //        print("did Tap MarkAsDone")
         viewModel.markWorkoutAsDone()
+        markAsDoneDelegate?.workoutWasMarkedAsDone()
         Router.popController(self)
     }
     

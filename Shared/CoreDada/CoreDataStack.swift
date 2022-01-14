@@ -192,7 +192,7 @@ struct CoreDataStack {
         let managedContext = persistentContainer.viewContext
         
         let newActivity = Activity(context: managedContext)
-        newActivity.date = Date.today().previous(.thursday)
+        newActivity.date = Date.today()
         newActivity.complete = true
         
         do {

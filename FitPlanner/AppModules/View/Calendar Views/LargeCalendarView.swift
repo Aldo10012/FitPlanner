@@ -35,8 +35,9 @@ class LargeCalendarView: UIView {
         
         calendar.appearance.headerTitleColor = .FPBlue
         calendar.appearance.weekdayTextColor = .FPTextFieldPlaceholder
-        calendar.appearance.todayColor = .FPBlue
+        calendar.appearance.todayColor = .systemBlue
         calendar.appearance.titleTodayColor = .white
+        calendar.appearance.selectionColor = .FPBlue
         // calendar.pagingEnabled = false   ~ this makes the calendar NOT scrollable
         addSubview(calendar)
         self.calendar = calendar

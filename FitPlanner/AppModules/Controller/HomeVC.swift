@@ -163,3 +163,10 @@ extension HomeVC: GetStartedDelegate {
         updateUI()
     }
 }
+
+// MARK: WorkoutMarkedAsDoneDelegate
+extension HomeVC: WorkoutMarkedAsDoneDelegate {
+    func workoutWasMarkedAsDone() {
+        updateUI()
+    }
+}
