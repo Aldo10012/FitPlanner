@@ -40,3 +40,14 @@ Type ```git clone https://github.com/Aldo10012/NBA-Stats.git``` into your termin
 
 ## Usage
 
+When you first open the app, you will be prompted to register. To register, enter your name, height, weight, and select a photo.
+
+<img src="Images/register.png" width=32%> 
+
+After you register, you can see on the home dashboard. Here, you can see what your next workout is and a calendar displaying your activity. If you tap on "Workout" in the tabbar, you will be redirected to your WorkoutLog, where you can see all of your workouts
+
+<img src="Images/home-screen.png" width=32%>  <img src="Images/workout-log.png" width=32%> 
+
+You are able to add a workout by tapping "Create New Workout", edit an existing workout by tapping on a workout card in WorkoutLog, delete a workout by swiping left on a workout card, and mark a workout as done by tapping "View" on the NextWorkoutCard in home (given that that workout is today).
+
+<img src="Images/add-workout.png" width=32%> <img src="Images/edit-workout.png" width=32%> <img src="Images/mark-as-done.png" width=32%> 
