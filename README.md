@@ -10,6 +10,10 @@ Before covid lockdown, I used to be super active in school. I was part of the JR
 
 Primarily for me, but also for anyone who wants to take back their fitness and create a plan that works for them. 
 
+## Preview Samples
+
+<img src="Images/register.png" width=24%>  <img src="Images/home-screen.png" width=24%>  <img src="Images/workout-log.png" width=24%> <img src="Images/edit-workout.png" width=24%>
+
 ## Features
 
 - User can register when they first open the app
@@ -20,19 +24,12 @@ Primarily for me, but also for anyone who wants to take back their fitness and c
 
 ## Tech Stack
 
-- Swift
-- UIKit
-- SwiftUI
-- WidgetKit
-- CoreData
-- Cocoapods: FSCalendar
+- Swift, UIKit, SwiftUI, WidgetKit, CoreData, Cocoapods: FSCalendar
 - Build using MVVM design pattern (with inspiration from VIPER)
 
 ## Requirements
 
-- XCode 13
-- Swift 5
-- iOS 15
+- XCode 13, Swift 5, iOS 15
 
 ## Instalation
 
