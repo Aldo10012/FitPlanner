@@ -1,31 +1,31 @@
 //
-//  SmallWIdget.swift
+//  MediumWidget.swift
 //  FitPlanner
 //
-//  Created by Alberto Dominguez on 1/12/22.
+//  Created by Alberto Dominguez on 3/14/22.
 //
 
 import Foundation
 import WidgetKit
 import SwiftUI
 
-//@main
-struct SmallWidget: Widget {
+
+struct MediumWidget: Widget {
     let kind: String = "FitPlannerWidgets"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: SmallWidgetTimeline()) { entry in
-            SmallWidgetEntryView(entry: entry)
+        StaticConfiguration(kind: kind, provider: MediumWidgetTimeline()) { entry in
+            MediumWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Small Widget")
+        .configurationDisplayName("Medium Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemMedium])
     }
 }
 
-struct SmallWidget_Previews: PreviewProvider {
+struct MediumWidget_Previews: PreviewProvider {
     static var previews: some View {
-        SmallWidgetEntryView(entry: SmallWidgetEntry(
+        MediumWidgetEntryView(entry: MediumWidgetEntry(
             date: Date(),
             nextWorkoutName: "Full Body A",
             nextWorkoutDate: getDateAsStringLong(Date()) + ",\n" + getMonthAndDateAsString(Date())

@@ -65,6 +65,15 @@
 		63BD4B62278F9F0100DDA2F4 /* SmallWIdgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B59278F9C4A00DDA2F4 /* SmallWIdgetEntry.swift */; };
 		63BD4B64278F9F0D00DDA2F4 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */; };
 		63BD4B66278FB46900DDA2F4 /* SmallWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5B278F9C6300DDA2F4 /* SmallWidgetTimeline.swift */; };
+		63FBC2E427DFF90A0065296D /* MediumWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2D927DFF6950065296D /* MediumWidgetEntry.swift */; };
+		63FBC2E527DFF90D0065296D /* MediumWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2DB27DFF6AF0065296D /* MediumWidgetTimeline.swift */; };
+		63FBC2E627DFF9100065296D /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2DD27DFF6C00065296D /* MediumWidget.swift */; };
+		63FBC2E727DFF9140065296D /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2DF27DFF6CA0065296D /* MediumWidgetView.swift */; };
+		63FBC2E827DFF91A0065296D /* WIdgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2E227DFF7A10065296D /* WIdgetBundle.swift */; };
+		63FBC2F227DFFC5F0065296D /* LargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2F027DFFC590065296D /* LargeWidgetView.swift */; };
+		63FBC2F327DFFC620065296D /* LargeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2EE27DFFC4E0065296D /* LargeWidget.swift */; };
+		63FBC2F427DFFC660065296D /* LargeWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2EC27DFFC420065296D /* LargeWidgetTimeline.swift */; };
+		63FBC2F527DFFC6A0065296D /* LargeWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2EA27DFFC300065296D /* LargeWidgetEntry.swift */; };
 		863B1A4C3DD9E776E043DB9B /* Pods_FitPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095E14D88B41FD316F26C005 /* Pods_FitPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +176,15 @@
 		63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		63BD4B6A278FBA0500DDA2F4 /* FitPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlanner.entitlements; sourceTree = "<group>"; };
 		63BD4B6B278FBA0C00DDA2F4 /* FitPlannerWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlannerWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		63FBC2D927DFF6950065296D /* MediumWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetEntry.swift; sourceTree = "<group>"; };
+		63FBC2DB27DFF6AF0065296D /* MediumWidgetTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetTimeline.swift; sourceTree = "<group>"; };
+		63FBC2DD27DFF6C00065296D /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
+		63FBC2DF27DFF6CA0065296D /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
+		63FBC2E227DFF7A10065296D /* WIdgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIdgetBundle.swift; sourceTree = "<group>"; };
+		63FBC2EA27DFFC300065296D /* LargeWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidgetEntry.swift; sourceTree = "<group>"; };
+		63FBC2EC27DFFC420065296D /* LargeWidgetTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidgetTimeline.swift; sourceTree = "<group>"; };
+		63FBC2EE27DFFC4E0065296D /* LargeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidget.swift; sourceTree = "<group>"; };
+		63FBC2F027DFFC590065296D /* LargeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidgetView.swift; sourceTree = "<group>"; };
 		800B54CB5EBAA63B1536A4A6 /* Pods-FitPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitPlanner.debug.xcconfig"; path = "Target Support Files/Pods-FitPlanner/Pods-FitPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +282,9 @@
 		637D87C6278E040C00359073 /* FitPlannerWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				63FBC2E127DFF7850065296D /* WIdget Bundle */,
+				63FBC2E927DFFBC80065296D /* Large Widget */,
+				63FBC2D827DFF6750065296D /* Medium Widget */,
 				63BD4B58278F9C3200DDA2F4 /* Small WIdget */,
 				637D87C9278E040D00359073 /* Assets.xcassets */,
 				637D87CB278E040D00359073 /* Info.plist */,
@@ -451,6 +472,36 @@
 				63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */,
 			);
 			path = "Small WIdget";
+			sourceTree = "<group>";
+		};
+		63FBC2D827DFF6750065296D /* Medium Widget */ = {
+			isa = PBXGroup;
+			children = (
+				63FBC2D927DFF6950065296D /* MediumWidgetEntry.swift */,
+				63FBC2DB27DFF6AF0065296D /* MediumWidgetTimeline.swift */,
+				63FBC2DD27DFF6C00065296D /* MediumWidget.swift */,
+				63FBC2DF27DFF6CA0065296D /* MediumWidgetView.swift */,
+			);
+			path = "Medium Widget";
+			sourceTree = "<group>";
+		};
+		63FBC2E127DFF7850065296D /* WIdget Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				63FBC2E227DFF7A10065296D /* WIdgetBundle.swift */,
+			);
+			path = "WIdget Bundle";
+			sourceTree = "<group>";
+		};
+		63FBC2E927DFFBC80065296D /* Large Widget */ = {
+			isa = PBXGroup;
+			children = (
+				63FBC2EA27DFFC300065296D /* LargeWidgetEntry.swift */,
+				63FBC2EC27DFFC420065296D /* LargeWidgetTimeline.swift */,
+				63FBC2EE27DFFC4E0065296D /* LargeWidget.swift */,
+				63FBC2F027DFFC590065296D /* LargeWidgetView.swift */,
+			);
+			path = "Large Widget";
 			sourceTree = "<group>";
 		};
 		708B87A3BFAE443449752F82 /* Frameworks */ = {
@@ -677,16 +728,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FBC2F227DFFC5F0065296D /* LargeWidgetView.swift in Sources */,
 				63BD4B66278FB46900DDA2F4 /* SmallWidgetTimeline.swift in Sources */,
+				63FBC2F527DFFC6A0065296D /* LargeWidgetEntry.swift in Sources */,
 				63BD4B29278F640000DDA2F4 /* UserDefaultManager.swift in Sources */,
 				63BD4B26278F63F800DDA2F4 /* CoreDataStack.swift in Sources */,
 				63BD4B28278F63FD00DDA2F4 /* Result.swift in Sources */,
+				63FBC2E627DFF9100065296D /* MediumWidget.swift in Sources */,
 				63BD4B64278F9F0D00DDA2F4 /* SmallWidgetView.swift in Sources */,
+				63FBC2F327DFFC620065296D /* LargeWidget.swift in Sources */,
 				63BD4B27278F63FB00DDA2F4 /* Date-ext.swift in Sources */,
 				63BD4B2A278F640300DDA2F4 /* NotificationManager.swift in Sources */,
+				63FBC2F427DFFC660065296D /* LargeWidgetTimeline.swift in Sources */,
 				63BD4B25278F63F400DDA2F4 /* FitPlanner.xcdatamodeld in Sources */,
 				63BD4B62278F9F0100DDA2F4 /* SmallWIdgetEntry.swift in Sources */,
+				63FBC2E427DFF90A0065296D /* MediumWidgetEntry.swift in Sources */,
+				63FBC2E827DFF91A0065296D /* WIdgetBundle.swift in Sources */,
 				63BD4B2B278F6B7A00DDA2F4 /* UIColor-ext.swift in Sources */,
+				63FBC2E727DFF9140065296D /* MediumWidgetView.swift in Sources */,
+				63FBC2E527DFF90D0065296D /* MediumWidgetTimeline.swift in Sources */,
 				63BD4B61278F9EF900DDA2F4 /* SmallWIdget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -976,6 +1036,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1006,6 +1067,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
