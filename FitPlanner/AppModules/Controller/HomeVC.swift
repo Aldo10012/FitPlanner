@@ -115,7 +115,7 @@ class HomeVC: UIViewController {
         largetCalendarCard.calendar.delegate = self
         largetCalendarCard.calendar.dataSource = self
         largetCalendarCard.calendar.allowsMultipleSelection = true
-        largetCalendarCard.calendar.isUserInteractionEnabled = false
+        largetCalendarCard.calendar.isUserInteractionEnabled = true
     }
     
     fileprivate func updateUI() {
@@ -138,7 +138,12 @@ class HomeVC: UIViewController {
                 for activity in self.viewModel.activity! {
                     self.largetCalendarCard.calendar.select(activity.date)
                 }
+                
+                // so calendar can focuse on TODAY
+                self.largetCalendarCard.calendar.select(Date.today())
+                self.largetCalendarCard.calendar.deselect(Date.today())
             }
+            
         }
     }
 
@@ -150,9 +155,35 @@ extension HomeVC: FSCalendarDataSource, FSCalendarDelegate{
     
     public func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         formatter.dateFormat = "dd-MMM-yyyy E"
-        print("Date Selected: \(formatter.string(from: date))")
+        let selectedDate = formatter.string(from: date)
+                
+        var listofActivityDates = [String]()
+        
+        for activity in viewModel.activity! {
+            let activityDate = formatter.string(from: activity.date!)
+            listofActivityDates.append(activityDate)
+        }
+        
+        if !listofActivityDates.contains(selectedDate){
+            self.largetCalendarCard.calendar.deselect(date)
+        }
     }
     
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        formatter.dateFormat = "dd-MMM-yyyy E"
+        let selectedDate = formatter.string(from: date)
+                
+        var listofActivityDates = [String]()
+        
+        for activity in viewModel.activity! {
+            let activityDate = formatter.string(from: activity.date!)
+            listofActivityDates.append(activityDate)
+        }
+        
+        if listofActivityDates.contains(selectedDate){
+            self.largetCalendarCard.calendar.select(date)
+        }
+    }
 }
 
 
