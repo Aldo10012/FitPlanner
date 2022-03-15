@@ -46,6 +46,8 @@ class ProfileVC: UIViewController {
     var userNameLabel = FPLabel(title: "Name", color: .primary, size: 22, weight: .light)
     var weightLabel = FPLabel(title: "0 lbs", color: .primary, size: 16, weight: .light)
     var heightLabel = FPLabel(title: "0 in", color: .primary, size: 16, weight: .light)
+    
+    var bmiCard = BMIScaleCardView()
 
     
     // MARK: Life cycles
@@ -60,7 +62,7 @@ class ProfileVC: UIViewController {
     fileprivate func setupViews() {
         view.backgroundColor = .FPBackground
         
-        view.addSubviews(profilePicView, userNameLabel, weightImageView, weightLabel, heightImageView, heightLabel)
+        view.addSubviews(profilePicView, userNameLabel, weightImageView, weightLabel, heightImageView, heightLabel, bmiCard)
         
         profilePicView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 20)
         
@@ -76,6 +78,8 @@ class ProfileVC: UIViewController {
         heightLabel.anchor(left: heightImageView.rightAnchor, paddingLeft: 5)
         heightLabel.centerY(inView: weightImageView)
         
+        bmiCard.anchor(top: profilePicView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 20, paddingRight: 20)
+        
         
     }
     
@@ -86,6 +90,8 @@ class ProfileVC: UIViewController {
             self!.userNameLabel.text = vm?.userName
             self!.weightLabel.text = "\((vm?.weight)!) lbs"
             self!.heightLabel.text = "\((vm?.feet)!)' \((vm?.inches)!)'' ft"
+            
+            self!.bmiCard.updateContent(bmi: (vm?.bmi)!)
         }
         
     }

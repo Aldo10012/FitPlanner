@@ -23,15 +23,16 @@ class BMIScaleCardView: UIView {
     
     
     func configureUI() {
-        backgroundColor = .white
+        backgroundColor = .clear
         layer.cornerRadius = 8
         
         addSubviews(label, card)
         card.addSubviews(bmiLabel, detailLabel)
         
         label.anchor(top: topAnchor, left: leftAnchor)
-        card.anchor(top: label.topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 15)
+        card.anchor(top: label.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 15)
         card.setConstantHeight(height: 115)
+        card.addStandardShadow()
         
         bmiLabel.anchor(top: card.topAnchor, left: card.leftAnchor, paddingTop: 10, paddingLeft: 15)
         detailLabel.anchor(left: bmiLabel.rightAnchor, bottom: bmiLabel.bottomAnchor, paddingLeft: 10)

@@ -27,6 +27,7 @@ struct ProfileVM {
     var height: Double? // in inches
     var feet: Int?
     var inches: Int?
+    var bmi: Double?
     
     init() {
         
@@ -46,8 +47,8 @@ extension ProfileVM: ProfilePresentorProtocol {
         userName = user?.name
         weight = user?.weight
         height = user?.height
-        print("BMI:", user?.bmi)
         
+        bmi = Double(round(user!.bmi * 100) / 100.0)
         feet = Int(height! / 12)
         inches = Int(height!) - Int(feet! * 12)
         
