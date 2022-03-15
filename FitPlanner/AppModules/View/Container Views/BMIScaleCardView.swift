@@ -10,7 +10,7 @@ import UIKit
 class BMIScaleCardView: UIView {
     
     // MARK: Properties
-    var label = FPLabel(title: "BMI Calculator", color: .primary, size: 18, weight: .regular)
+    var label = FPLabel(title: "BMI Calculator", color: .primary, size: 20, weight: .medium)
     let card = FPBackground(radius: 8)
     var bmiLabel = FPLabel(title: "0.0", color: .primary, size: 22, weight: .bold)
     var detailLabel = FPLabel(title: "Detail", color: .primary, size: 16, weight: .thin)
