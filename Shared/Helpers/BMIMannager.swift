@@ -20,4 +20,19 @@ class BMIMannager {
         let bmi = kg / pow(m, 2)
         return bmi
     }
+    
+    static func getBMIScaleDescription(bmi: Double) -> String {
+        if bmi < 30 {
+            return "You are obese"
+        }
+        else if bmi < 25 {
+            return "You are over weight"
+        }
+        else if bmi < 18.5 {
+            return "You are healthy"
+        }
+        else {
+            return "You are under weight"
+        }
+    }
 }

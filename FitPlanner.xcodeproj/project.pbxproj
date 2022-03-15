@@ -21,6 +21,7 @@
 		630B47592787C74600E6FA4B /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B47582787C74600E6FA4B /* AlertManager.swift */; };
 		630F570C27E0F54500DFBE90 /* BMIMannager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F570B27E0F54500DFBE90 /* BMIMannager.swift */; };
 		630F570D27E0F7F300DFBE90 /* BMIMannager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F570B27E0F54500DFBE90 /* BMIMannager.swift */; };
+		630F570F27E105DD00DFBE90 /* BMIScaleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F570E27E105DD00DFBE90 /* BMIScaleCardView.swift */; };
 		636CE251278508C400BB5664 /* WorkoutCardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE250278508C400BB5664 /* WorkoutCardVM.swift */; };
 		636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE253278509B700BB5664 /* LargeCalendarView.swift */; };
 		636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* WorkoutCardView.swift */; };
@@ -133,6 +134,7 @@
 		630B47562787B75000E6FA4B /* WorkoutPlanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanVM.swift; sourceTree = "<group>"; };
 		630B47582787C74600E6FA4B /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		630F570B27E0F54500DFBE90 /* BMIMannager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIMannager.swift; sourceTree = "<group>"; };
+		630F570E27E105DD00DFBE90 /* BMIScaleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIScaleCardView.swift; sourceTree = "<group>"; };
 		636CE250278508C400BB5664 /* WorkoutCardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardVM.swift; sourceTree = "<group>"; };
 		636CE253278509B700BB5664 /* LargeCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCalendarView.swift; sourceTree = "<group>"; };
 		636CE25527851C1300BB5664 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */,
 				636CE25527851C1300BB5664 /* WorkoutCardView.swift */,
 				630582D027868A9B0044399A /* AddExerciseCardView.swift */,
+				630F570E27E105DD00DFBE90 /* BMIScaleCardView.swift */,
 			);
 			path = "Container Views";
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */,
 				63B21DAE2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld in Sources */,
 				630F570C27E0F54500DFBE90 /* BMIMannager.swift in Sources */,
+				630F570F27E105DD00DFBE90 /* BMIScaleCardView.swift in Sources */,
 				636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */,
 				630B47572787B75000E6FA4B /* WorkoutPlanVM.swift in Sources */,
 				63B21DF92784DFD700E5DCE9 /* FPBackground.swift in Sources */,

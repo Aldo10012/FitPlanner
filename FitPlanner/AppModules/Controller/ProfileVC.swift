@@ -81,12 +81,13 @@ class ProfileVC: UIViewController {
     
     // MARK: Helpers
     fileprivate func getUserData() {
-        viewModel.updateProfile(completion: { [self] vm in
-            profilePic = vm?.profilePic
-            userNameLabel.text = vm?.userName
-            weightLabel.text = "\((vm?.weight)!) lbs"
-            heightLabel.text = "\((vm?.feet)!)' \((vm?.inches)!)'' ft"
-        })
+        viewModel.updateProfile { [weak self] vm in
+            self!.profilePic = vm?.profilePic
+            self!.userNameLabel.text = vm?.userName
+            self!.weightLabel.text = "\((vm?.weight)!) lbs"
+            self!.heightLabel.text = "\((vm?.feet)!)' \((vm?.inches)!)'' ft"
+        }
+        
     }
 
     
