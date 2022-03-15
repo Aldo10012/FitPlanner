@@ -26,44 +26,7 @@ class BMIScaleCardView: UIView {
         return s
     }()
     
-    var bmiBar: UIView = {
-        let bar = UIView()
-        let obesebar = UIView()
-        let overweightBar = UIView()
-        let normalBar = UIView()
-        let underweightbar = UIView()
-        
-        bar.setConstantHeight(height: 10)
-        obesebar.setConstantHeight(height: 10)
-        overweightBar.setConstantHeight(height: 10)
-        normalBar.setConstantHeight(height: 10)
-        underweightbar.setConstantHeight(height: 10)
-        
-        obesebar.backgroundColor = .FPObese
-        overweightBar.backgroundColor = .FPOverWeight
-        normalBar.backgroundColor = .FPNormalWeight
-        underweightbar.backgroundColor = .FPUnderWeight
-        
-        bar.addSubviews(obesebar, overweightBar, normalBar, underweightbar)
-        obesebar.anchor(left: bar.leftAnchor)
-        obesebar.centerY(inView: bar)
-        obesebar.setWidth(as: bar.widthAnchor, multiplier: 1)
-        
-        overweightBar.anchor(left: bar.leftAnchor)
-        overweightBar.centerY(inView: bar)
-        overweightBar.setWidth(as: bar.widthAnchor, multiplier: 0.7618)
-        
-        normalBar.anchor(left: bar.leftAnchor)
-        normalBar.centerY(inView: bar)
-        normalBar.setWidth(as: bar.widthAnchor, multiplier: 0.5236)
-        
-        underweightbar.anchor(left: bar.leftAnchor)
-        underweightbar.centerY(inView: bar)
-        underweightbar.setWidth(as: bar.widthAnchor, multiplier: 0.2143)
-        
-        
-        return bar
-    }()
+    var bmiBar = BMIScaleView()
     
     init() {
         super.init(frame: .zero)

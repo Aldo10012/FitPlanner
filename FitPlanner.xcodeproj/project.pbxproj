@@ -23,7 +23,7 @@
 		630F570D27E0F7F300DFBE90 /* BMIMannager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F570B27E0F54500DFBE90 /* BMIMannager.swift */; };
 		630F570F27E105DD00DFBE90 /* BMIScaleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F570E27E105DD00DFBE90 /* BMIScaleCardView.swift */; };
 		630F571127E1225200DFBE90 /* FPAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F571027E1225200DFBE90 /* FPAlert.swift */; };
-		630F571327E132DA00DFBE90 /* jjj.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630F571227E132DA00DFBE90 /* jjj.storyboard */; };
+		630F571527E1427100DFBE90 /* BMIScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F571427E1427100DFBE90 /* BMIScaleView.swift */; };
 		636CE251278508C400BB5664 /* WorkoutCardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE250278508C400BB5664 /* WorkoutCardVM.swift */; };
 		636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE253278509B700BB5664 /* LargeCalendarView.swift */; };
 		636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* WorkoutCardView.swift */; };
@@ -138,7 +138,7 @@
 		630F570B27E0F54500DFBE90 /* BMIMannager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIMannager.swift; sourceTree = "<group>"; };
 		630F570E27E105DD00DFBE90 /* BMIScaleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIScaleCardView.swift; sourceTree = "<group>"; };
 		630F571027E1225200DFBE90 /* FPAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPAlert.swift; sourceTree = "<group>"; };
-		630F571227E132DA00DFBE90 /* jjj.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = jjj.storyboard; sourceTree = "<group>"; };
+		630F571427E1427100DFBE90 /* BMIScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIScaleView.swift; sourceTree = "<group>"; };
 		636CE250278508C400BB5664 /* WorkoutCardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardVM.swift; sourceTree = "<group>"; };
 		636CE253278509B700BB5664 /* LargeCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCalendarView.swift; sourceTree = "<group>"; };
 		636CE25527851C1300BB5664 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
@@ -403,7 +403,6 @@
 				63B21DDD2784C92C00E5DCE9 /* WorkoutLogVC.swift */,
 				63B21DE32784CC5500E5DCE9 /* ProfileVC.swift */,
 				630582C5278632CD0044399A /* WorkoutPlanVC.swift */,
-				630F571227E132DA00DFBE90 /* jjj.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -463,6 +462,7 @@
 				636CE25527851C1300BB5664 /* WorkoutCardView.swift */,
 				630582D027868A9B0044399A /* AddExerciseCardView.swift */,
 				630F570E27E105DD00DFBE90 /* BMIScaleCardView.swift */,
+				630F571427E1427100DFBE90 /* BMIScaleView.swift */,
 			);
 			path = "Container Views";
 			sourceTree = "<group>";
@@ -674,7 +674,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B21DB32784C5DA00E5DCE9 /* LaunchScreen.storyboard in Resources */,
-				630F571327E132DA00DFBE90 /* jjj.storyboard in Resources */,
 				63B21DB02784C5DA00E5DCE9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -804,6 +803,7 @@
 				63B21DDE2784C92C00E5DCE9 /* WorkoutLogVC.swift in Sources */,
 				63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */,
 				63B21DF32784DD2700E5DCE9 /* FPTextField.swift in Sources */,
+				630F571527E1427100DFBE90 /* BMIScaleView.swift in Sources */,
 				630582CA278649590044399A /* HomeVM.swift in Sources */,
 				6394D2D72788BA740019A935 /* NotificationManager.swift in Sources */,
 				630582D127868A9B0044399A /* AddExerciseCardView.swift in Sources */,
