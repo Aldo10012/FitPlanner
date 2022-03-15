@@ -116,14 +116,20 @@ class ProfileVC: UIViewController {
     func showAlert() {
         let ac = UIAlertController(title: "Your new weight (lbs)", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
         ac.view.addSubview(pickerView)
-        pickerView.selectRow(Int(viewModel.weight!), inComponent: 0, animated: false)
+        pickerView.selectRow(Int(viewModel.weight!) - 1, inComponent: 0, animated: false)
 
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             let pickerValue = self.pickerData[self.pickerView.selectedRow(inComponent: 0)]
             print("Picker value: \(pickerValue) was selected")
+            self.bmiWasUpdated(with: Double(pickerValue))
         }))
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(ac, animated: true)
+    }
+    
+    func bmiWasUpdated(with newWeight: Double) {
+        viewModel.updateBMI(newWeight: newWeight)
+        getUserData()
     }
     
 }

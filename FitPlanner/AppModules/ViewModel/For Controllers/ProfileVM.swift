@@ -10,10 +10,12 @@ import UIKit
 // MARK: Protocols
 protocol ProfileInteractorProtocol {
     func getUserData() -> User?
+    func updateUserBMI(for user: User)
 }
 
 protocol ProfilePresentorProtocol {
     mutating func updateProfile(completion: @escaping (ProfileVM?) -> () )
+    mutating func updateBMI(newWeight: Double)
 }
 
 
@@ -57,6 +59,18 @@ extension ProfileVM: ProfilePresentorProtocol {
         completion(self)
         
     }
+    
+    mutating func updateBMI(newWeight: Double) {
+        weight = newWeight
+        
+        let user = getUserData()
+        let newBMI = BMIMannager.calculateBMI(height: height!, weight: newWeight)
+        user?.bmi = newBMI
+        user?.weight = newWeight
+        
+        updateUserBMI(for: user!)
+        
+    }
 }
 
 // MARK: Interactor
@@ -66,6 +80,10 @@ extension ProfileVM: ProfileInteractorProtocol {
         // Get user data form CoreData & return to presentor
         let user = myData.getUser()
         return user
+    }
+    
+    func updateUserBMI(for user: User) {
+        myData.updateUserBMI(user)
     }
     
 }

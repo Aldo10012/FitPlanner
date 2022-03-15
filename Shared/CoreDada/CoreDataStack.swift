@@ -136,6 +136,15 @@ struct CoreDataStack {
         catch {}
     }
     
+    func updateUserBMI(_ user: User) {
+        let managedContext = persistentContainer.viewContext
+
+        do {
+            try managedContext.save()
+        }
+        catch {}
+    }
+    
     // MARK: - Delete Workout
     func deleteWorkout(_ workout: Workout) {
         let managedContext = persistentContainer.viewContext
