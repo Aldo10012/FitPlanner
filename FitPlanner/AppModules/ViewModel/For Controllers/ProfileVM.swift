@@ -46,6 +46,7 @@ extension ProfileVM: ProfilePresentorProtocol {
         userName = user?.name
         weight = user?.weight
         height = user?.height
+        print("BMI:", user?.bmi)
         
         feet = Int(height! / 12)
         inches = Int(height!) - Int(feet! * 12)

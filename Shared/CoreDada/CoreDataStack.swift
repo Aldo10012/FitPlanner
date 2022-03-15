@@ -50,6 +50,7 @@ struct CoreDataStack {
         newUser.name = userName
         newUser.height = height
         newUser.weight = weight
+        newUser.bmi = BMIMannager.calculateBMI(height: height, weight: weight)
         newUser.pictureData = pictureData
         
         // save context

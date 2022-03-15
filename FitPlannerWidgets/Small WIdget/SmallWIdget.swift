@@ -9,7 +9,7 @@ import Foundation
 import WidgetKit
 import SwiftUI
 
-@main
+//@main
 struct SmallWidget: Widget {
     let kind: String = "FitPlannerWidgets"
 
@@ -17,7 +17,7 @@ struct SmallWidget: Widget {
         StaticConfiguration(kind: kind, provider: SmallWidgetTimeline()) { entry in
             SmallWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
+        .configurationDisplayName("Small Widget")
         .description("This is an example widget.")
         .supportedFamilies([.systemSmall])
     }
