@@ -22,6 +22,7 @@
 		630F570C27E0F54500DFBE90 /* BMIMannager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F570B27E0F54500DFBE90 /* BMIMannager.swift */; };
 		630F570D27E0F7F300DFBE90 /* BMIMannager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F570B27E0F54500DFBE90 /* BMIMannager.swift */; };
 		630F570F27E105DD00DFBE90 /* BMIScaleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F570E27E105DD00DFBE90 /* BMIScaleCardView.swift */; };
+		630F571127E1225200DFBE90 /* FPAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F571027E1225200DFBE90 /* FPAlert.swift */; };
 		636CE251278508C400BB5664 /* WorkoutCardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE250278508C400BB5664 /* WorkoutCardVM.swift */; };
 		636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE253278509B700BB5664 /* LargeCalendarView.swift */; };
 		636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* WorkoutCardView.swift */; };
@@ -135,6 +136,7 @@
 		630B47582787C74600E6FA4B /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		630F570B27E0F54500DFBE90 /* BMIMannager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIMannager.swift; sourceTree = "<group>"; };
 		630F570E27E105DD00DFBE90 /* BMIScaleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIScaleCardView.swift; sourceTree = "<group>"; };
+		630F571027E1225200DFBE90 /* FPAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPAlert.swift; sourceTree = "<group>"; };
 		636CE250278508C400BB5664 /* WorkoutCardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardVM.swift; sourceTree = "<group>"; };
 		636CE253278509B700BB5664 /* LargeCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCalendarView.swift; sourceTree = "<group>"; };
 		636CE25527851C1300BB5664 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				63B21DFC2784E71A00E5DCE9 /* FPButton.swift */,
 				636CE25727851D2900BB5664 /* FPWeekButton.swift */,
 				630B47582787C74600E6FA4B /* AlertManager.swift */,
+				630F571027E1225200DFBE90 /* FPAlert.swift */,
 			);
 			path = Universal;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B21DFB2784E3DA00E5DCE9 /* UIView-ext.swift in Sources */,
+				630F571127E1225200DFBE90 /* FPAlert.swift in Sources */,
 				63B21DA82784C5D800E5DCE9 /* HomeVC.swift in Sources */,
 				639F9757278BDA2E007DF038 /* Result.swift in Sources */,
 				63B21DA42784C5D800E5DCE9 /* AppDelegate.swift in Sources */,
