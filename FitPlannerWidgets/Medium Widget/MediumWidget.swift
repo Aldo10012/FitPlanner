@@ -27,9 +27,47 @@ struct MediumWidget_Previews: PreviewProvider {
     static var previews: some View {
         MediumWidgetEntryView(entry: MediumWidgetEntry(
             date: Date(),
-            nextWorkoutName: "Full Body A",
-            nextWorkoutDate: getDateAsStringLong(Date()) + ",\n" + getMonthAndDateAsString(Date())
+            nextWorkoutName: MediumSample.getName(),
+            nextWorkoutDate: getDateAsStringLong(Date()),
+            nextWorkout: MediumSample.getListofExercises(),
+            numberOfExercises: MediumSample.getNumberOfExercises()
         ))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
+
+
+fileprivate class MediumSample {
+    static func getName() -> String {
+        let myData = CoreDataStack.shared
+        let nextWorkout = myData.getNextWorkout()
+        
+        if nextWorkout?.name == nil {
+            return "not found"
+        } else {
+            return (nextWorkout?.name!)!
+        }
+    }
+
+    static func getListofExercises() -> Workout? {
+        let myData = CoreDataStack.shared
+        let nextWorkout = myData.getNextWorkout()
+        
+        return nextWorkout
+    }
+
+    static func getNumberOfExercises() -> Int {
+        let myData = CoreDataStack.shared
+        let nextWorkout = myData.getNextWorkout()
+        let numberOfExercises = nextWorkout?.exercises?.count
+        
+        if numberOfExercises == nil {
+            return 0
+        } else {
+            return numberOfExercises!
+        }
+    }
+}
+
+
+

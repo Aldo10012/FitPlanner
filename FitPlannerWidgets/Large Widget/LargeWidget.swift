@@ -30,6 +30,6 @@ struct LargeWidget_Previews: PreviewProvider {
             nextWorkoutName: "Full Body A",
             nextWorkoutDate: getDateAsStringLong(Date()) + ",\n" + getMonthAndDateAsString(Date())
         ))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }
