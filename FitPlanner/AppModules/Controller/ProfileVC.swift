@@ -48,6 +48,10 @@ class ProfileVC: UIViewController {
     var heightLabel = FPLabel(title: "0 in", color: .primary, size: 16, weight: .light)
     
     var bmiCard = BMIScaleCardView()
+    
+    // Picker
+    var pickerView: UIPickerView!
+    var pickerData: [Int]!
 
     
     // MARK: Life cycles
@@ -55,6 +59,8 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         getUserData()
         setupViews()
+        setupPicker()
+        showAlert()
     }
     
     
@@ -95,6 +101,44 @@ class ProfileVC: UIViewController {
         }
         
     }
-
     
+    func setupPicker() {
+        pickerView = UIPickerView(frame: CGRect(x: 10, y: 50, width: 250, height: 150))
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        // This is where you can set your min/max values
+        let minNum = 1
+        let maxNum = 300
+        pickerData = Array(stride(from: minNum, to: maxNum + 1, by: 1))
+    }
+    
+    func showAlert() {
+        let ac = UIAlertController(title: "Your new weight (lbs)", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+        ac.view.addSubview(pickerView)
+        pickerView.selectRow(Int(viewModel.weight!), inComponent: 0, animated: false)
+
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            let pickerValue = self.pickerData[self.pickerView.selectedRow(inComponent: 0)]
+            print("Picker value: \(pickerValue) was selected")
+        }))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(ac, animated: true)
+    }
+    
+}
+
+// MARK: UIPickerView Delegates
+extension ProfileVC: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(pickerData[row])"
+    }
 }
