@@ -46,6 +46,7 @@ class ProfileVC: UIViewController {
     var userNameLabel = FPLabel(title: "Name", color: .primary, size: 22, weight: .light)
     var weightLabel = FPLabel(title: "0 lbs", color: .primary, size: 16, weight: .light)
     var heightLabel = FPLabel(title: "0 in", color: .primary, size: 16, weight: .light)
+    let logWeightButton = FPButton(type: .primary, title: "Log weight", target: self, action: #selector(didTapLogWeight))
     
     var bmiCard = BMIScaleCardView()
     
@@ -59,16 +60,19 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         getUserData()
         setupViews()
+    }
+    
+    // MARK: Selectors
+    @objc func didTapLogWeight() {
         setupPicker()
         showAlert()
     }
-    
     
     // MARK: UI Setup
     fileprivate func setupViews() {
         view.backgroundColor = .FPBackground
         
-        view.addSubviews(profilePicView, userNameLabel, weightImageView, weightLabel, heightImageView, heightLabel, bmiCard)
+        view.addSubviews(profilePicView, userNameLabel, weightImageView, weightLabel, heightImageView, heightLabel, bmiCard, logWeightButton)
         
         profilePicView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 20)
         
@@ -86,6 +90,7 @@ class ProfileVC: UIViewController {
         
         bmiCard.anchor(top: profilePicView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 20, paddingRight: 20)
         
+        logWeightButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
         
     }
     
@@ -99,7 +104,11 @@ class ProfileVC: UIViewController {
             
             self!.bmiCard.updateContent(bmi: (vm?.bmi)!)
         }
-        
+    }
+    
+    func bmiWasUpdated(with newWeight: Double) {
+        viewModel.updateBMI(newWeight: newWeight)
+        getUserData()
     }
     
     func setupPicker() {
@@ -127,10 +136,7 @@ class ProfileVC: UIViewController {
         present(ac, animated: true)
     }
     
-    func bmiWasUpdated(with newWeight: Double) {
-        viewModel.updateBMI(newWeight: newWeight)
-        getUserData()
-    }
+    
     
 }
 
