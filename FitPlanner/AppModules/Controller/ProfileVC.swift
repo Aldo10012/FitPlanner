@@ -102,16 +102,16 @@ class ProfileVC: UIViewController {
             self!.weightLabel.text = "\((vm?.weight)!) lbs"
             self!.heightLabel.text = "\((vm?.feet)!)' \((vm?.inches)!)'' ft"
             
-            self!.bmiCard.updateContent(bmi: (vm?.bmi)!)
+            self!.bmiCard.updateContent(bmi: (vm?.bmi)!)            
         }
     }
     
-    func bmiWasUpdated(with newWeight: Double) {
+    fileprivate func bmiWasUpdated(with newWeight: Double) {
         viewModel.updateBMI(newWeight: newWeight)
         getUserData()
     }
     
-    func setupPicker() {
+    fileprivate func setupPicker() {
         pickerView = UIPickerView(frame: CGRect(x: 10, y: 50, width: 250, height: 150))
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -122,16 +122,13 @@ class ProfileVC: UIViewController {
         pickerData = Array(stride(from: minNum, to: maxNum + 1, by: 1))
     }
     
-    func showAlert() {
+    fileprivate func showAlert() {
         FPAlert.showUpdateWeightAlert(on: self, pickerView: pickerView, pickerData: pickerData, weight: viewModel.weight!) {
             let pickerValue = self.pickerData[self.pickerView.selectedRow(inComponent: 0)]
             print("Picker value: \(pickerValue) was selected")
             self.bmiWasUpdated(with: Double(pickerValue))
         }
     }
-    
-    
-    
 }
 
 // MARK: UIPickerView Delegates
