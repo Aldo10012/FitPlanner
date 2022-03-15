@@ -29,6 +29,13 @@ extension UIColor {
     static var FPGray = rgba(238, 238, 238, 1)
     
     
+    static var FPUnderWeight = rgba(103, 174, 239, 1)
+    static var FPNormalWeight = rgba(103, 231, 239, 1)
+    static var FPOverWeight = rgba(222, 224, 97, 1)
+    static var FPObese = rgba(208, 100, 100, 1)
+    
+    
+    
     
     
 }

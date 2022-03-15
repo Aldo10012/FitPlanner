@@ -46,6 +46,13 @@ class ProfileVC: UIViewController {
     var userNameLabel = FPLabel(title: "Name", color: .primary, size: 22, weight: .light)
     var weightLabel = FPLabel(title: "0 lbs", color: .primary, size: 16, weight: .light)
     var heightLabel = FPLabel(title: "0 in", color: .primary, size: 16, weight: .light)
+    let logWeightButton = FPButton(type: .primary, title: "Log weight", target: self, action: #selector(didTapLogWeight))
+    
+    var bmiCard = BMIScaleCardView()
+    
+    // Picker
+    var pickerView: UIPickerView!
+    var pickerData: [Int]!
 
     
     // MARK: Life cycles
@@ -55,12 +62,17 @@ class ProfileVC: UIViewController {
         setupViews()
     }
     
+    // MARK: Selectors
+    @objc func didTapLogWeight() {
+        setupPicker()
+        showAlert()
+    }
     
     // MARK: UI Setup
     fileprivate func setupViews() {
         view.backgroundColor = .FPBackground
         
-        view.addSubviews(profilePicView, userNameLabel, weightImageView, weightLabel, heightImageView, heightLabel)
+        view.addSubviews(profilePicView, userNameLabel, weightImageView, weightLabel, heightImageView, heightLabel, bmiCard, logWeightButton)
         
         profilePicView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 20, paddingLeft: 20)
         
@@ -76,18 +88,60 @@ class ProfileVC: UIViewController {
         heightLabel.anchor(left: heightImageView.rightAnchor, paddingLeft: 5)
         heightLabel.centerY(inView: weightImageView)
         
+        bmiCard.anchor(top: profilePicView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 20, paddingRight: 20)
+        
+        logWeightButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
         
     }
     
     // MARK: Helpers
     fileprivate func getUserData() {
-        viewModel.updateProfile(completion: { [self] vm in
-            profilePic = vm?.profilePic
-            userNameLabel.text = vm?.userName
-            weightLabel.text = "\((vm?.weight)!) lbs"
-            heightLabel.text = "\((vm?.feet)!)' \((vm?.inches)!)'' ft"
-        })
+        viewModel.updateProfile { [weak self] vm in
+            self!.profilePic = vm?.profilePic
+            self!.userNameLabel.text = vm?.userName
+            self!.weightLabel.text = "\((vm?.weight)!) lbs"
+            self!.heightLabel.text = "\((vm?.feet)!)' \((vm?.inches)!)'' ft"
+            
+            self!.bmiCard.updateContent(bmi: (vm?.bmi)!)            
+        }
     }
-
     
+    fileprivate func bmiWasUpdated(with newWeight: Double) {
+        viewModel.updateBMI(newWeight: newWeight)
+        getUserData()
+    }
+    
+    fileprivate func setupPicker() {
+        pickerView = UIPickerView(frame: CGRect(x: 10, y: 50, width: 250, height: 150))
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        // This is where you can set your min/max values
+        let minNum = 1
+        let maxNum = 300
+        pickerData = Array(stride(from: minNum, to: maxNum + 1, by: 1))
+    }
+    
+    fileprivate func showAlert() {
+        FPAlert.showUpdateWeightAlert(on: self, pickerView: pickerView, pickerData: pickerData, weight: viewModel.weight!) {
+            let pickerValue = self.pickerData[self.pickerView.selectedRow(inComponent: 0)]
+            print("Picker value: \(pickerValue) was selected")
+            self.bmiWasUpdated(with: Double(pickerValue))
+        }
+    }
+}
+
+// MARK: UIPickerView Delegates
+extension ProfileVC: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(pickerData[row])"
+    }
 }
