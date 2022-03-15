@@ -56,26 +56,12 @@ class BMIScaleCardView: UIView {
         bmiBar.addSubview(slider)
         slider.anchor(left: bmiBar.leftAnchor, right: bmiBar.rightAnchor)
         slider.centerY(inView: bmiBar)
-        
-        
-        slider.addTarget(self, action: #selector(sliderValueDidChange), for: .valueChanged)
-        
     }
     
     func updateContent(bmi: Double) {
         bmiLabel.text = "\(bmi)"
         detailLabel.text = BMIMannager.getBMIScaleDescription(bmi: bmi)
         slider.value = Float(bmi)
-    }
-    
-    
-    //let step:Float = 10
-    @objc func sliderValueDidChange(_ sender:UISlider!) {
-        print("Slider value changed")
-            
-        let value = round(sender.value * 100) / 100 //(sender.value)
-            
-        print("Slider step value \(value)")
     }
     
     required init?(coder: NSCoder) {
