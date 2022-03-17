@@ -12,8 +12,8 @@ class BMILogTableViewCell: UITableViewCell {
     // MARK: Properties
     var card = FPBackground(radius: 8)
     
-    var dateLabel = FPLabel(title: "Date", color: .primary, size: 16, weight: .medium)
-    var bmiLabel = FPLabel(title: "BMI", color: .primary, size: 20, weight: .medium)
+    var dateLabel = FPLabel(title: "Date", color: .tertiary, size: 16, weight: .medium)
+    var bmiLabel = FPLabel(title: "BMI", color: .primary, size: 20, weight: .bold)
     lazy var weightLabel: UILabel = {
         let label = UILabel()
         let attributedTitle = self.setAttributedText("0.0")

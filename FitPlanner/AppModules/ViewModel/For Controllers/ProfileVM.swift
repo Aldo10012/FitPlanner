@@ -93,6 +93,7 @@ extension ProfileVM: ProfileInteractorProtocol {
         let bmiLog = BMIMannager.calculateBMI(height: height!, weight: weight!)
         
         myData.userDidLogBMI(date: dateLog, weight: weightLog, bmi: bmiLog)
+        
     }
     
 }

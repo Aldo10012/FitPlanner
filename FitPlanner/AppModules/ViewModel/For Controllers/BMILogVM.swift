@@ -27,7 +27,7 @@ struct BMILogVM {
 extension BMILogVM: BMILogPresentor {
     mutating func onViewDidLoad(success: @escaping () -> ()) {
         let bmiHistory = getBMIHistory()
-        history = bmiHistory
+        history = bmiHistory.reversed()
     }
 }
 

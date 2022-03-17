@@ -22,6 +22,7 @@ extension UIColor {
     
     // colors specific to FPLabel
     static var FPLabelPrimary = rgba(62, 62, 62, 1)
+    static var FPLableTertiary = rgba(187, 187, 187, 1)
     
     // colors spedific to FPTextField
     static var FPTextFieldPlaceholder = rgba(187, 187, 187, 1)

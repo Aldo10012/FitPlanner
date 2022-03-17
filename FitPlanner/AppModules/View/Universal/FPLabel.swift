@@ -10,6 +10,7 @@ import UIKit
 enum labelColor {
     case primary
     case secondary
+    case tertiary
 }
 
 class FPLabel: UILabel{
@@ -38,6 +39,8 @@ class FPLabel: UILabel{
             self.textColor = .FPLabelPrimary
         case .secondary:
             self.textColor = .white
+        case .tertiary:
+            self.textColor = .FPLableTertiary
         }
     }
     
