@@ -70,6 +70,9 @@
 		63BD4B62278F9F0100DDA2F4 /* SmallWIdgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B59278F9C4A00DDA2F4 /* SmallWIdgetEntry.swift */; };
 		63BD4B64278F9F0D00DDA2F4 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */; };
 		63BD4B66278FB46900DDA2F4 /* SmallWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5B278F9C6300DDA2F4 /* SmallWidgetTimeline.swift */; };
+		63D7F23127E3BC7A00A7064A /* BMILogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F23027E3BC7A00A7064A /* BMILogVC.swift */; };
+		63D7F23327E3BE4600A7064A /* BMILogVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F23227E3BE4600A7064A /* BMILogVM.swift */; };
+		63D7F23527E3C05200A7064A /* BMILogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F23427E3C05200A7064A /* BMILogTableViewCell.swift */; };
 		63FBC2E427DFF90A0065296D /* MediumWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2D927DFF6950065296D /* MediumWidgetEntry.swift */; };
 		63FBC2E527DFF90D0065296D /* MediumWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2DB27DFF6AF0065296D /* MediumWidgetTimeline.swift */; };
 		63FBC2E627DFF9100065296D /* MediumWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBC2DD27DFF6C00065296D /* MediumWidget.swift */; };
@@ -185,6 +188,9 @@
 		63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		63BD4B6A278FBA0500DDA2F4 /* FitPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlanner.entitlements; sourceTree = "<group>"; };
 		63BD4B6B278FBA0C00DDA2F4 /* FitPlannerWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlannerWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		63D7F23027E3BC7A00A7064A /* BMILogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILogVC.swift; sourceTree = "<group>"; };
+		63D7F23227E3BE4600A7064A /* BMILogVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILogVM.swift; sourceTree = "<group>"; };
+		63D7F23427E3C05200A7064A /* BMILogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILogTableViewCell.swift; sourceTree = "<group>"; };
 		63FBC2D927DFF6950065296D /* MediumWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetEntry.swift; sourceTree = "<group>"; };
 		63FBC2DB27DFF6AF0065296D /* MediumWidgetTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetTimeline.swift; sourceTree = "<group>"; };
 		63FBC2DD27DFF6C00065296D /* MediumWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidget.swift; sourceTree = "<group>"; };
@@ -248,6 +254,7 @@
 				630582C127861D740044399A /* WorkoutLogVM.swift */,
 				630B474F2787736F00E6FA4B /* ProfileVM.swift */,
 				630B47562787B75000E6FA4B /* WorkoutPlanVM.swift */,
+				63D7F23227E3BE4600A7064A /* BMILogVM.swift */,
 			);
 			path = "For Controllers";
 			sourceTree = "<group>";
@@ -257,6 +264,7 @@
 			children = (
 				630582BF27861CC20044399A /* WorkoutCardTableViewCell.swift */,
 				630582CC27865FE00044399A /* ExerciseTableViewCell.swift */,
+				63D7F23427E3C05200A7064A /* BMILogTableViewCell.swift */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
@@ -401,8 +409,9 @@
 				63B21DE92784D6BE00E5DCE9 /* GetStartedVC.swift */,
 				63B21DA72784C5D800E5DCE9 /* HomeVC.swift */,
 				63B21DDD2784C92C00E5DCE9 /* WorkoutLogVC.swift */,
-				63B21DE32784CC5500E5DCE9 /* ProfileVC.swift */,
 				630582C5278632CD0044399A /* WorkoutPlanVC.swift */,
+				63B21DE32784CC5500E5DCE9 /* ProfileVC.swift */,
+				63D7F23027E3BC7A00A7064A /* BMILogVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -791,6 +800,7 @@
 				63B21DE82784D69800E5DCE9 /* Router.swift in Sources */,
 				636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */,
 				630B4752278776CF00E6FA4B /* GetStartedVM.swift in Sources */,
+				63D7F23327E3BE4600A7064A /* BMILogVM.swift in Sources */,
 				63B21DEA2784D6BE00E5DCE9 /* GetStartedVC.swift in Sources */,
 				63B21DEF2784DB9200E5DCE9 /* UIView-autolayout.swift in Sources */,
 				63B21DE42784CC5500E5DCE9 /* ProfileVC.swift in Sources */,
@@ -801,7 +811,9 @@
 				630582C6278632CD0044399A /* WorkoutPlanVC.swift in Sources */,
 				630582C027861CC20044399A /* WorkoutCardTableViewCell.swift in Sources */,
 				63B21DDE2784C92C00E5DCE9 /* WorkoutLogVC.swift in Sources */,
+				63D7F23527E3C05200A7064A /* BMILogTableViewCell.swift in Sources */,
 				63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */,
+				63D7F23127E3BC7A00A7064A /* BMILogVC.swift in Sources */,
 				63B21DF32784DD2700E5DCE9 /* FPTextField.swift in Sources */,
 				630F571527E1427100DFBE90 /* BMIScaleView.swift in Sources */,
 				630582CA278649590044399A /* HomeVM.swift in Sources */,
