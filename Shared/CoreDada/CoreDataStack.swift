@@ -79,6 +79,33 @@ struct CoreDataStack {
         }
     }
     
+    // MARK: Update User BMI
+    func updateUserBMI(_ user: User) {
+        let managedContext = persistentContainer.viewContext
+
+        do {
+            try managedContext.save()
+        }
+        catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
+    // MARK: Log BMI change
+    func userDidLogBMI(date: Date, weight: Double, bmi: Double) {
+        let managedContext = persistentContainer.viewContext
+        
+        let newBmiLog = BMILog(context: managedContext)
+        newBmiLog.date = date
+        newBmiLog.weight = weight
+        newBmiLog.bmi = bmi
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
     
     // MARK: Create Workout
     func createWorkout(workoutName: String,
@@ -136,14 +163,6 @@ struct CoreDataStack {
         catch {}
     }
     
-    func updateUserBMI(_ user: User) {
-        let managedContext = persistentContainer.viewContext
-
-        do {
-            try managedContext.save()
-        }
-        catch {}
-    }
     
     // MARK: - Delete Workout
     func deleteWorkout(_ workout: Workout) {

@@ -69,6 +69,7 @@ extension ProfileVM: ProfilePresentorProtocol {
         user?.weight = newWeight
         
         updateUserBMI(for: user!)
+        userDidLogBMI()
         
     }
 }
@@ -84,6 +85,14 @@ extension ProfileVM: ProfileInteractorProtocol {
     
     func updateUserBMI(for user: User) {
         myData.updateUserBMI(user)
+    }
+    
+    func userDidLogBMI() {
+        let dateLog = Date.today()
+        let weightLog = weight!
+        let bmiLog = BMIMannager.calculateBMI(height: height!, weight: weight!)
+        
+        myData.userDidLogBMI(date: dateLog, weight: weightLog, bmi: bmiLog)
     }
     
 }
