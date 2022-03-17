@@ -18,7 +18,7 @@ struct SmallWidgetEntryView : View {
                 Text("Next Workout")
                     .font(.system(size: 14, weight: .medium, design: .default))
                     .foregroundColor(Color(UIColor.FPBlue))
-                    .padding(.bottom, 5)
+                    .padding(.bottom, 2)
                 
                 Text(entry.nextWorkoutName)
                     .font(.system(size: 18, weight: .light, design: .default))
@@ -30,7 +30,6 @@ struct SmallWidgetEntryView : View {
                     .foregroundColor(Color(UIColor.FPTextFieldPlaceholder))
                     .padding(.bottom, 10)
                     .lineLimit(nil)
-                Spacer()
             }
             Spacer()
         }.padding()

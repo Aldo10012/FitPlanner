@@ -50,7 +50,7 @@ struct MediumWidgetTimeline: TimelineProvider {
         print("next workout:", myData.getNextWorkout() )
         if let nextWorkout = myData.getNextWorkout() {
             name = nextWorkout.name!
-            date = getDateAsStringLong(dateOfNextWorkout) + ",\n" + getMonthAndDateAsString(dateOfNextWorkout)
+            date = Date().getDateAsString(dateOfNextWorkout, format: "EEEE,\nMMM d")
             workout = nextWorkout
             numberOfExercises = nextWorkout.exercises?.count ?? 0
         } else {

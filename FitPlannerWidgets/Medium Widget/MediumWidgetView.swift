@@ -46,7 +46,7 @@ struct MediumWidgetEntryView : View {
                 }
                 Spacer()
             }
-            .padding(.leading, 25)
+            .padding(.leading, 20)
             
             Spacer()
         }.padding()
@@ -71,8 +71,9 @@ struct ExtractedView: View {
             Text("\(name)")
             Spacer()
             Text("\(reps)")
-                .padding(.trailing, 5)
+                .frame(width: 36, alignment: .center)
             Text("\(sets)")
+                .frame(width: 36, alignment: .center)
         }
     }
 }
