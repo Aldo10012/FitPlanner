@@ -29,6 +29,7 @@ struct SmallWidgetEntryView : View {
                     .font(.system(size: 16, weight: .regular, design: .default))
                     .foregroundColor(Color(UIColor.FPTextFieldPlaceholder))
                     .padding(.bottom, 10)
+                    .lineLimit(nil)
                 Spacer()
             }
             Spacer()

@@ -37,22 +37,26 @@ struct MediumWidgetEntryView : View {
                 ExtractedView(name: "name", reps: "reps", sets: "sets")
                 
                 // TODO: Exercise is of type NSSet(), does it need an Array? Why doesn't this work
-//                ForEach(entry.nextWorkout?.exercises?.allObjects) { (exercise) in
-//                    ExtractedView(
-//                        name: exercise.name, reps: exercise.reps, sets: exercise.sets
-//                    )
-//                }
-                
-                
+                ForEach(self.getListOfExercises(), id: \.self) { (exercise) in
+                    ExtractedView(
+                        name: exercise.name ?? "no name",
+                        reps: "\(exercise.reps)",
+                        sets: "\(exercise.sets)"
+                    )
+                }
                 Spacer()
             }
             .padding(.leading, 25)
-            
             
             Spacer()
         }.padding()
             
         
+    }
+    
+    func getListOfExercises() -> [Exercise] {
+        let listOfExercises = entry.nextWorkout?.exercises?.allObjects as [Exercise]
+        return listOfExercises
     }
 }
 

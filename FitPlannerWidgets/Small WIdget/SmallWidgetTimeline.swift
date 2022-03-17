@@ -36,7 +36,11 @@ struct SmallWidgetTimeline: TimelineProvider {
         print("next workout:", myData.getNextWorkout() )
         if let nextWorkout = myData.getNextWorkout() {
             name = nextWorkout.name!
-            date = getDateAsStringLong(dateOfNextWorkout) + ",\n" + getMonthAndDateAsString(dateOfNextWorkout)
+            
+            let dayOfWeek = Date().getDateAsString(dateOfNextWorkout, format: "EEEE")
+            let monthAndDate = Date().getDateAsString(dateOfNextWorkout, format: "MMM d")
+            date = "\(dayOfWeek), \(monthAndDate)"
+            
         } else {
             name = "No workouts "
             date = ""
