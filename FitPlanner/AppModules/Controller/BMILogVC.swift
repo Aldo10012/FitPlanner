@@ -12,13 +12,16 @@ class BMILogVC: UIViewController {
     // MARK: Properties
     
     let tableView = UITableView()
-    let viewModel = BMILogVM()
+    var viewModel = BMILogVM()
     
     // MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+        viewModel.onViewDidLoad { 
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -47,11 +50,14 @@ class BMILogVC: UIViewController {
 
 extension BMILogVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.history.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId.bmiLogCell) as! BMILogTableViewCell
+        
+        let log = viewModel.history[indexPath.row]
+        cell.setLogDetails(date: log.date!, bmi: log.bmi, weight: log.weight)
         
         return cell
     }

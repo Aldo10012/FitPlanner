@@ -48,5 +48,8 @@ extension GetStartedVM: GetStartedInteractor {
             weight: weight!,
             pictureData: pictureData!
         )
+        
+        let bmi = BMIMannager.calculateBMI(height: height!, weight: weight!)
+        myData.userDidLogBMI(date: Date(), weight: weight!, bmi: bmi)
     }
 }

@@ -13,7 +13,7 @@ class BMILogTableViewCell: UITableViewCell {
     var card = FPBackground(radius: 8)
     
     var dateLabel = FPLabel(title: "Date", color: .primary, size: 16, weight: .medium)
-    var bmiLabel = FPLabel(title: "BMI", color: .primary, size: 16, weight: .medium)
+    var bmiLabel = FPLabel(title: "BMI", color: .primary, size: 20, weight: .medium)
     lazy var weightLabel: UILabel = {
         let label = UILabel()
         let attributedTitle = self.setAttributedText("0.0")
@@ -52,10 +52,19 @@ class BMILogTableViewCell: UITableViewCell {
     }
     
     
+    
     // MARK: Helpers
-    func setAttributedText(_ text: String) ->  NSAttributedString? {
+    func setLogDetails(date: Date, bmi: Double, weight: Double) {
+        dateLabel.text = Date().getDateAsString(date, format: "MMM dd, yyyy")
+        bmiLabel.text = "\(Double(round(bmi * 100) / 100.0))"
+        bmiLabel.textColor = BMIMannager.getBMIScaleColor(bmi: bmi)
+        weightLabel.attributedText = setAttributedText("\(weight)")
+    }
+    
+    
+    private func setAttributedText(_ text: String) ->  NSAttributedString? {
         let attributedTitle = NSMutableAttributedString(
-            string: "\(text)  ",
+            string: "\(text) ",
             attributes: [
                 .font: UIFont.systemFont(ofSize: 30, weight: .medium),
                 .foregroundColor: UIColor.FPLabelPrimary

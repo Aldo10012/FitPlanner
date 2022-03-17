@@ -13,33 +13,28 @@ protocol BMILogInteractor {
 }
 
 protocol BMILogPresentor {
-    mutating func onViewDidLoad()
+    mutating func onViewDidLoad(success: @escaping () -> ())
 }
 
 // MARK: ViewModel
 struct BMILogVM {
-    var history: [BMILog]?
+    private let myDate = CoreDataStack.shared
+    var history: [BMILog] = []
 }
 
 
 // MARK: Presentor
 extension BMILogVM: BMILogPresentor {
-    mutating func onViewDidLoad() {
-        
-        
-        
-        return
+    mutating func onViewDidLoad(success: @escaping () -> ()) {
+        let bmiHistory = getBMIHistory()
+        history = bmiHistory
     }
-    
-    
 }
 
 // MARK: Interactor
 extension BMILogVM: BMILogInteractor {
     func getBMIHistory() -> [BMILog] {
-        
-        
-        
-        return []
+        print("BMI History:", myDate.getMBILog())
+        return myDate.getMBILog()
     }
 }

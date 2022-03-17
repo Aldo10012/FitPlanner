@@ -107,6 +107,20 @@ struct CoreDataStack {
         }
     }
     
+    func getMBILog() -> [BMILog] {
+        let managedContext = persistentContainer.viewContext
+        let fetchRequest = BMILog.fetchRequest()
+        
+        do {
+            let bmiLog = try managedContext.fetch(fetchRequest)
+            return bmiLog
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return []
+        }
+    }
+    
     // MARK: Create Workout
     func createWorkout(workoutName: String,
                        onSun: Bool, onMon: Bool, onTue: Bool, onWed: Bool, onThu: Bool, onFri: Bool, onSat: Bool,
