@@ -68,6 +68,11 @@ class ProfileVC: UIViewController {
         showAlert()
     }
     
+    @objc func handleSeeHistoryTap(_ sender: UITapGestureRecognizer) {
+        print("DID TAP")
+        Router.pushToController(BMILogVC(), from: self)
+    }
+    
     // MARK: UI Setup
     fileprivate func setupViews() {
         view.backgroundColor = .FPBackground
@@ -92,6 +97,11 @@ class ProfileVC: UIViewController {
         
         logWeightButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 20, paddingBottom: 20, paddingRight: 20)
         
+        
+        bmiCard.seeHistoryLabel.isUserInteractionEnabled = true
+        
+        let seeHistoryTap = UITapGestureRecognizer(target: self, action: #selector(handleSeeHistoryTap))
+        bmiCard.seeHistoryLabel.addGestureRecognizer(seeHistoryTap)
     }
     
     // MARK: Helpers

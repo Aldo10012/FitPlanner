@@ -14,6 +14,7 @@ class BMIScaleCardView: UIView {
     let card = FPBackground(radius: 8)
     var bmiLabel = FPLabel(title: "0.0", color: .primary, size: 22, weight: .bold)
     var detailLabel = FPLabel(title: "Detail", color: .primary, size: 16, weight: .thin)
+    var seeHistoryLabel = FPLabel(title: "See history", color: .primary, size: 16, weight: .light, alignment: .right)
     
     var slider: UISlider = {
         let s = UISlider()
@@ -39,10 +40,12 @@ class BMIScaleCardView: UIView {
         backgroundColor = .clear
         layer.cornerRadius = 8
         
-        addSubviews(label, card)
+        addSubviews(label, card, seeHistoryLabel)
         card.addSubviews(bmiLabel, detailLabel, bmiBar)
         
         label.anchor(top: topAnchor, left: leftAnchor)
+        seeHistoryLabel.anchor(bottom: label.bottomAnchor, right: rightAnchor)
+        seeHistoryLabel.textColor = .FPBlue
         card.anchor(top: label.bottomAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 15)
         card.setConstantHeight(height: 115)
         card.addStandardShadow()

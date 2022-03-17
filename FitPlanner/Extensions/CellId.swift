@@ -10,4 +10,5 @@ import Foundation
 struct CellId {
     static let workoutCell = "WorkoutCardCell"
     static let exerciseCell = "ExerciseCell"
+    static let bmiLogCell = "BmiLogCell"
 }

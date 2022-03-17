@@ -81,6 +81,14 @@ extension Date {
       }
     }
   }
+    
+    func getDateAsString(_ date: Date, format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        let dateAsString = dateFormatter.string(from: date)
+
+        return dateAsString
+    }
 }
 
 func getDateAsString(_ date: Date) -> String {

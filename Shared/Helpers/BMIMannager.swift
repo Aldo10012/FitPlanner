@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class BMIMannager {
     
@@ -28,6 +29,21 @@ class BMIMannager {
         }
         else {
             return "You are under weight"
+        }
+    }
+    
+    static func getBMIScaleColor(bmi: Double) -> UIColor {
+        if bmi > 30 {
+            return UIColor.FPObese
+        }
+        else if bmi > 25 {
+            return UIColor.FPOverWeight
+        }
+        else if bmi > 18.5 {
+            return UIColor.FPNormalWeight
+        }
+        else {
+            return UIColor.FPUnderWeight
         }
     }
 }
