@@ -43,7 +43,7 @@ class TabBarController: UITabBarController {
             
             createNavController(for: ProfileVC(),
                                 navBarTitle: NSLocalizedString("Profile", comment: ""),
-                                tabBarTitle: NSLocalizedString("Home", comment: ""),
+                                tabBarTitle: NSLocalizedString("Profile", comment: ""),
                                 image: UIImage(systemName: "person")!,
                                 selectedImage: UIImage(systemName: "person.fill")!)
         ]

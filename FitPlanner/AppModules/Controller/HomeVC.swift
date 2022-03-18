@@ -140,10 +140,17 @@ class HomeVC: UIViewController {
                 }
                 
                 // so calendar can focuse on TODAY
-                self.largetCalendarCard.calendar.select(Date.today())
-                self.largetCalendarCard.calendar.deselect(Date.today())
+                self.viewModel.checkIfActivityisToday { result in
+                    switch result {
+                    case .success:
+                        self.largetCalendarCard.calendar.deselect(Date.today())
+                        self.largetCalendarCard.calendar.select(Date.today())
+                    case .failure:
+                        self.largetCalendarCard.calendar.select(Date.today())
+                        self.largetCalendarCard.calendar.deselect(Date.today())
+                    }
+                }
             }
-            
         }
     }
 

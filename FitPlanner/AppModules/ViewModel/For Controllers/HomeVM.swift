@@ -12,6 +12,7 @@ import CoreData
 protocol HomePresentor {
     mutating func updateNextWorkoutCard(completion: @escaping(Result<String, String>) -> ())
     mutating func updateActivityCalendar(completion: @escaping() -> ())
+    func checkIfActivityisToday(completion: @escaping (Result<String, String>) -> ())
 }
 
 protocol HomeInteractor {
@@ -65,6 +66,25 @@ extension HomeVM: HomePresentor {
         self.activity = getActivity()
         print("MY ACTIVITY", self.activity)
         completion()
+    }
+    
+    func checkIfActivityisToday(completion: @escaping (Result<String, String>) -> ()) {
+        DispatchQueue.global(qos: .utility).async {
+            for activity in self.activity! {
+                let activityDate = Date().getDateAsString(activity.date!, format: "MMM, dd, yyyy")
+                let todaysDate = Date().getDateAsString(Date.today(), format: "MMM, dd, yyyy")
+                
+                if activityDate == todaysDate {
+                    DispatchQueue.main.async {
+                        completion(Result.success("pass"))
+                    }
+                    return
+                }
+            }
+            DispatchQueue.main.async {
+                completion(Result.failure("fail"))
+            }
+        }
     }
 }
 
