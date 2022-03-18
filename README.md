@@ -21,6 +21,8 @@ Primarily for me, but also for anyone who wants to take back their fitness and c
 - Local notifications to remind you of your next workout
 - Track your workouts
 - Widgets reminding you of your next workout
+- Update your weight
+- Track your BMI progression
 
 ## Tech Stack
 
@@ -33,7 +35,7 @@ Primarily for me, but also for anyone who wants to take back their fitness and c
 
 ## Instalation
 
-Type ```git clone https://github.com/Aldo10012/NBA-Stats.git``` into your terminal
+Type ```git clone https://github.com/Aldo10012/FitPlanner.git``` into your terminal
 
 ## Usage
 
@@ -48,3 +50,11 @@ After you register, you can see on the home dashboard. Here, you can see what yo
 You are able to add a workout by tapping "Create New Workout", edit an existing workout by tapping on a workout card in WorkoutLog, delete a workout by swiping left on a workout card, and mark a workout as done by tapping "View" on the NextWorkoutCard in home (given that that workout is today).
 
 <img src="Images/add-workout.png" width=32%> <img src="Images/edit-workout.png" width=32%> <img src="Images/mark-as-done.png" width=32%> 
+
+You can see where you stand on the BMI scale. As time progresses, you can update your weight and this will update the scale for you. You can also see your weight and bmi history to see your improvements. 
+
+<img src="Images/profile.png" width=32%> <img src="Images/update-weight.png" width=32%> <img src="Images/weight-log.png" width=32%> 
+
+When on the home screen, you can see any of three widgets. Each one displays information of your next workout, acting as a visual reminder.
+
+<img src="Images/large-widget.png" width=32%> <img src="Images/small-medium-widget.png" width=32%>
