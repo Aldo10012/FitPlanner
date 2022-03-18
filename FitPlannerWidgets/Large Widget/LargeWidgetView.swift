@@ -34,7 +34,7 @@ struct LargeWidgetEntryView : View {
                         .font(.system(size: 14, weight: .light))
                         .foregroundColor(Color.init(uiColor: .FPLabelPrimary))
                     Spacer()
-                    DaysOfWeekView()
+                    DaysOfWeekView(entry: entry)
                 }
                 
                 Rectangle()
@@ -70,15 +70,24 @@ struct LargeWidgetEntryView : View {
 }
 
 struct DaysOfWeekView: View {
+    @State var entry: LargeWidgetTimeline.Entry
+    
     var body: some View {
         HStack(spacing: 6) {
             Text("S")
+                .foregroundColor(entry.onSun ? Color.init(uiColor: .FPBlue) : Color.init(uiColor: .FPLabelPrimary))
             Text("M")
+                .foregroundColor(entry.onMon ? Color.init(uiColor: .FPBlue) : Color.init(uiColor: .FPLabelPrimary))
             Text("T")
+                .foregroundColor(entry.onThu ? Color.init(uiColor: .FPBlue) : Color.init(uiColor: .FPLabelPrimary))
             Text("W")
+                .foregroundColor(entry.onWed ? Color.init(uiColor: .FPBlue) : Color.init(uiColor: .FPLabelPrimary))
             Text("Th")
+                .foregroundColor(entry.onThu ? Color.init(uiColor: .FPBlue) : Color.init(uiColor: .FPLabelPrimary))
             Text("F")
+                .foregroundColor(entry.onFri ? Color.init(uiColor: .FPBlue) : Color.init(uiColor: .FPLabelPrimary))
             Text("Sa")
+                .foregroundColor(entry.onSat ? Color.init(uiColor: .FPBlue) : Color.init(uiColor: .FPLabelPrimary))
         }
         .font(.system(size: 14, weight: .medium))
     }
