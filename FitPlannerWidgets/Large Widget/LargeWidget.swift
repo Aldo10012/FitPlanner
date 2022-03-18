@@ -9,7 +9,7 @@ import Foundation
 import WidgetKit
 import SwiftUI
 
-
+@main
 struct LargeWidget: Widget {
     let kind: String = "FitPlannerWidgets"
 
@@ -28,7 +28,8 @@ struct LargeWidget_Previews: PreviewProvider {
         LargeWidgetEntryView(entry: LargeWidgetEntry(
             date: Date(),
             nextWorkoutName: "Full Body A",
-            nextWorkoutDate: getDateAsStringLong(Date()) + ",\n" + getMonthAndDateAsString(Date())
+            nextWorkoutDate: Date().getDateAsString(dateOfNextWorkout, format: "EEEE"),
+            numberOfExercises: 0
         ))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
     }

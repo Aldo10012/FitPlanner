@@ -34,11 +34,10 @@ struct MediumWidgetEntryView : View {
                     .padding(.bottom, 10)
             }
             VStack(alignment: .leading) {
-                ExtractedView(name: "name", reps: "reps", sets: "sets")
+                MediumWidgetExerciseRowView(name: "name", reps: "reps", sets: "sets")
                 
-                // TODO: Exercise is of type NSSet(), does it need an Array? Why doesn't this work
                 ForEach(self.getListOfExercises(), id: \.self) { (exercise) in
-                    ExtractedView(
+                    MediumWidgetExerciseRowView(
                         name: exercise.name ?? "no name",
                         reps: "\(exercise.reps)",
                         sets: "\(exercise.sets)"
@@ -61,7 +60,7 @@ struct MediumWidgetEntryView : View {
 }
 
 
-struct ExtractedView: View {
+struct MediumWidgetExerciseRowView: View {
     @State var name: String
     @State var reps: String
     @State var sets: String

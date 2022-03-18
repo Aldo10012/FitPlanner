@@ -16,12 +16,24 @@ struct LargeWidgetTimeline: TimelineProvider {
     
     /// return our snapshotEntry
     func placeholder(in context: Context) -> LargeWidgetEntry {
-        LargeWidgetEntry(date: Date(), nextWorkoutName: "", nextWorkoutDate: "")
+        LargeWidgetEntry(
+            date: Date(),
+            nextWorkoutName: "",
+            nextWorkoutDate: "",
+            nextWorkout: nil,
+            numberOfExercises: 0
+        )
     }
 
     /// create the snapshot using the snapshotEntry
     func getSnapshot(in context: Context, completion: @escaping (LargeWidgetEntry) -> ()) {
-        let entry = LargeWidgetEntry(date: Date(), nextWorkoutName: "", nextWorkoutDate: "")
+        let entry = LargeWidgetEntry(
+            date: Date(),
+            nextWorkoutName: "",
+            nextWorkoutDate: "",
+            nextWorkout: nil,
+            numberOfExercises: 0
+        )
         completion(entry)
     }
 
@@ -30,32 +42,46 @@ struct LargeWidgetTimeline: TimelineProvider {
         var entries: [LargeWidgetEntry] = []
 
         
-        var name: String
-        var date: String
-        
-        print("next workout:", myData.getNextWorkout() )
-        if let nextWorkout = myData.getNextWorkout() {
-            name = nextWorkout.name!
-            date = getDateAsStringLong(dateOfNextWorkout) + ",\n" + getMonthAndDateAsString(dateOfNextWorkout)
-        } else {
-            name = "No workouts "
-            date = ""
-            
-        }
-        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = LargeWidgetEntry(
-                date: entryDate,
-                nextWorkoutName: name,
-                nextWorkoutDate: date
-            )
+            let entry = createlargeWidgetEntry(entryDate: entryDate)
             entries.append(entry)
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
+    }
+    
+    
+    func createlargeWidgetEntry(entryDate: Date) -> LargeWidgetEntry {
+        var entry: LargeWidgetEntry!
+        
+        if let nextWorkout = myData.getNextWorkout() {
+            entry = LargeWidgetEntry(
+                date: entryDate,
+                nextWorkoutName: nextWorkout.name!,
+                nextWorkoutDate: Date().getDateAsString(dateOfNextWorkout, format: "EEEE"),
+                nextWorkout: nextWorkout,
+                numberOfExercises: nextWorkout.exercises?.count ?? 0,
+                onSun: nextWorkout.onSun,
+                onMon: nextWorkout.onMon,
+                onTue: nextWorkout.onTue,
+                onWed: nextWorkout.onWed,
+                onThu: nextWorkout.onThu,
+                onFri: nextWorkout.onFri,
+                onSat: nextWorkout.onSat
+            )
+        } else {
+            entry = LargeWidgetEntry(
+                date: entryDate,
+                nextWorkoutName: "No workouts ",
+                nextWorkoutDate: "",
+                numberOfExercises: 0
+            )
+        }
+        print(entry)
+        return entry
     }
 }

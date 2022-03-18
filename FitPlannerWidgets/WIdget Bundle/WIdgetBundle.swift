@@ -9,7 +9,7 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-@main
+//@main
 struct FPWidgetBundle: WidgetBundle {
     
     @WidgetBundleBuilder
