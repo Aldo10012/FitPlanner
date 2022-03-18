@@ -11,8 +11,8 @@ import SwiftUI
 
 //@main
 struct SmallWidget: Widget {
-    let kind: String = "FitPlannerWidgets"
-
+    let kind: String = "SmallWidget"
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: SmallWidgetTimeline()) { entry in
             SmallWidgetEntryView(entry: entry)

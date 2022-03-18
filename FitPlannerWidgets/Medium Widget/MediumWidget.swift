@@ -11,7 +11,7 @@ import SwiftUI
 
 //@main
 struct MediumWidget: Widget {
-    let kind: String = "FitPlannerWidgets"
+    let kind: String = "MediumWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: MediumWidgetTimeline()) { entry in

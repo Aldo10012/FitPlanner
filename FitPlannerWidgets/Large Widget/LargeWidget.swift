@@ -11,7 +11,7 @@ import SwiftUI
 
 //@main
 struct LargeWidget: Widget {
-    let kind: String = "FitPlannerWidgets"
+    let kind: String = "LargeWidget"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: LargeWidgetTimeline()) { entry in
