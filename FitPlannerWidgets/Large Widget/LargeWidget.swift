@@ -9,7 +9,7 @@ import Foundation
 import WidgetKit
 import SwiftUI
 
-@main
+//@main
 struct LargeWidget: Widget {
     let kind: String = "FitPlannerWidgets"
 
