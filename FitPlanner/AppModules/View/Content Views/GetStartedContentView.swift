@@ -23,8 +23,8 @@ class GetStartedContentView: UIView {
     
     let getStartedButton = FPButton(type: .primary, title: "Get Started")
     
-    private var profileImage: UIImage?
-    private let plusPhotoButton: UIButton = {
+    var profileImage: UIImage?
+    let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
         button.tintColor = .FPOffBlack
@@ -43,9 +43,7 @@ class GetStartedContentView: UIView {
     }
     
     // MARK: - Helpers
-    func configureUI() {
-        backgroundColor = .FPBackground
-        
+    func configureUI() {        
         addSubview(card)
         card.anchor(left: leftAnchor, right: rightAnchor, paddingLeft: 25, paddingRight: 25, height: 530)
         card.centerY(inView: self)
