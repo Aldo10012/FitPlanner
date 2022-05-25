@@ -1062,6 +1062,7 @@
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitPlanner/Resources/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses your photo library to select your profile picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1093,6 +1094,7 @@
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitPlanner/Resources/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses your photo library to select your profile picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
