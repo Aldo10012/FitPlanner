@@ -31,7 +31,7 @@ class GetStartedVC: UIViewController {
     lazy var heightContainer = InputContainerView(label: "Height (in)", textField: heightTextField)
     lazy var weightContainer = InputContainerView(label: "Weight (lb)", textField: weightTextField)
     
-    let getStartedButton = FPButton(type: .primary, title: "Get Started", target: self, action: #selector(didTapButton))
+    let getStartedButton = FPButton(type: .primary, title: "Get Started")
     
     private var profileImage: UIImage?
     private let plusPhotoButton: UIButton = {
@@ -105,6 +105,9 @@ class GetStartedVC: UIViewController {
         
         card.addSubview(getStartedButton)
         getStartedButton.anchor(top: stack.bottomAnchor, left: card.leftAnchor, right: card.rightAnchor, paddingTop: 68, paddingLeft: 24, paddingRight: 24)
+        
+        getStartedButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        plusPhotoButton.addTarget(self, action: #selector(handleSelectPhoto), for: .touchUpInside)
         
         checkFormStatus()
     }
