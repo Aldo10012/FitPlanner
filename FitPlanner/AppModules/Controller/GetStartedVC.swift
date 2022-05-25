@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 protocol GetStartedDelegate {
     func didRegister()
@@ -19,6 +20,8 @@ class GetStartedVC: UIViewController {
     var getStartedDelegate: GetStartedDelegate!
     var contentView = GetStartedContentView()
     
+    var photoAuthStatus: PHAuthorizationStatus!
+    
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -28,6 +31,8 @@ class GetStartedVC: UIViewController {
         setupViews()
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
+        
+        setupPhotoAccess()
     }
     
     
@@ -43,7 +48,21 @@ class GetStartedVC: UIViewController {
     @objc func handleSelectPhoto() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
+        
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        
+        switch photoAuthorizationStatus {
+        case .authorized:
+            print("authorized")
+            present(imagePickerController, animated: true, completion: nil)
+            
+        case .denied:
+            print("denied")
+            // TODO: give profile pic a placeholder so it's not nil
+        
+        default:
+            break
+        }
     }
     
     
@@ -128,4 +147,67 @@ extension GetStartedVC: UIImagePickerControllerDelegate, UINavigationControllerD
         
         dismiss(animated: true, completion: nil)
     }
+}
+
+// MARK: - Photo Library
+extension GetStartedVC {
+    func setupPhotoAccess() {
+        // Request permission to access photo library
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { [unowned self] (status) in
+            DispatchQueue.main.async { [unowned self] in
+                showUI(for: status)
+            }
+        }
+    }
+    
+    func showUI(for status: PHAuthorizationStatus) {
+        
+        self.photoAuthStatus = status
+        
+        switch status {
+        case .authorized:
+            showFullAccessUI()
+
+        case .limited:
+            showLimittedAccessUI()
+
+        case .restricted:
+            showRestrictedAccessUI()
+
+        case .denied:
+            showAccessDeniedUI()
+
+        case .notDetermined:
+            break
+
+        @unknown default:
+            break
+        }
+    }
+    
+    func showFullAccessUI() {
+        print("full access")
+        let photoCount = PHAsset.fetchAssets(with: nil).count
+    }
+    
+    func showLimittedAccessUI() {
+        print("limited access")
+        let photoCount = PHAsset.fetchAssets(with: nil).count
+        print("Photo count:", photoCount)
+    }
+    
+    func showRestrictedAccessUI() {
+        print("Restricted access")
+    }
+    
+    func showAccessDeniedUI() {
+        print("access denied")
+    }
+    
+    
+    /*
+     "Select Photos" -> limited access -> authorized
+     "Allow access to all photos" -> full access -> authorized
+     "Dont't allow" -> access denied -> denied
+     */
 }
