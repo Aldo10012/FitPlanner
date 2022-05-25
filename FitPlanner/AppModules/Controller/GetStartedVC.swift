@@ -57,7 +57,6 @@ class GetStartedVC: UIViewController {
             
         case .denied:
             print("denied")
-            // TODO: give profile pic a placeholder so it's not nil
         
         default:
             break
@@ -147,6 +146,21 @@ extension GetStartedVC: UIImagePickerControllerDelegate, UINavigationControllerD
         
         dismiss(animated: true, completion: nil)
     }
+    
+    func setDefaultImage() {
+        let image: UIImage = UIImage(named: "FitPlanner-logo")!
+        
+        /// set app logo to be that image
+        contentView.profileImage = image
+        contentView.plusPhotoButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+        contentView.plusPhotoButton.layer.borderColor = UIColor.systemGray3.cgColor
+        contentView.plusPhotoButton.layer.borderWidth = 3.0
+        contentView.plusPhotoButton.layer.cornerRadius = 100/2
+        
+        viewModel.pictureIsSelected = true
+        viewModel.pictureData = image.pngData()
+        checkFormStatus()
+    }
 }
 
 // MARK: - Photo Library
@@ -157,5 +171,7 @@ extension GetStartedVC: PhotoAccessManagerDelegate {
     func showFullAccessUI() {}
     func showLimittedAccessUI() {}
     func showRestrictedAccessUI() {}
-    func showAccessDeniedUI() {}
+    func showAccessDeniedUI() {
+        setDefaultImage()
+    }
 }
