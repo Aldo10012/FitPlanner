@@ -29,6 +29,7 @@
 		636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* WorkoutCardView.swift */; };
 		636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25727851D2900BB5664 /* FPWeekButton.swift */; };
 		637540B5283ED6C30005DC67 /* GetStartedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637540B4283ED6C30005DC67 /* GetStartedContentView.swift */; };
+		637540B7283EE3060005DC67 /* PhotoAccessManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637540B6283EE3060005DC67 /* PhotoAccessManger.swift */; };
 		637D87C3278E040C00359073 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637D87C2278E040C00359073 /* WidgetKit.framework */; };
 		637D87C5278E040C00359073 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637D87C4278E040C00359073 /* SwiftUI.framework */; };
 		637D87CA278E040D00359073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637D87C9278E040D00359073 /* Assets.xcassets */; };
@@ -148,6 +149,7 @@
 		636CE25527851C1300BB5664 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
 		636CE25727851D2900BB5664 /* FPWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWeekButton.swift; sourceTree = "<group>"; };
 		637540B4283ED6C30005DC67 /* GetStartedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedContentView.swift; sourceTree = "<group>"; };
+		637540B6283EE3060005DC67 /* PhotoAccessManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAccessManger.swift; sourceTree = "<group>"; };
 		637D87C1278E040C00359073 /* FitPlannerWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FitPlannerWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		637D87C2278E040C00359073 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		637D87C4278E040C00359073 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -277,6 +279,7 @@
 				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
 				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
 				630582C327862A180044399A /* CellId.swift */,
+				637540B6283EE3060005DC67 /* PhotoAccessManger.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -814,6 +817,7 @@
 				63D7F23327E3BE4600A7064A /* BMILogVM.swift in Sources */,
 				63B21DEA2784D6BE00E5DCE9 /* GetStartedVC.swift in Sources */,
 				63B21DEF2784DB9200E5DCE9 /* UIView-autolayout.swift in Sources */,
+				637540B7283EE3060005DC67 /* PhotoAccessManger.swift in Sources */,
 				637540B5283ED6C30005DC67 /* GetStartedContentView.swift in Sources */,
 				63B21DE42784CC5500E5DCE9 /* ProfileVC.swift in Sources */,
 				636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */,
