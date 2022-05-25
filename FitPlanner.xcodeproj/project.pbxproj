@@ -28,6 +28,8 @@
 		636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE253278509B700BB5664 /* LargeCalendarView.swift */; };
 		636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25527851C1300BB5664 /* WorkoutCardView.swift */; };
 		636CE25827851D2900BB5664 /* FPWeekButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE25727851D2900BB5664 /* FPWeekButton.swift */; };
+		637540B5283ED6C30005DC67 /* GetStartedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637540B4283ED6C30005DC67 /* GetStartedContentView.swift */; };
+		637540B7283EE3060005DC67 /* PhotoAccessManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637540B6283EE3060005DC67 /* PhotoAccessManger.swift */; };
 		637D87C3278E040C00359073 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637D87C2278E040C00359073 /* WidgetKit.framework */; };
 		637D87C5278E040C00359073 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637D87C4278E040C00359073 /* SwiftUI.framework */; };
 		637D87CA278E040D00359073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637D87C9278E040D00359073 /* Assets.xcassets */; };
@@ -146,6 +148,8 @@
 		636CE253278509B700BB5664 /* LargeCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCalendarView.swift; sourceTree = "<group>"; };
 		636CE25527851C1300BB5664 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
 		636CE25727851D2900BB5664 /* FPWeekButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPWeekButton.swift; sourceTree = "<group>"; };
+		637540B4283ED6C30005DC67 /* GetStartedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedContentView.swift; sourceTree = "<group>"; };
+		637540B6283EE3060005DC67 /* PhotoAccessManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAccessManger.swift; sourceTree = "<group>"; };
 		637D87C1278E040C00359073 /* FitPlannerWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FitPlannerWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		637D87C2278E040C00359073 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		637D87C4278E040C00359073 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -275,6 +279,7 @@
 				63B21DEE2784DB9200E5DCE9 /* UIView-autolayout.swift */,
 				63B21DFA2784E3DA00E5DCE9 /* UIView-ext.swift */,
 				630582C327862A180044399A /* CellId.swift */,
+				637540B6283EE3060005DC67 /* PhotoAccessManger.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +299,14 @@
 				636CE253278509B700BB5664 /* LargeCalendarView.swift */,
 			);
 			path = "Calendar Views";
+			sourceTree = "<group>";
+		};
+		637540B3283ED6AA0005DC67 /* Content Views */ = {
+			isa = PBXGroup;
+			children = (
+				637540B4283ED6C30005DC67 /* GetStartedContentView.swift */,
+			);
+			path = "Content Views";
 			sourceTree = "<group>";
 		};
 		637D87C6278E040C00359073 /* FitPlannerWidgets */ = {
@@ -399,6 +412,7 @@
 				63B21DF52784DE7200E5DCE9 /* Container Views */,
 				636CE2522785099100BB5664 /* Calendar Views */,
 				630582CB27864A100044399A /* TableView Cells */,
+				637540B3283ED6AA0005DC67 /* Content Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -803,6 +817,8 @@
 				63D7F23327E3BE4600A7064A /* BMILogVM.swift in Sources */,
 				63B21DEA2784D6BE00E5DCE9 /* GetStartedVC.swift in Sources */,
 				63B21DEF2784DB9200E5DCE9 /* UIView-autolayout.swift in Sources */,
+				637540B7283EE3060005DC67 /* PhotoAccessManger.swift in Sources */,
+				637540B5283ED6C30005DC67 /* GetStartedContentView.swift in Sources */,
 				63B21DE42784CC5500E5DCE9 /* ProfileVC.swift in Sources */,
 				636CE254278509B700BB5664 /* LargeCalendarView.swift in Sources */,
 				63B21DE22784CB3500E5DCE9 /* TabBarController.swift in Sources */,
@@ -1058,10 +1074,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FitPlanner/FitPlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitPlanner/Resources/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses your photo library to select your profile picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1089,10 +1106,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FitPlanner/FitPlanner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = BS4YM2JJ65;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitPlanner/Resources/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses your photo library to select your profile picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
