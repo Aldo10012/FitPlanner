@@ -168,10 +168,8 @@ extension GetStartedVC: PhotoAccessManagerDelegate {
     
     // These method's don't really do anything right now, but if we want some kind of UI update to happen when a user selects a photo library auroization level, we would call these.
     
-    func showFullAccessUI() {}
-    func showLimittedAccessUI() {}
-    func showRestrictedAccessUI() {}
-    func showAccessDeniedUI() {
-        setDefaultImage()
-    }
+    func showFullAccessUI() { checkFormStatus() }
+    func showLimittedAccessUI() { checkFormStatus() }
+    func showRestrictedAccessUI() { checkFormStatus() }
+    func showAccessDeniedUI() { setDefaultImage() }
 }
