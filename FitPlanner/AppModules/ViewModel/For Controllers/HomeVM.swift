@@ -23,7 +23,8 @@ protocol HomeInteractor {
 
 // MARK: ViewModel
 struct HomeVM {
-    var myData = CoreDataStack.shared
+    let workoutStorage = WorkoutCoreDataStorage()
+    let activityStorage = ActivityCoreDataStorage()
     var nextWorkout = WorkoutCardVM()
     var activity: [Activity]? = []
     
@@ -94,11 +95,11 @@ extension HomeVM: HomeInteractor {
     
     func getNextWorkout() -> Workout? {
         print("")
-        return myData.getNextWorkout()
+        return workoutStorage.getNextWorkout()
     }
     
     func getActivity() -> [Activity] {
-        return myData.getActivity()
+        return activityStorage.getActivity()
     }
 }
 

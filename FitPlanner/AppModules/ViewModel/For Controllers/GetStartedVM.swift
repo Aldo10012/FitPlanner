@@ -15,7 +15,8 @@ protocol GetStartedInteractor {
 
 // MARK: View Model
 struct GetStartedVM {
-    let myData = CoreDataStack.shared
+    let userStorage = UserCoreDataStorage()
+    let bmiStorage = UserBMICoreDataStorage()
     
     var pictureData: Data?
     var pictureIsSelected: Bool?
@@ -42,7 +43,7 @@ extension GetStartedVM: GetStartedInteractor {
         // get data from view model
         // pass them to CoreDataStack to create user
         
-        myData.registerNewUser(
+        userStorage.registerNewUser(
             userName: userName!,
             height: height!,
             weight: weight!,
@@ -50,6 +51,6 @@ extension GetStartedVM: GetStartedInteractor {
         )
         
         let bmi = BMIMannager.calculateBMI(height: height!, weight: weight!)
-        myData.userDidLogBMI(date: Date(), weight: weight!, bmi: bmi)
+        bmiStorage.userDidLogBMI(date: Date(), weight: weight!, bmi: bmi)
     }
 }

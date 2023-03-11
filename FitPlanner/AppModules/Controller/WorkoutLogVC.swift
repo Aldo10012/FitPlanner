@@ -11,7 +11,7 @@ import CoreData
 class WorkoutLogVC: UIViewController {
 
     // MARK: Properties
-    let myData = CoreDataStack.shared
+    let workoutStorage = WorkoutCoreDataStorage()
     let yourWorkoutsLabel = FPLabel(title: "Your workouts", color: .primary, size: 20, weight: .medium)
     
     var viewModel = WorkoutLogVM()
@@ -97,7 +97,7 @@ extension WorkoutLogVC: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             let object = viewModel.yourWorkouts[indexPath.row]
             self.viewModel.yourWorkouts.remove(at: indexPath.row)
-            myData.deleteWorkout(object.workout)
+            workoutStorage.deleteWorkout(object.workout)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         }

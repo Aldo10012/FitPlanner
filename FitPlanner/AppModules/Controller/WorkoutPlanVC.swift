@@ -27,7 +27,7 @@ class WorkoutPlanVC: UIViewController {
     // MARK: - Properties    
     var type: WorkoutPlanType!
     var viewModel = WorkoutPlanVM()
-    let myData = CoreDataStack.shared
+    let coreDataStorage = CoreDataStorage()
     
     var delegate: WorkoutChangedDelegate!
     var markAsDoneDelegate: WorkoutMarkedAsDoneDelegate?
@@ -92,7 +92,7 @@ class WorkoutPlanVC: UIViewController {
     }
     
     @objc func didTapAddExerciseButton() {
-        let newExercise = Exercise(context: myData.persistentContainer.viewContext)
+        let newExercise = Exercise(context: coreDataStorage.managedContext)
         viewModel.exercises.append(newExercise)
         print("1", viewModel.exercises)
         addExerciseCard.tableView.reloadData()

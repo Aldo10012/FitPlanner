@@ -21,7 +21,8 @@ protocol ProfilePresentorProtocol {
 
 // MARK: View Model
 struct ProfileVM {
-    fileprivate let myData = CoreDataStack.shared
+    let userStorage = UserCoreDataStorage()
+    let userBMIStorage = UserBMICoreDataStorage()
     
     var profilePic: UIImage?
     var userName: String?
@@ -79,12 +80,12 @@ extension ProfileVM: ProfileInteractorProtocol {
     
     func getUserData() -> User? {
         // Get user data form CoreData & return to presentor
-        let user = myData.getUser()
+        let user = userStorage.getUser()
         return user
     }
     
     func updateUserBMI(for user: User) {
-        myData.updateUserBMI(user)
+        userBMIStorage.updateUserBMI(user)
     }
     
     func userDidLogBMI() {
@@ -92,9 +93,7 @@ extension ProfileVM: ProfileInteractorProtocol {
         let weightLog = weight!
         let bmiLog = BMIMannager.calculateBMI(height: height!, weight: weight!)
         
-        myData.userDidLogBMI(date: dateLog, weight: weightLog, bmi: bmiLog)
-        
+        userBMIStorage.userDidLogBMI(date: dateLog, weight: weightLog, bmi: bmiLog)
     }
-    
 }
 

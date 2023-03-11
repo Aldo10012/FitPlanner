@@ -12,7 +12,7 @@ import SwiftUI
 /// Creates one or more timeline entries with dates that tell WidgetKit when to display a widget.
 struct SmallWidgetTimeline: TimelineProvider {
     
-    let myData = CoreDataStack.shared
+    let workoutStorage = WorkoutCoreDataStorage()
     
     /// return our snapshotEntry
     func placeholder(in context: Context) -> SmallWidgetEntry {
@@ -33,8 +33,8 @@ struct SmallWidgetTimeline: TimelineProvider {
         var name: String
         var date: String
         
-        print("next workout:", myData.getNextWorkout() )
-        if let nextWorkout = myData.getNextWorkout() {
+        print("next workout:", workoutStorage.getNextWorkout() )
+        if let nextWorkout = workoutStorage.getNextWorkout() {
             name = nextWorkout.name!
             date = Date().getDateAsString(dateOfNextWorkout, format: "EEEE,\nMMM d")
         } else {
