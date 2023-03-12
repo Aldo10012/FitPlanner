@@ -40,8 +40,6 @@ struct GetStartedVM {
 extension GetStartedVM: GetStartedInteractor {
     func registerUser() {
         print("register user")
-        // get data from view model
-        // pass them to CoreDataStack to create user
         
         userStorage.registerNewUser(
             userName: userName!,
