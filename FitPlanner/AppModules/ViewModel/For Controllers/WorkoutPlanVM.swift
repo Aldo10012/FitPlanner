@@ -22,7 +22,9 @@ protocol WorkoutPlanPresentor {
 
 // MARK: ViewModel
 struct WorkoutPlanVM {
-    fileprivate var myData = CoreDataStack.shared
+    let workoutStorage = WorkoutCoreDataStorage()
+    let activityStorage = ActivityCoreDataStorage()
+    let coreDataStorage = CoreDataStorage()
     var object: Workout?
     
     var name: String?
@@ -51,7 +53,7 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
         
         setupAlertsAndNotifications()
 //        print("MY EXERCISES: \n", exercises)
-        myData.createWorkout(
+        workoutStorage.createWorkout(
             workoutName: name!,
             onSun: onSun!, onMon: onMon!, onTue: onTue!, onWed: onWed!, onThu: onThu!, onFri: onFri!, onSat: onSat!,
             alerts: alerts,
@@ -72,13 +74,13 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
         object?.exercises = NSSet(array: exercises)
         self.deleteOldAlertsAndSetNewOnes()
         
-        myData.updateWorkout(object!)
+        workoutStorage.updateWorkout(object!)
         
     }
     
     func markWorkoutAsDone() {
         print("mark workout as done")
-        myData.completedWorkout()
+        activityStorage.completedWorkout()
     }
     
     
@@ -95,7 +97,7 @@ extension WorkoutPlanVM: WorkoutPlanInteractor {
         
         func createAndAppendAlert(dayOfWeek: Weekday) {
             let date = Date.today().next(dayOfWeek)
-            let newAlert = Alert(context: myData.persistentContainer.viewContext)
+            let newAlert = Alert(context: coreDataStorage.managedContext)
             newAlert.date = date
             alerts.append(newAlert)
         }

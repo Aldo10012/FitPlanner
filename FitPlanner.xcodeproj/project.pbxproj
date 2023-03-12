@@ -47,7 +47,6 @@
 		63B21DC82784C5DB00E5DCE9 /* FitPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DC72784C5DB00E5DCE9 /* FitPlannerUITests.swift */; };
 		63B21DCA2784C5DB00E5DCE9 /* FitPlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DC92784C5DB00E5DCE9 /* FitPlannerUITestsLaunchTests.swift */; };
 		63B21DDE2784C92C00E5DCE9 /* WorkoutLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DDD2784C92C00E5DCE9 /* WorkoutLogVC.swift */; };
-		63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */; };
 		63B21DE22784CB3500E5DCE9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DE12784CB3500E5DCE9 /* TabBarController.swift */; };
 		63B21DE42784CC5500E5DCE9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DE32784CC5500E5DCE9 /* ProfileVC.swift */; };
 		63B21DE82784D69800E5DCE9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DE72784D69800E5DCE9 /* Router.swift */; };
@@ -62,7 +61,6 @@
 		63B21DFD2784E71A00E5DCE9 /* FPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFC2784E71A00E5DCE9 /* FPButton.swift */; };
 		63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DFE2784F00600E5DCE9 /* NextWorkoutCard.swift */; };
 		63BD4B25278F63F400DDA2F4 /* FitPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DAC2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld */; };
-		63BD4B26278F63F800DDA2F4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */; };
 		63BD4B27278F63FB00DDA2F4 /* Date-ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D2D82788D0060019A935 /* Date-ext.swift */; };
 		63BD4B28278F63FD00DDA2F4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639F9756278BDA2E007DF038 /* Result.swift */; };
 		63BD4B29278F640000DDA2F4 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B47532787869900E6FA4B /* UserDefaultManager.swift */; };
@@ -72,6 +70,18 @@
 		63BD4B62278F9F0100DDA2F4 /* SmallWIdgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B59278F9C4A00DDA2F4 /* SmallWIdgetEntry.swift */; };
 		63BD4B64278F9F0D00DDA2F4 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */; };
 		63BD4B66278FB46900DDA2F4 /* SmallWidgetTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BD4B5B278F9C6300DDA2F4 /* SmallWidgetTimeline.swift */; };
+		63C13A9429BC4AA2008A02EF /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9329BC4AA2008A02EF /* PersistentContainer.swift */; };
+		63C13A9529BC4AA2008A02EF /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9329BC4AA2008A02EF /* PersistentContainer.swift */; };
+		63C13A9729BC4B36008A02EF /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9629BC4B36008A02EF /* CoreDataStorage.swift */; };
+		63C13A9829BC4B36008A02EF /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9629BC4B36008A02EF /* CoreDataStorage.swift */; };
+		63C13A9A29BC4E0C008A02EF /* UsersStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9929BC4E0C008A02EF /* UsersStorage.swift */; };
+		63C13A9B29BC4E0C008A02EF /* UsersStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9929BC4E0C008A02EF /* UsersStorage.swift */; };
+		63C13A9D29BC4F0B008A02EF /* UserBMIStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9C29BC4F0B008A02EF /* UserBMIStorage.swift */; };
+		63C13A9E29BC4F0B008A02EF /* UserBMIStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9C29BC4F0B008A02EF /* UserBMIStorage.swift */; };
+		63C13AA029BC4F6F008A02EF /* WorkoutStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9F29BC4F6F008A02EF /* WorkoutStorage.swift */; };
+		63C13AA129BC4F6F008A02EF /* WorkoutStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13A9F29BC4F6F008A02EF /* WorkoutStorage.swift */; };
+		63C13AA329BC5068008A02EF /* ActivityStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13AA229BC5068008A02EF /* ActivityStorage.swift */; };
+		63C13AA429BC5068008A02EF /* ActivityStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C13AA229BC5068008A02EF /* ActivityStorage.swift */; };
 		63D7F23127E3BC7A00A7064A /* BMILogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F23027E3BC7A00A7064A /* BMILogVC.swift */; };
 		63D7F23327E3BE4600A7064A /* BMILogVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F23227E3BE4600A7064A /* BMILogVM.swift */; };
 		63D7F23527E3C05200A7064A /* BMILogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D7F23427E3C05200A7064A /* BMILogTableViewCell.swift */; };
@@ -172,7 +182,6 @@
 		63B21DC72784C5DB00E5DCE9 /* FitPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlannerUITests.swift; sourceTree = "<group>"; };
 		63B21DC92784C5DB00E5DCE9 /* FitPlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		63B21DDD2784C92C00E5DCE9 /* WorkoutLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogVC.swift; sourceTree = "<group>"; };
-		63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		63B21DE12784CB3500E5DCE9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		63B21DE32784CC5500E5DCE9 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		63B21DE72784D69800E5DCE9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -192,6 +201,12 @@
 		63BD4B5F278F9C7B00DDA2F4 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		63BD4B6A278FBA0500DDA2F4 /* FitPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlanner.entitlements; sourceTree = "<group>"; };
 		63BD4B6B278FBA0C00DDA2F4 /* FitPlannerWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitPlannerWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		63C13A9329BC4AA2008A02EF /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		63C13A9629BC4B36008A02EF /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		63C13A9929BC4E0C008A02EF /* UsersStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStorage.swift; sourceTree = "<group>"; };
+		63C13A9C29BC4F0B008A02EF /* UserBMIStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBMIStorage.swift; sourceTree = "<group>"; };
+		63C13A9F29BC4F6F008A02EF /* WorkoutStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStorage.swift; sourceTree = "<group>"; };
+		63C13AA229BC5068008A02EF /* ActivityStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStorage.swift; sourceTree = "<group>"; };
 		63D7F23027E3BC7A00A7064A /* BMILogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILogVC.swift; sourceTree = "<group>"; };
 		63D7F23227E3BE4600A7064A /* BMILogVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILogVM.swift; sourceTree = "<group>"; };
 		63D7F23427E3C05200A7064A /* BMILogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILogTableViewCell.swift; sourceTree = "<group>"; };
@@ -400,7 +415,12 @@
 			isa = PBXGroup;
 			children = (
 				63B21DAC2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld */,
-				63B21DDF2784C98D00E5DCE9 /* CoreDataStack.swift */,
+				63C13A9329BC4AA2008A02EF /* PersistentContainer.swift */,
+				63C13A9629BC4B36008A02EF /* CoreDataStorage.swift */,
+				63C13A9929BC4E0C008A02EF /* UsersStorage.swift */,
+				63C13A9C29BC4F0B008A02EF /* UserBMIStorage.swift */,
+				63C13A9F29BC4F6F008A02EF /* WorkoutStorage.swift */,
+				63C13AA229BC5068008A02EF /* ActivityStorage.swift */,
 			);
 			path = CoreDada;
 			sourceTree = "<group>";
@@ -768,16 +788,21 @@
 				63BD4B66278FB46900DDA2F4 /* SmallWidgetTimeline.swift in Sources */,
 				630F570D27E0F7F300DFBE90 /* BMIMannager.swift in Sources */,
 				63FBC2F527DFFC6A0065296D /* LargeWidgetEntry.swift in Sources */,
+				63C13A9B29BC4E0C008A02EF /* UsersStorage.swift in Sources */,
 				63BD4B29278F640000DDA2F4 /* UserDefaultManager.swift in Sources */,
-				63BD4B26278F63F800DDA2F4 /* CoreDataStack.swift in Sources */,
+				63C13AA429BC5068008A02EF /* ActivityStorage.swift in Sources */,
+				63C13A9E29BC4F0B008A02EF /* UserBMIStorage.swift in Sources */,
 				63BD4B28278F63FD00DDA2F4 /* Result.swift in Sources */,
+				63C13A9829BC4B36008A02EF /* CoreDataStorage.swift in Sources */,
 				63FBC2E627DFF9100065296D /* MediumWidget.swift in Sources */,
 				63BD4B64278F9F0D00DDA2F4 /* SmallWidgetView.swift in Sources */,
 				63FBC2F327DFFC620065296D /* LargeWidget.swift in Sources */,
+				63C13AA129BC4F6F008A02EF /* WorkoutStorage.swift in Sources */,
 				63BD4B27278F63FB00DDA2F4 /* Date-ext.swift in Sources */,
 				63BD4B2A278F640300DDA2F4 /* NotificationManager.swift in Sources */,
 				63FBC2F427DFFC660065296D /* LargeWidgetTimeline.swift in Sources */,
 				63BD4B25278F63F400DDA2F4 /* FitPlanner.xcdatamodeld in Sources */,
+				63C13A9529BC4AA2008A02EF /* PersistentContainer.swift in Sources */,
 				63BD4B62278F9F0100DDA2F4 /* SmallWIdgetEntry.swift in Sources */,
 				63FBC2E427DFF90A0065296D /* MediumWidgetEntry.swift in Sources */,
 				63FBC2E827DFF91A0065296D /* WIdgetBundle.swift in Sources */,
@@ -800,13 +825,14 @@
 				63B21DAE2784C5D800E5DCE9 /* FitPlanner.xcdatamodeld in Sources */,
 				630F570C27E0F54500DFBE90 /* BMIMannager.swift in Sources */,
 				630F570F27E105DD00DFBE90 /* BMIScaleCardView.swift in Sources */,
+				63C13A9429BC4AA2008A02EF /* PersistentContainer.swift in Sources */,
 				636CE25627851C1300BB5664 /* WorkoutCardView.swift in Sources */,
 				630B47572787B75000E6FA4B /* WorkoutPlanVM.swift in Sources */,
 				63B21DF92784DFD700E5DCE9 /* FPBackground.swift in Sources */,
-				63B21DE02784C98D00E5DCE9 /* CoreDataStack.swift in Sources */,
 				630582C427862A180044399A /* CellId.swift in Sources */,
 				63B21DFF2784F00600E5DCE9 /* NextWorkoutCard.swift in Sources */,
 				6394D2D92788D0060019A935 /* Date-ext.swift in Sources */,
+				63C13A9A29BC4E0C008A02EF /* UsersStorage.swift in Sources */,
 				63B21DF72784DF7D00E5DCE9 /* InputContainerView.swift in Sources */,
 				630582C227861D740044399A /* WorkoutLogVM.swift in Sources */,
 				63B21DED2784D70F00E5DCE9 /* UIColor-ext.swift in Sources */,
@@ -824,12 +850,16 @@
 				63B21DE22784CB3500E5DCE9 /* TabBarController.swift in Sources */,
 				63B21DF12784DC3B00E5DCE9 /* FPLabel.swift in Sources */,
 				630582CD27865FE00044399A /* ExerciseTableViewCell.swift in Sources */,
+				63C13A9729BC4B36008A02EF /* CoreDataStorage.swift in Sources */,
+				63C13AA329BC5068008A02EF /* ActivityStorage.swift in Sources */,
 				630582C6278632CD0044399A /* WorkoutPlanVC.swift in Sources */,
 				630582C027861CC20044399A /* WorkoutCardTableViewCell.swift in Sources */,
 				63B21DDE2784C92C00E5DCE9 /* WorkoutLogVC.swift in Sources */,
 				63D7F23527E3C05200A7064A /* BMILogTableViewCell.swift in Sources */,
+				63C13AA029BC4F6F008A02EF /* WorkoutStorage.swift in Sources */,
 				63B21DA62784C5D800E5DCE9 /* SceneDelegate.swift in Sources */,
 				63D7F23127E3BC7A00A7064A /* BMILogVC.swift in Sources */,
+				63C13A9D29BC4F0B008A02EF /* UserBMIStorage.swift in Sources */,
 				63B21DF32784DD2700E5DCE9 /* FPTextField.swift in Sources */,
 				630F571527E1427100DFBE90 /* BMIScaleView.swift in Sources */,
 				630582CA278649590044399A /* HomeVM.swift in Sources */,

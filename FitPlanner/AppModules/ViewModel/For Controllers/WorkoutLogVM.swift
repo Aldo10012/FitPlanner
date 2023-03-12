@@ -22,12 +22,9 @@ protocol WorkoutLogInteractor {
 
 // MARK: ViewModel
 struct WorkoutLogVM {
-    fileprivate var myData = CoreDataStack.shared
-
+    var workoutStorage = WorkoutCoreDataStorage()
     
     var yourWorkouts: [WorkoutCardVM] = []
-    
-
 }
 
 // MARK: Presentor
@@ -70,6 +67,6 @@ extension WorkoutLogVM: WorkoutLogPresentor {
 extension WorkoutLogVM: WorkoutLogInteractor {
 
     func getWorkouts() -> [Workout] {
-        return myData.getWorkouts()
+        return workoutStorage.getAllWorkouts()
     }
 }

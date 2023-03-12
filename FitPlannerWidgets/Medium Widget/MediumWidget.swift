@@ -39,8 +39,8 @@ struct MediumWidget_Previews: PreviewProvider {
 
 fileprivate class MediumSample {
     static func getName() -> String {
-        let myData = CoreDataStack.shared
-        let nextWorkout = myData.getNextWorkout()
+        let workoutStorage = WorkoutCoreDataStorage()
+        let nextWorkout = workoutStorage.getNextWorkout()
         
         if nextWorkout?.name == nil {
             return "not found"
@@ -50,15 +50,15 @@ fileprivate class MediumSample {
     }
 
     static func getListofExercises() -> Workout? {
-        let myData = CoreDataStack.shared
-        let nextWorkout = myData.getNextWorkout()
+        let workoutStorage = WorkoutCoreDataStorage()
+        let nextWorkout = workoutStorage.getNextWorkout()
         
         return nextWorkout
     }
 
     static func getNumberOfExercises() -> Int {
-        let myData = CoreDataStack.shared
-        let nextWorkout = myData.getNextWorkout()
+        let workoutStorage = WorkoutCoreDataStorage()
+        let nextWorkout = workoutStorage.getNextWorkout()
         let numberOfExercises = nextWorkout?.exercises?.count
         
         if numberOfExercises == nil {

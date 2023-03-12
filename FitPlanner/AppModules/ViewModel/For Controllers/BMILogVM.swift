@@ -18,7 +18,7 @@ protocol BMILogPresentor {
 
 // MARK: ViewModel
 struct BMILogVM {
-    private let myDate = CoreDataStack.shared
+    let userBMIStorage = UserBMICoreDataStorage()
     var history: [BMILog] = []
 }
 
@@ -34,7 +34,7 @@ extension BMILogVM: BMILogPresentor {
 // MARK: Interactor
 extension BMILogVM: BMILogInteractor {
     func getBMIHistory() -> [BMILog] {
-        print("BMI History:", myDate.getMBILog())
-        return myDate.getMBILog()
+        print("BMI History:", userBMIStorage.getMBILog())
+        return userBMIStorage.getMBILog()
     }
 }

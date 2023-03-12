@@ -12,7 +12,7 @@ import SwiftUI
 /// Creates one or more timeline entries with dates that tell WidgetKit when to display a widget.
 struct LargeWidgetTimeline: TimelineProvider {
     
-    let myData = CoreDataStack.shared
+    let workoutStorage = WorkoutCoreDataStorage()
     
     /// return our snapshotEntry
     func placeholder(in context: Context) -> LargeWidgetEntry {
@@ -58,7 +58,7 @@ struct LargeWidgetTimeline: TimelineProvider {
     func createlargeWidgetEntry(entryDate: Date) -> LargeWidgetEntry {
         var entry: LargeWidgetEntry!
         
-        if let nextWorkout = myData.getNextWorkout() {
+        if let nextWorkout = workoutStorage.getNextWorkout() {
             entry = LargeWidgetEntry(
                 date: entryDate,
                 nextWorkoutName: nextWorkout.name!,
